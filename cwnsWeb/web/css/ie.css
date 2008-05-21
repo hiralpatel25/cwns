@@ -1,0 +1,61 @@
+/*	Styles for IE < 7.0. Various tweaks that help IE along. */
+
+/* Date: 05 June 2007 */
+/* Version: 3.1.2 */
+
+/* Includes hack to fudge layout in IE5.0
+	 The first value is for IE 5.0
+	 The second value, with the comments + whitespace, is hidden from IE5.0
+	 All other versions of IE apply the second value */
+
+
+/* =Layout -- Positioning of major page blocks
+----------------------------------------------- */
+body
+{	width: expression(document.body.clientWidth < 758? "760px" : document.body.clientWidth > 1198? "1200px" : "auto"); }
+
+#header
+/* A fix for IE5/Win only */
+{	margin: 26px 1px 26px 0;
+	margin/* */: 0 1px 0 0; }
+
+
+/* =Header elements (top of page)
+----------------------------------------------- */
+#header div#logo /* A fix for IE5/Win only */
+{	margin: -26px 0 0;
+	margin/* */: 0; }
+	
+#areaname /* A fix for IE5/Win only */
+{	margin: 26px 0 0 100px;
+	margin/* */: 0 0 0 100px; }
+
+body#aara #areaname /* A fix for IE5/Win only */
+{	margin: 26px 0 0 144px;
+	margin/* */: 0 0 0 144px; }
+
+#header ul li /* A fix for IE */
+{	background: 0;
+	background/* */: url(http://www.epa.gov/epafiles/s/i/breadcrumbarrow.gif) no-repeat 1px 1px; }
+
+	/* =Search elements
+	----------------------------------------------- */
+	#searchbutton /* A tweak for IE/Win */
+	{	margin: 1px 20px 1px 0; padding: 0; }
+
+
+/* =Content
+----------------------------------------------- */
+table { font-size: 100%; }
+
+/* =Area Navigation -- Left sidebar
+----------------------------------------------- */
+	#area-nav ul li /* A fix for IE5/Win */
+	{	padding: 0 0 0 6px;
+		padding/* */: 3px 0px 6px 6px; }
+
+		
+/* =Footer elements
+----------------------------------------------- */
+ul#globalfooter li /* A fix for IE/Win */
+{	margin: 0 0 0 9px; padding: 0 5px 0 0; }

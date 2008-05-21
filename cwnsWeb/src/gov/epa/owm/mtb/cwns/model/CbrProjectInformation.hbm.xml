@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CbrProjectInformation" table="CBR_PROJECT_INFORMATION">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.CbrProjectInformationId">
+            <key-property name="cbrLoanInformationId" type="string">
+                <column name="CBR_LOAN_INFORMATION_ID_FK" length="50" />
+            </key-property>
+            <key-property name="cbrProjectInformationId" type="string">
+                <column name="CBR_PROJECT_INFORMATION_ID" length="50" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cbrLoanInformation" class="gov.epa.owm.mtb.cwns.model.CbrLoanInformation" update="false" insert="false" fetch="select">
+            <column name="CBR_LOAN_INFORMATION_ID_FK" length="50" not-null="true" />
+        </many-to-one>
+        <property name="projectNumber" type="int">
+            <column name="PROJECT_NUMBER" precision="8" scale="0" not-null="true" />
+        </property>
+        <property name="cwnsNumber" type="string">
+            <column name="CWNS_NUMBER" length="45" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="facilityName" type="string">
+            <column name="FACILITY_NAME" length="150" />
+        </property>
+        <property name="npdesPermitNumber" type="string">
+            <column name="NPDES_PERMIT_NUMBER" length="45" />
+        </property>
+        <property name="permitType" type="string">
+            <column name="PERMIT_TYPE" length="45" />
+        </property>
+        <property name="permitNumber" type="string">
+            <column name="PERMIT_NUMBER" length="45" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="cbrAmountInformations" inverse="true">
+            <key>
+                <column name="CBR_LOAN_INFORMATION_ID_FK" length="50" not-null="true" />
+                <column name="CBR_PROJECT_INFORMATION_ID" length="50" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CbrAmountInformation" />
+        </set>
+    </class>
+</hibernate-mapping>

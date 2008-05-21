@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CbrAmountInformation" table="CBR_AMOUNT_INFORMATION">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.CbrAmountInformationId">
+            <key-property name="cbrLoanInformationId" type="string">
+                <column name="CBR_LOAN_INFORMATION_ID_FK" length="50" />
+            </key-property>
+            <key-property name="cbrProjectInformationId" type="string">
+                <column name="CBR_PROJECT_INFORMATION_ID" length="50" />
+            </key-property>
+            <key-property name="cbrCategoryId" type="string">
+                <column name="CBR_CATEGORY_ID" length="50" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cbrProjectInformation" class="gov.epa.owm.mtb.cwns.model.CbrProjectInformation" update="false" insert="false" fetch="select">
+            <column name="CBR_LOAN_INFORMATION_ID_FK" length="50" not-null="true" />
+            <column name="CBR_PROJECT_INFORMATION_ID" length="50" not-null="true" />
+        </many-to-one>
+        <property name="amount" type="big_decimal">
+            <column name="AMOUNT" precision="14" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="fundingSources" inverse="true">
+            <key>
+                <column name="CBR_LOAN_INFORMATION_ID_FK" length="50" />
+                <column name="CBR_PROJECT_INFORMATION_ID_FK" length="50" />
+                <column name="CBR_CATEGORY_ID_FK" length="50" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FundingSource" />
+        </set>
+    </class>
+</hibernate-mapping>

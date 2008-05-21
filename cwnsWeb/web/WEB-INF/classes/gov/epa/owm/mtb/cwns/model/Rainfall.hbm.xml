@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.Rainfall" table="RAINFALL">
+        <id name="rainfallId" type="long">
+            <column name="RAINFALL_ID" precision="15" scale="0" />
+            <generator class="sequence">
+				<param name="sequence">RAINFALL_SEQ</param>
+			</generator>     
+        </id>
+        <many-to-one name="stateRef" class="gov.epa.owm.mtb.cwns.model.StateRef" fetch="select">
+            <column name="STATE_ID_FK" length="2" />
+        </many-to-one>
+        <many-to-one name="facility" class="gov.epa.owm.mtb.cwns.model.Facility" fetch="select">
+            <column name="FACILITY_ID_FK" precision="15" scale="0" />
+        </many-to-one>
+        <property name="nationalDefualtFlag" type="java.lang.Character">
+            <column name="NATIONAL_DEFUALT_FLAG" length="1" />
+        </property>
+        <property name="rain85CptMsr" type="big_decimal">
+            <column name="RAIN_85_CPT_MSR" precision="4" scale="3" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.HorizontalCoordntDatumRef" table="HORIZONTAL_COORDNT_DATUM_REF">
+        <id name="horizontalCoordntDatumId" type="long">
+            <column name="HORIZONTAL_COORDNT_DATUM_ID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="code" type="string">
+            <column name="CODE" length="5" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <property name="geodeticCode" type="java.lang.Integer">
+            <column name="GEODETIC_CODE" precision="6" scale="0" />
+        </property>
+        <set name="efPermits" inverse="true">
+            <key>
+                <column name="HORIZONTAL_COORDNT_DATUM_ID_FK" precision="15" scale="0" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.EfPermit" />
+        </set>
+        <set name="absoluteLocationPoints" inverse="true">
+            <key>
+                <column name="HORIZONTAL_COORDNT_DATUM_ID" precision="15" scale="0" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.AbsoluteLocationPoint" />
+        </set>
+    </class>
+</hibernate-mapping>

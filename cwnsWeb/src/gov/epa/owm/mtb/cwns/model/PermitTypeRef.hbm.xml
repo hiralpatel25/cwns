@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.PermitTypeRef" table="PERMIT_TYPE_REF">
+        <id name="permitTypeId" type="long">
+            <column name="PERMIT_TYPE_ID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="code" type="string">
+            <column name="CODE" length="3" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="npdesFlag" type="char">
+            <column name="NPDES_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="permits" inverse="true">
+            <key>
+                <column name="PERMIT_TYPE_ID_FK" precision="15" scale="0" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.Permit" />
+        </set>
+        <set name="efPermits" inverse="true">
+            <key>
+                <column name="PERMIT_TYPE_ID_FK" precision="15" scale="0" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.EfPermit" />
+        </set>
+    </class>
+</hibernate-mapping>

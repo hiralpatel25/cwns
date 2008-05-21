@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.DataAreaRef" table="DATA_AREA_REF">
+        <id name="dataAreaId" type="long">
+            <column name="DATA_AREA_ID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="40" not-null="true" />
+        </property>
+        <property name="sortSequence" type="byte">
+            <column name="SORT_SEQUENCE" precision="2" scale="0" not-null="true" unique="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="dataAreaFesRuleRefsForDataAreaIdToPerform" inverse="true">
+            <key>
+                <column name="DATA_AREA_ID_FK_TO_PERFORM" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.DataAreaFesRuleRef" />
+        </set>
+        <set name="facilityComments" inverse="true">
+            <key>
+                <column name="DATA_AREA_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityComment" />
+        </set>
+        <set name="federalReviewStatuses" inverse="true">
+            <key>
+                <column name="DATA_AREA_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FederalReviewStatus" />
+        </set>
+        <set name="dataAreaFesRuleRefsForDataAreaIdCurrent" inverse="true">
+            <key>
+                <column name="DATA_AREA_ID_FK_CURRENT" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.DataAreaFesRuleRef" />
+        </set>
+        <set name="facilityEntryStatuses" inverse="true">
+            <key>
+                <column name="DATA_AREA_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityEntryStatus" />
+        </set>
+        <set name="facilityCostCurveDataAreas" inverse="true">
+            <key>
+                <column name="DATA_AREA_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityCostCurveDataArea" />
+        </set>
+    </class>
+</hibernate-mapping>

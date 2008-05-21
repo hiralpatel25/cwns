@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://org.rti.waters.Indexing_Service/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://org.rti.waters.Indexing_Service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://org.rti.waters.Indexing_Service/">
+      <s:element name="createSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="validateSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clearSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clearSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clearSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="transformCoordinatesToNAD83">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="datum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="transformCoordinatesToNAD83Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="transformCoordinatesToNAD83Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePointToSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="point_coordinates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePointToSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="savePointToSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePolygonToSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="point_coordinates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePolygonToSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="savePolygonToSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePolylineToSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="point_coordinates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePolylineToSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="savePolylineToSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieveSketches">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieveSketchesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retrieveSketchesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePendingIndexFeatures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entity_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="savePendingIndexFeaturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="savePendingIndexFeaturesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrievePendingIndexFeatures">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entity_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feature_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrievePendingIndexFeaturesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retrievePendingIndexFeaturesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="removePendingIndexFeature">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feature_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="service_registration_key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="removePendingIndexFeatureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="removePendingIndexFeatureResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="createSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:createSession" />
+  </wsdl:message>
+  <wsdl:message name="createSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:createSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:validateSession" />
+  </wsdl:message>
+  <wsdl:message name="validateSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:validateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="clearSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:clearSession" />
+  </wsdl:message>
+  <wsdl:message name="clearSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:clearSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteSession" />
+  </wsdl:message>
+  <wsdl:message name="deleteSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="transformCoordinatesToNAD83SoapIn">
+    <wsdl:part name="parameters" element="tns:transformCoordinatesToNAD83" />
+  </wsdl:message>
+  <wsdl:message name="transformCoordinatesToNAD83SoapOut">
+    <wsdl:part name="parameters" element="tns:transformCoordinatesToNAD83Response" />
+  </wsdl:message>
+  <wsdl:message name="savePointToSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:savePointToSession" />
+  </wsdl:message>
+  <wsdl:message name="savePointToSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:savePointToSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="savePolygonToSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:savePolygonToSession" />
+  </wsdl:message>
+  <wsdl:message name="savePolygonToSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:savePolygonToSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="savePolylineToSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:savePolylineToSession" />
+  </wsdl:message>
+  <wsdl:message name="savePolylineToSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:savePolylineToSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveSketchesSoapIn">
+    <wsdl:part name="parameters" element="tns:retrieveSketches" />
+  </wsdl:message>
+  <wsdl:message name="retrieveSketchesSoapOut">
+    <wsdl:part name="parameters" element="tns:retrieveSketchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="savePendingIndexFeaturesSoapIn">
+    <wsdl:part name="parameters" element="tns:savePendingIndexFeatures" />
+  </wsdl:message>
+  <wsdl:message name="savePendingIndexFeaturesSoapOut">
+    <wsdl:part name="parameters" element="tns:savePendingIndexFeaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrievePendingIndexFeaturesSoapIn">
+    <wsdl:part name="parameters" element="tns:retrievePendingIndexFeatures" />
+  </wsdl:message>
+  <wsdl:message name="retrievePendingIndexFeaturesSoapOut">
+    <wsdl:part name="parameters" element="tns:retrievePendingIndexFeaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="removePendingIndexFeatureSoapIn">
+    <wsdl:part name="parameters" element="tns:removePendingIndexFeature" />
+  </wsdl:message>
+  <wsdl:message name="removePendingIndexFeatureSoapOut">
+    <wsdl:part name="parameters" element="tns:removePendingIndexFeatureResponse" />
+  </wsdl:message>
+  <wsdl:message name="createSessionHttpGetIn">
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="validateSessionHttpGetIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validateSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="clearSessionHttpGetIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clearSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteSessionHttpGetIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="transformCoordinatesToNAD83HttpGetIn">
+    <wsdl:part name="latitude" type="s:string" />
+    <wsdl:part name="longitude" type="s:string" />
+    <wsdl:part name="datum" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="transformCoordinatesToNAD83HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="savePointToSessionHttpGetIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="point_coordinates" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePointToSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="savePolygonToSessionHttpGetIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="point_coordinates" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePolygonToSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="savePolylineToSessionHttpGetIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="point_coordinates" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePolylineToSessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retrieveSketchesHttpGetIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retrieveSketchesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="savePendingIndexFeaturesHttpGetIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="entity_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePendingIndexFeaturesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retrievePendingIndexFeaturesHttpGetIn">
+    <wsdl:part name="entity_id" type="s:string" />
+    <wsdl:part name="feature_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retrievePendingIndexFeaturesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="removePendingIndexFeatureHttpGetIn">
+    <wsdl:part name="feature_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="removePendingIndexFeatureHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="createSessionHttpPostIn">
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="validateSessionHttpPostIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validateSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="clearSessionHttpPostIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="clearSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteSessionHttpPostIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="transformCoordinatesToNAD83HttpPostIn">
+    <wsdl:part name="latitude" type="s:string" />
+    <wsdl:part name="longitude" type="s:string" />
+    <wsdl:part name="datum" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="transformCoordinatesToNAD83HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="savePointToSessionHttpPostIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="point_coordinates" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePointToSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="savePolygonToSessionHttpPostIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="point_coordinates" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePolygonToSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="savePolylineToSessionHttpPostIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="point_coordinates" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePolylineToSessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retrieveSketchesHttpPostIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retrieveSketchesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="savePendingIndexFeaturesHttpPostIn">
+    <wsdl:part name="session_id" type="s:string" />
+    <wsdl:part name="entity_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="savePendingIndexFeaturesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retrievePendingIndexFeaturesHttpPostIn">
+    <wsdl:part name="entity_id" type="s:string" />
+    <wsdl:part name="feature_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retrievePendingIndexFeaturesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="removePendingIndexFeatureHttpPostIn">
+    <wsdl:part name="feature_id" type="s:string" />
+    <wsdl:part name="service_registration_key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="removePendingIndexFeatureHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Waters_Indexing_ServiceSoap">
+    <wsdl:operation name="createSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method creates a unique session id saves it to the database and returns it.  The returned session id is a required parameter for many of the other service methods.</wsdl:documentation>
+      <wsdl:input message="tns:createSessionSoapIn" />
+      <wsdl:output message="tns:createSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method verifies that a unique session id has been created and can be used with subsequent service method calls.</wsdl:documentation>
+      <wsdl:input message="tns:validateSessionSoapIn" />
+      <wsdl:output message="tns:validateSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clearSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method clears all stored information for the specified session id including all sketched geometries (points, lines, and polygons). It does not delete the session, see deleteSession method. Use this method if you want to keep your session id, but simply clear the stored information.</wsdl:documentation>
+      <wsdl:input message="tns:clearSessionSoapIn" />
+      <wsdl:output message="tns:clearSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method deletes the session completely including all stored information for the specified session id. Use this method when you are finished with your session id.  The session id can not be used again once this method is called, validateSession will fail.</wsdl:documentation>
+      <wsdl:input message="tns:deleteSessionSoapIn" />
+      <wsdl:output message="tns:deleteSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="transformCoordinatesToNAD83">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a lat, lon and datum and transforms the coordinates the NAD83.  NAD83 is the only valid system for these webservice methods, WLV, WebRIT, PIT, PET and the Reach Address Database (RAD).</wsdl:documentation>
+      <wsdl:input message="tns:transformCoordinatesToNAD83SoapIn" />
+      <wsdl:output message="tns:transformCoordinatesToNAD83SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePointToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session id and a delimited string of point coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;[lat,long;...]</wsdl:documentation>
+      <wsdl:input message="tns:savePointToSessionSoapIn" />
+      <wsdl:output message="tns:savePointToSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePolygonToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session id and a delimited string of polygon coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;lat,long;lat,long;lat,long|[...]</wsdl:documentation>
+      <wsdl:input message="tns:savePolygonToSessionSoapIn" />
+      <wsdl:output message="tns:savePolygonToSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePolylineToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session_id and a delimited string of line coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;lat,long;lat,long;lat,long|[...]</wsdl:documentation>
+      <wsdl:input message="tns:savePolylineToSessionSoapIn" />
+      <wsdl:output message="tns:savePolylineToSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveSketches">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a session id and returns in XML/GML all the sketches (points, lines, and polygons) associated with the session.  Sketches are stored temporary session tables(tempory database tables) until they are saved to the Pending Index Table (PIT) tables with the savePendingIndexFeatures method.  These session tables are emptied when clearSession,  deleteSession, savePendingIndexFeatures are called and after reaching an age limit.</wsdl:documentation>
+      <wsdl:input message="tns:retrieveSketchesSoapIn" />
+      <wsdl:output message="tns:retrieveSketchesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePendingIndexFeatures">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a session_id and an entity_id to associate with all the sketches currently in the session (point, lines, polygons) and saves them to the Pending Index Tables (PIT) as permanent features for future batch indexing. Batching indexing will move the features to the Pending Event Tables (PET) and then via a PET2RAD process to the Reach Address Database (RAD).</wsdl:documentation>
+      <wsdl:input message="tns:savePendingIndexFeaturesSoapIn" />
+      <wsdl:output message="tns:savePendingIndexFeaturesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrievePendingIndexFeatures">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes an entity_id or feature_id and returns in XML/GML all the features associated with the entity_id (points, lines, polygons) from the Pending Index Tables (PIT).</wsdl:documentation>
+      <wsdl:input message="tns:retrievePendingIndexFeaturesSoapIn" />
+      <wsdl:output message="tns:retrievePendingIndexFeaturesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="removePendingIndexFeature">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a feature_id to be removed from the Pending Index Table (PIT).  You get the feature_id by parsing the return of retrievePendingIndexFeatures.</wsdl:documentation>
+      <wsdl:input message="tns:removePendingIndexFeatureSoapIn" />
+      <wsdl:output message="tns:removePendingIndexFeatureSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Waters_Indexing_ServiceHttpGet">
+    <wsdl:operation name="createSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method creates a unique session id saves it to the database and returns it.  The returned session id is a required parameter for many of the other service methods.</wsdl:documentation>
+      <wsdl:input message="tns:createSessionHttpGetIn" />
+      <wsdl:output message="tns:createSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method verifies that a unique session id has been created and can be used with subsequent service method calls.</wsdl:documentation>
+      <wsdl:input message="tns:validateSessionHttpGetIn" />
+      <wsdl:output message="tns:validateSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clearSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method clears all stored information for the specified session id including all sketched geometries (points, lines, and polygons). It does not delete the session, see deleteSession method. Use this method if you want to keep your session id, but simply clear the stored information.</wsdl:documentation>
+      <wsdl:input message="tns:clearSessionHttpGetIn" />
+      <wsdl:output message="tns:clearSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method deletes the session completely including all stored information for the specified session id. Use this method when you are finished with your session id.  The session id can not be used again once this method is called, validateSession will fail.</wsdl:documentation>
+      <wsdl:input message="tns:deleteSessionHttpGetIn" />
+      <wsdl:output message="tns:deleteSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="transformCoordinatesToNAD83">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a lat, lon and datum and transforms the coordinates the NAD83.  NAD83 is the only valid system for these webservice methods, WLV, WebRIT, PIT, PET and the Reach Address Database (RAD).</wsdl:documentation>
+      <wsdl:input message="tns:transformCoordinatesToNAD83HttpGetIn" />
+      <wsdl:output message="tns:transformCoordinatesToNAD83HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePointToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session id and a delimited string of point coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;[lat,long;...]</wsdl:documentation>
+      <wsdl:input message="tns:savePointToSessionHttpGetIn" />
+      <wsdl:output message="tns:savePointToSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePolygonToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session id and a delimited string of polygon coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;lat,long;lat,long;lat,long|[...]</wsdl:documentation>
+      <wsdl:input message="tns:savePolygonToSessionHttpGetIn" />
+      <wsdl:output message="tns:savePolygonToSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePolylineToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session_id and a delimited string of line coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;lat,long;lat,long;lat,long|[...]</wsdl:documentation>
+      <wsdl:input message="tns:savePolylineToSessionHttpGetIn" />
+      <wsdl:output message="tns:savePolylineToSessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveSketches">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a session id and returns in XML/GML all the sketches (points, lines, and polygons) associated with the session.  Sketches are stored temporary session tables(tempory database tables) until they are saved to the Pending Index Table (PIT) tables with the savePendingIndexFeatures method.  These session tables are emptied when clearSession,  deleteSession, savePendingIndexFeatures are called and after reaching an age limit.</wsdl:documentation>
+      <wsdl:input message="tns:retrieveSketchesHttpGetIn" />
+      <wsdl:output message="tns:retrieveSketchesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePendingIndexFeatures">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a session_id and an entity_id to associate with all the sketches currently in the session (point, lines, polygons) and saves them to the Pending Index Tables (PIT) as permanent features for future batch indexing. Batching indexing will move the features to the Pending Event Tables (PET) and then via a PET2RAD process to the Reach Address Database (RAD).</wsdl:documentation>
+      <wsdl:input message="tns:savePendingIndexFeaturesHttpGetIn" />
+      <wsdl:output message="tns:savePendingIndexFeaturesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrievePendingIndexFeatures">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes an entity_id or feature_id and returns in XML/GML all the features associated with the entity_id (points, lines, polygons) from the Pending Index Tables (PIT).</wsdl:documentation>
+      <wsdl:input message="tns:retrievePendingIndexFeaturesHttpGetIn" />
+      <wsdl:output message="tns:retrievePendingIndexFeaturesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="removePendingIndexFeature">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a feature_id to be removed from the Pending Index Table (PIT).  You get the feature_id by parsing the return of retrievePendingIndexFeatures.</wsdl:documentation>
+      <wsdl:input message="tns:removePendingIndexFeatureHttpGetIn" />
+      <wsdl:output message="tns:removePendingIndexFeatureHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Waters_Indexing_ServiceHttpPost">
+    <wsdl:operation name="createSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method creates a unique session id saves it to the database and returns it.  The returned session id is a required parameter for many of the other service methods.</wsdl:documentation>
+      <wsdl:input message="tns:createSessionHttpPostIn" />
+      <wsdl:output message="tns:createSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method verifies that a unique session id has been created and can be used with subsequent service method calls.</wsdl:documentation>
+      <wsdl:input message="tns:validateSessionHttpPostIn" />
+      <wsdl:output message="tns:validateSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="clearSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method clears all stored information for the specified session id including all sketched geometries (points, lines, and polygons). It does not delete the session, see deleteSession method. Use this method if you want to keep your session id, but simply clear the stored information.</wsdl:documentation>
+      <wsdl:input message="tns:clearSessionHttpPostIn" />
+      <wsdl:output message="tns:clearSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method deletes the session completely including all stored information for the specified session id. Use this method when you are finished with your session id.  The session id can not be used again once this method is called, validateSession will fail.</wsdl:documentation>
+      <wsdl:input message="tns:deleteSessionHttpPostIn" />
+      <wsdl:output message="tns:deleteSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="transformCoordinatesToNAD83">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a lat, lon and datum and transforms the coordinates the NAD83.  NAD83 is the only valid system for these webservice methods, WLV, WebRIT, PIT, PET and the Reach Address Database (RAD).</wsdl:documentation>
+      <wsdl:input message="tns:transformCoordinatesToNAD83HttpPostIn" />
+      <wsdl:output message="tns:transformCoordinatesToNAD83HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePointToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session id and a delimited string of point coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;[lat,long;...]</wsdl:documentation>
+      <wsdl:input message="tns:savePointToSessionHttpPostIn" />
+      <wsdl:output message="tns:savePointToSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePolygonToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session id and a delimited string of polygon coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;lat,long;lat,long;lat,long|[...]</wsdl:documentation>
+      <wsdl:input message="tns:savePolygonToSessionHttpPostIn" />
+      <wsdl:output message="tns:savePolygonToSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePolylineToSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes in a session_id and a delimited string of line coordinates and saves them to a temporary session table.  Valid coordinate string is lat,long;lat,long;lat,long;lat,long|[...]</wsdl:documentation>
+      <wsdl:input message="tns:savePolylineToSessionHttpPostIn" />
+      <wsdl:output message="tns:savePolylineToSessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveSketches">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a session id and returns in XML/GML all the sketches (points, lines, and polygons) associated with the session.  Sketches are stored temporary session tables(tempory database tables) until they are saved to the Pending Index Table (PIT) tables with the savePendingIndexFeatures method.  These session tables are emptied when clearSession,  deleteSession, savePendingIndexFeatures are called and after reaching an age limit.</wsdl:documentation>
+      <wsdl:input message="tns:retrieveSketchesHttpPostIn" />
+      <wsdl:output message="tns:retrieveSketchesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="savePendingIndexFeatures">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a session_id and an entity_id to associate with all the sketches currently in the session (point, lines, polygons) and saves them to the Pending Index Tables (PIT) as permanent features for future batch indexing. Batching indexing will move the features to the Pending Event Tables (PET) and then via a PET2RAD process to the Reach Address Database (RAD).</wsdl:documentation>
+      <wsdl:input message="tns:savePendingIndexFeaturesHttpPostIn" />
+      <wsdl:output message="tns:savePendingIndexFeaturesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrievePendingIndexFeatures">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes an entity_id or feature_id and returns in XML/GML all the features associated with the entity_id (points, lines, polygons) from the Pending Index Tables (PIT).</wsdl:documentation>
+      <wsdl:input message="tns:retrievePendingIndexFeaturesHttpPostIn" />
+      <wsdl:output message="tns:retrievePendingIndexFeaturesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="removePendingIndexFeature">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method takes a feature_id to be removed from the Pending Index Table (PIT).  You get the feature_id by parsing the return of retrievePendingIndexFeatures.</wsdl:documentation>
+      <wsdl:input message="tns:removePendingIndexFeatureHttpPostIn" />
+      <wsdl:output message="tns:removePendingIndexFeatureHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Waters_Indexing_ServiceSoap" type="tns:Waters_Indexing_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createSession">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/createSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateSession">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/validateSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearSession">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/clearSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSession">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/deleteSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transformCoordinatesToNAD83">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/transformCoordinatesToNAD83" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePointToSession">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/savePointToSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePolygonToSession">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/savePolygonToSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePolylineToSession">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/savePolylineToSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveSketches">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/retrieveSketches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePendingIndexFeatures">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/savePendingIndexFeatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrievePendingIndexFeatures">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/retrievePendingIndexFeatures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePendingIndexFeature">
+      <soap:operation soapAction="http://org.rti.waters.Indexing_Service/removePendingIndexFeature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Waters_Indexing_ServiceSoap12" type="tns:Waters_Indexing_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="createSession">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/createSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateSession">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/validateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearSession">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/clearSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSession">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/deleteSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transformCoordinatesToNAD83">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/transformCoordinatesToNAD83" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePointToSession">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/savePointToSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePolygonToSession">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/savePolygonToSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePolylineToSession">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/savePolylineToSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveSketches">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/retrieveSketches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePendingIndexFeatures">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/savePendingIndexFeatures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrievePendingIndexFeatures">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/retrievePendingIndexFeatures" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePendingIndexFeature">
+      <soap12:operation soapAction="http://org.rti.waters.Indexing_Service/removePendingIndexFeature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Waters_Indexing_ServiceHttpGet" type="tns:Waters_Indexing_ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="createSession">
+      <http:operation location="/createSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateSession">
+      <http:operation location="/validateSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearSession">
+      <http:operation location="/clearSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSession">
+      <http:operation location="/deleteSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transformCoordinatesToNAD83">
+      <http:operation location="/transformCoordinatesToNAD83" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePointToSession">
+      <http:operation location="/savePointToSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePolygonToSession">
+      <http:operation location="/savePolygonToSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePolylineToSession">
+      <http:operation location="/savePolylineToSession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveSketches">
+      <http:operation location="/retrieveSketches" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePendingIndexFeatures">
+      <http:operation location="/savePendingIndexFeatures" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrievePendingIndexFeatures">
+      <http:operation location="/retrievePendingIndexFeatures" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePendingIndexFeature">
+      <http:operation location="/removePendingIndexFeature" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Waters_Indexing_ServiceHttpPost" type="tns:Waters_Indexing_ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="createSession">
+      <http:operation location="/createSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateSession">
+      <http:operation location="/validateSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearSession">
+      <http:operation location="/clearSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteSession">
+      <http:operation location="/deleteSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transformCoordinatesToNAD83">
+      <http:operation location="/transformCoordinatesToNAD83" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePointToSession">
+      <http:operation location="/savePointToSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePolygonToSession">
+      <http:operation location="/savePolygonToSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePolylineToSession">
+      <http:operation location="/savePolylineToSession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveSketches">
+      <http:operation location="/retrieveSketches" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePendingIndexFeatures">
+      <http:operation location="/savePendingIndexFeatures" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrievePendingIndexFeatures">
+      <http:operation location="/retrievePendingIndexFeatures" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePendingIndexFeature">
+      <http:operation location="/removePendingIndexFeature" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Waters_Indexing_Service">
+    <wsdl:port name="Waters_Indexing_ServiceSoap" binding="tns:Waters_Indexing_ServiceSoap">
+      <soap:address location="https://rtidemo.rti.org/waters_indexing_service/Waters_indexing_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Waters_Indexing_ServiceSoap12" binding="tns:Waters_Indexing_ServiceSoap12">
+      <soap12:address location="https://rtidemo.rti.org/waters_indexing_service/Waters_indexing_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Waters_Indexing_ServiceHttpGet" binding="tns:Waters_Indexing_ServiceHttpGet">
+      <http:address location="https://rtidemo.rti.org/waters_indexing_service/Waters_indexing_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Waters_Indexing_ServiceHttpPost" binding="tns:Waters_Indexing_ServiceHttpPost">
+      <http:address location="https://rtidemo.rti.org/waters_indexing_service/Waters_indexing_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.FacilityPollutionProblem" table="FACILITY_POLLUTION_PROBLEM">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.FacilityPollutionProblemId">
+            <key-property name="facilityId" type="long">
+                <column name="FACILITY_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="pollutionProblemId" type="long">
+                <column name="POLLUTION_PROBLEM_ID_FK" precision="15" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="pollutionProblemRef" class="gov.epa.owm.mtb.cwns.model.PollutionProblemRef" update="false" insert="false" fetch="select">
+            <column name="POLLUTION_PROBLEM_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="facility" class="gov.epa.owm.mtb.cwns.model.Facility" update="false" insert="false" fetch="select">
+            <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

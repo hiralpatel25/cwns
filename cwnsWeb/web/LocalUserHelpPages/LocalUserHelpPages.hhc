@@ -1,0 +1,484 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800002">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 1 - Introduction">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Overview">
+      <param name="Local" value="Local.Overview.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Schedule and Milestones">
+      <param name="Local" value="Schedule_and_Milestones.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Data Collection Procedures">
+      <param name="Local" value="Data_Collection_Procedures.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Need Definition">
+      <param name="Local" value="Need_Definition.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="CWNS Categories">
+      <param name="Local" value="CWNS_Categories.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Documentation Requirements">
+      <param name="Local" value="Documentation_Requirements.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Resources Available">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Key Contact Information">
+        <param name="Local" value="Key_Contact_Information.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="EPA Website">
+        <param name="Local" value="EPA_Website.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="DEP Help Function">
+        <param name="Local" value="DEP_Help_Function.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 2 - Local-State Interaction Via the CWNS DEP">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Local User Roles and Responsibilities">
+      <param name="Local" value="Local_User_Roles_and_Responsibilities.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Applying for a CWNS User Account">
+      <param name="Local" value="CWNS_Registration.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Providing Local Feedback">
+      <param name="Local" value="Providing_Local_Feedback.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Updating Unit Process and Utility Management Information">
+      <param name="Local" value="Updating_Unit_Process_and_Utility_Management_Information.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="EPA and State Roles and Responsibilities">
+      <param name="Local" value="EPA_and_State_Roles_and_Responsibilities.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 3 - Small Community Needs">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Small Community Definition">
+      <param name="Local" value="Small_Community_Definition.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Documenting Small Community Needs">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Documenting Small Community Needs">
+        <param name="Local" value="Documenting_Small_Community_Needs.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Simplified Methodology for Small Communities">
+        <param name="Local" value="Simplified_Methodology_for_Small_Communities.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="EPA-Approved Small Community Form">
+        <param name="Local" value="EPA-Approved_Small_Community_Form.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 4 - Navigating in the Data Entry Portal (DEP)">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Entering the DEP">
+      <param name="Local" value="Entering_the_DEP.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="CWNS Welcome Page">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="CWNS 2008 Welcome Page">
+        <param name="Local" value="CWNS_2008_Welcome_Page.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Facility/Project List">
+        <param name="Local" value="Facility_Project_List.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Facility/Project Search Portlet">
+        <param name="Local" value="Facility_Project_Search_Portlet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Navigating the Administration Portlet">
+        <param name="Local" value="Navigating_the_Administration_Portlet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Technical Data Area Pages">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Technical Data Area Pages">
+          <param name="Local" value="Technical_Data_Area_Pages.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Tabs">
+          <param name="Local" value="Tabs.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Breadcrumbs">
+          <param name="Local" value="Breadcrumbs.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Summary Portlet">
+          <param name="Local" value="Summary_Portlet.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Review Status Portlet">
+          <param name="Local" value="Review_Status_Portlet.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Review Comments Portlet">
+          <param name="Local" value="Review_Comments_Portlet.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Commonly Used Icons">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Help">
+        <param name="Local" value="Help.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Save">
+        <param name="Local" value="Save.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Data Area Comments">
+        <param name="Local" value="Data_Area_Comments.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Lookup">
+        <param name="Local" value="Lookup.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Search">
+        <param name="Local" value="Search.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Required Field">
+        <param name="Local" value="Required_Field.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 5 - Facility/Project Tab">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Facility/Project Menu">
+      <param name="Local" value="Facility_Project_Tab.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Facility/Project Information">
+      <param name="Local" value="Facility_Project_Information.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Facility Project Types">
+      <param name="Local" value="Facility_Project_Types.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Permits">
+      <param name="Local" value="Permits.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="NPDES Permit Search">
+      <param name="Local" value="NPDES_Permit_Search.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Point of Contact">
+      <param name="Local" value="Point_of_Contact.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Point of Contact Search">
+      <param name="Local" value="Point_of_Contact_Search.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 6 - Location Tab">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Address">
+      <param name="Local" value="Address.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Coordinates">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Coordinates">
+        <param name="Local" value="Coordinates.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="From NPDES">
+        <param name="Local" value="From_NPDES.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Manual Data Entry">
+        <param name="Local" value="Manual_Data_Entry.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="WATERS Lite Viewer">
+        <param name="Local" value="WATERS_Lite_Viewer.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Areas Related to Needs">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Areas Related to Needs">
+        <param name="Local" value="Areas_Related_to_Needs.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="County">
+        <param name="Local" value="County.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Congressional District">
+        <param name="Local" value="Congressional_District.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Watershed">
+        <param name="Local" value="Watershed.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Special Program Areas">
+        <param name="Local" value="Special_Program_Areas.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 7 - Needs Tab">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Needs Data Area">
+      <param name="Local" value="Needs_Data_Area.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Capital Costs Sub-Area">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Needs by Document">
+        <param name="Local" value="Needs_by_Document.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Document Search">
+        <param name="Local" value="Document_Search.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Document Submittal">
+        <param name="Local" value="Document_Submitta.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Capital Costs">
+        <param name="Local" value="Capital_Costs.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Cost Curves">
+        <param name="Local" value="Cost_Curves.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Funding Sub-Area">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Funding Source">
+        <param name="Local" value="Funding_Source.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="CWSRF Benefits Reporting Search">
+        <param name="Local" value="CWSRF_Benefits_Reporting_Search.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="O &amp; M (Operation and Maintenance)  Sub-Area">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="O &amp; M">
+        <param name="Local" value="O_&amp;_M.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 8 - Population and Flow Tab">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Population Information">
+      <param name="Local" value="Population_Information.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Flow">
+      <param name="Local" value="Flow.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="NPDES Permit Flow Data">
+      <param name="Local" value="NPDES_Permit_Flow_Data.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 9 - Discharge and Effluent Tab">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Discharge Information">
+      <param name="Local" value="Discharge_Information.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Effluent Information">
+      <param name="Local" value="Effluent_Information.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 10 - Pollution Tab">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Pollution Problems">
+      <param name="Local" value="Pollution_Problems.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Impaired Waters Search">
+      <param name="Local" value="Impaired_Waters_Search.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 11- Combined Sewer Overflow">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Combined Sewer Overflow">
+      <param name="Local" value="Combined_Sewer_Overflow.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 12 - Unit Process and Utility Management">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Unit Process and Utility Management Tabs">
+      <param name="Local" value="Unit_Process_and_Utility_Management_Tabs.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Unit Process">
+      <param name="Local" value="Unit_Process.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Utility Management">
+      <param name="Local" value="Utility_Management.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 13 - Submit Data for State Review">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Submit Data for State Review">
+      <param name="Local" value="Submit_Data_for_State_Review.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ch. 14 - Appendices">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="A: 2008 Needs Categories">
+      <param name="Local" value="A__2008_Needs_Categories.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="B: Document Type List">
+      <param name="Local" value="B__Document_Type_List.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="C: Small Community Needs Form">
+      <param name="Local" value="C_Small_Community_Needs_Form.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="D: Facility/Project Type Information">
+      <param name="Local" value="D__Facility_Project_Type_Information.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="E: 301(h) Waiver List">
+      <param name="Local" value="E__301(h)_Waiver_List.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="F: Local User Management">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="User Management">
+        <param name="Local" value="User_Management.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="CWNS Local User Manager">
+        <param name="Local" value="CWNS_Local_User_Manager.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Administration Portlet">
+        <param name="Local" value="Administration_Portlet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="User Management Data Area">
+        <param name="Local" value="User_Management_Data_Area.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="User List">
+        <param name="Local" value="User_List.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="User Search">
+        <param name="Local" value="User_Search.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="New User Accounts">
+        <param name="Local" value="New_User_Accounts.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="New User Approval">
+        <param name="Local" value="New_User_Approval.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="User Details">
+        <param name="Local" value="User_Details.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

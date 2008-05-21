@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.PcsPipeSched" table="PCS_PIPE_SCHED">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.PcsPipeSchedId">
+            <key-property name="npdes" type="string">
+                <column name="NPDES" length="9" />
+            </key-property>
+            <key-property name="dischargeNum" type="string">
+                <column name="DISCHARGE_NUM" length="3" />
+            </key-property>
+            <key-property name="reportDesig" type="string">
+                <column name="REPORT_DESIG" length="1" />
+            </key-property>
+            <key-property name="pipeSetQualifier" type="char">
+                <column name="PIPE_SET_QUALIFIER" length="1" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="pcsPermitFacility" class="gov.epa.owm.mtb.cwns.model.PcsPermitFacility" update="false" insert="false" fetch="select">
+            <column name="NPDES" length="9" not-null="true" />
+        </many-to-one>
+        <property name="outfallTypeCode" type="string">
+            <column name="OUTFALL_TYPE_CODE" length="1" />
+        </property>
+        <property name="initLimitsStartDate" type="date">
+            <column name="INIT_LIMITS_START_DATE" length="7" />
+        </property>
+        <property name="initLimitsEndDate" type="date">
+            <column name="INIT_LIMITS_END_DATE" length="7" />
+        </property>
+        <property name="interimLimitsStartDate" type="date">
+            <column name="INTERIM_LIMITS_START_DATE" length="7" />
+        </property>
+        <property name="interimLimitsEndDate" type="date">
+            <column name="INTERIM_LIMITS_END_DATE" length="7" />
+        </property>
+        <property name="finalLimitsStartDate" type="date">
+            <column name="FINAL_LIMITS_START_DATE" length="7" />
+        </property>
+        <property name="finalLimitsEndDate" type="date">
+            <column name="FINAL_LIMITS_END_DATE" length="7" />
+        </property>
+        <property name="pipeDesc" type="string">
+            <column name="PIPE_DESC" length="30" />
+        </property>
+        <property name="initRptDate" type="date">
+            <column name="INIT_RPT_DATE" length="7" />
+        </property>
+        <property name="unitsInRptPeriod" type="java.lang.Short">
+            <column name="UNITS_IN_RPT_PERIOD" precision="4" scale="0" />
+        </property>
+        <property name="reportingUnits" type="string">
+            <column name="REPORTING_UNITS" length="1" />
+        </property>
+        <property name="pipeInactiveCode" type="string">
+            <column name="PIPE_INACTIVE_CODE" length="1" />
+        </property>
+        <property name="pipeInactiveDate" type="date">
+            <column name="PIPE_INACTIVE_DATE" length="7" />
+        </property>
+        <property name="initEpaSubmissionDate" type="date">
+            <column name="INIT_EPA_SUBMISSION_DATE" length="7" />
+        </property>
+        <property name="unitsInEpaStateSubmPeriod" type="java.lang.Short">
+            <column name="UNITS_IN_EPA_STATE_SUBM_PERIOD" precision="3" scale="0" />
+        </property>
+        <property name="stateSubmissionUnits" type="string">
+            <column name="STATE_SUBMISSION_UNITS" length="1" />
+        </property>
+        <set name="pcsEffluentLimits" inverse="true">
+            <key>
+                <column name="NPDES" length="9" not-null="true" />
+                <column name="DISCHARGE_NUM" length="3" not-null="true" />
+                <column name="REPORT_DESIG" length="1" not-null="true" />
+                <column name="PIPE_SET_QUALIFIER" length="1" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.PcsEffluentLimit" />
+        </set>
+    </class>
+</hibernate-mapping>

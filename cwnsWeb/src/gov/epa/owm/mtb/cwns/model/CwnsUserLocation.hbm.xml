@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CwnsUserLocation" table="CWNS_USER_LOCATION">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.CwnsUserLocationId">
+            <key-property name="cwnsUserId" type="string">
+                <column name="CWNS_USER_ID_FK" length="30" />
+            </key-property>
+            <key-property name="locationTypeId" type="string">
+                <column name="LOCATION_TYPE_ID_FK" length="8" />
+            </key-property>
+            <key-property name="locationId" type="string">
+                <column name="LOCATION_ID_FK" length="2" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cwnsUser" class="gov.epa.owm.mtb.cwns.model.CwnsUser" update="false" insert="false" fetch="select">
+            <column name="CWNS_USER_ID_FK" length="30" not-null="true" />
+        </many-to-one>
+        <many-to-one name="roleRef" class="gov.epa.owm.mtb.cwns.model.RoleRef" update="false" insert="false" fetch="select">
+            <column name="LOCATION_TYPE_ID_FK" length="8" not-null="true" />
+            <column name="LOCATION_ID_FK" length="2" not-null="true" />
+        </many-to-one>
+        <property name="primaryFlag" type="char">
+            <column name="PRIMARY_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="limitedFacilitiesFlag" type="char">
+            <column name="LIMITED_FACILITIES_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="cwnsUserLocationFacilities" inverse="true">
+            <key>
+                <column name="CWNS_USER_ID_FK" length="30" not-null="true" />
+                <column name="LOCATION_TYPE_ID_FK" length="8" not-null="true" />
+                <column name="LOCATION_ID_FK" length="2" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CwnsUserLocationFacility" />
+        </set>
+        <set name="cwnsUserLocatnAccessLevels" inverse="true">
+            <key>
+                <column name="CWNS_USER_ID_FK" length="30" not-null="true" />
+                <column name="LOCATION_TYPE_ID_FK" length="8" not-null="true" />
+                <column name="LOCATION_ID_FK" length="2" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CwnsUserLocatnAccessLevel" />
+        </set>
+    </class>
+</hibernate-mapping>

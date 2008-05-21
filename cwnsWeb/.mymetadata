@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="cwnsWeb"
+  id="myeclipse.1162836643018"
+  context-root="/cwns"
+  j2ee-spec="1.4"
+  archive="cwnsWeb.war">
+  <attributes>
+    <attribute name="webrootdir" value="web" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.TreatmentTypeRef" table="TREATMENT_TYPE_REF">
+        <id name="treatmentTypeId" type="long">
+            <column name="TREATMENT_TYPE_ID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="facilityOverallTypeRef" class="gov.epa.owm.mtb.cwns.model.FacilityOverallTypeRef" fetch="select">
+            <column name="FACILITY_OVERALL_TYPE_ID_FK" precision="15" scale="0" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="sortSequence" type="byte">
+            <column name="SORT_SEQUENCE" precision="2" scale="0" not-null="true" unique="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="treatmentTypeUnitprocessRefs" inverse="true">
+            <key>
+                <column name="TREATMENT_TYPE_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.TreatmentTypeUnitprocessRef" />
+        </set>
+    </class>
+</hibernate-mapping>

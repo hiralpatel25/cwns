@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.FacilityPopulation" table="FACILITY_POPULATION">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.FacilityPopulationId">
+            <key-property name="facilityId" type="long">
+                <column name="FACILITY_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="populationId" type="long">
+                <column name="POPULATION_ID_FK" precision="15" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="populationRef" class="gov.epa.owm.mtb.cwns.model.PopulationRef" update="false" insert="false" fetch="select">
+            <column name="POPULATION_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="facility" class="gov.epa.owm.mtb.cwns.model.Facility" update="false" insert="false" fetch="select">
+            <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="presentPopulationCount" type="java.lang.Integer">
+            <column name="PRESENT_POPULATION_COUNT" precision="8" scale="0" />
+        </property>
+        <property name="projectedPopulationCount" type="java.lang.Integer">
+            <column name="PROJECTED_POPULATION_COUNT" precision="8" scale="0" />
+        </property>
+        <property name="projectionYear" type="java.lang.Short">
+            <column name="PROJECTION_YEAR" precision="4" scale="0" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!-- saved from url=(0014)about:internet -->
+<fts>
+<chunkinfo url="whfwdata0.xml" first="0" last="bill"/>
+<chunkinfo url="whfwdata1.xml" first="biochemical" last="deposition"/>
+<chunkinfo url="whfwdata2.xml" first="descend" last="general"/>
+<chunkinfo url="whfwdata3.xml" first="generat" last="mod"/>
+<chunkinfo url="whfwdata4.xml" first="modification" last="purpl"/>
+<chunkinfo url="whfwdata5.xml" first="purpos" last="tab"/>
+<chunkinfo url="whfwdata6.xml" first="tabl" last="zoom"/>
+
+<tchunkinfo first="0" last="86" url="whftdata0.xml" />
+
+</fts>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.ClassificationRef" table="CLASSIFICATION_REF">
+        <id name="classificationId" type="string">
+            <column name="CLASSIFICATION_ID" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="40" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="categoryClassificationRefs" inverse="true">
+            <key>
+                <column name="CLASSIFICATION_ID_FK" length="3" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CategoryClassificationRef" />
+        </set>
+        <set name="costs" inverse="true">
+            <key>
+                <column name="CLASSIFICATION_ID_FK" length="3" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.Cost" />
+        </set>
+    </class>
+</hibernate-mapping>
