@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CostTemp" table="COST_TEMP">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.CostTempId">
+            <key-property name="costId" type="long">
+                <column name="COST_ID" precision="15" scale="0" />
+            </key-property>
+            <key-property name="costMethodCode" type="char">
+                <column name="COST_METHOD_CODE" length="1" />
+            </key-property>
+            <key-property name="baseAmount" type="java.lang.Long">
+                <column name="BASE_AMOUNT" precision="11" scale="0" />
+            </key-property>
+            <key-property name="adjustedAmount" type="java.lang.Long">
+                <column name="ADJUSTED_AMOUNT" precision="11" scale="0" />
+            </key-property>
+            <key-property name="costAdjustmentAreaId" type="string">
+                <column name="COST_ADJUSTMENT_AREA_ID_FK" length="2" />
+            </key-property>
+            <key-property name="lastUpdateUserid" type="string">
+                <column name="LAST_UPDATE_USERID" length="8" />
+            </key-property>
+            <key-property name="lastUpdateTs" type="timestamp">
+                <column name="LAST_UPDATE_TS" length="11" />
+            </key-property>
+            <key-property name="needTypeId" type="java.lang.Character">
+                <column name="NEED_TYPE_ID_FK" length="1" />
+            </key-property>
+            <key-property name="categoryId" type="string">
+                <column name="CATEGORY_ID_FK" length="5" />
+            </key-property>
+            <key-property name="documentId" type="java.lang.Long">
+                <column name="DOCUMENT_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="facilityId" type="java.lang.Long">
+                <column name="FACILITY_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="facilityCostCurveId" type="java.lang.Long">
+                <column name="FACILITY_COST_CURVE_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="ncgId" type="java.lang.Long">
+                <column name="NCG_ID" precision="15" scale="0" />
+            </key-property>
+            <key-property name="classificationId" type="string">
+                <column name="CLASSIFICATION_ID_FK" length="3" />
+            </key-property>
+            <key-property name="ssoFlag" type="java.lang.Character">
+                <column name="SSO_FLAG" length="1" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

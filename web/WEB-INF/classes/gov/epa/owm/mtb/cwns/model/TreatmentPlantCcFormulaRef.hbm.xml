@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.TreatmentPlantCcFormulaRef" table="TREATMENT_PLANT_CC_FORMULA_REF">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.TreatmentPlantCcFormulaRefId">
+            <key-property name="curveTypeCd" type="string">
+                <column name="CURVE_TYPE_CD" length="2" />
+            </key-property>
+            <key-property name="minArgumentValue" type="big_decimal">
+                <column name="MIN_ARGUMENT_VALUE" precision="5" scale="4" />
+            </key-property>
+            <key-property name="maxArgumentValue" type="big_decimal">
+                <column name="MAX_ARGUMENT_VALUE" precision="5" scale="4" />
+            </key-property>
+        </composite-id>
+        <property name="coeffAValue" type="big_decimal">
+            <column name="COEFF_A_VALUE" precision="4" scale="3" not-null="true" />
+        </property>
+        <property name="coeffBValue" type="big_decimal">
+            <column name="COEFF_B_VALUE" precision="4" scale="3" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

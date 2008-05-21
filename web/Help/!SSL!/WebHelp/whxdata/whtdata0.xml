@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!-- saved from url=(0014)about:internet -->
+<tocdata>
+<book name="Ch. 1 - Introduction" >
+  <item name="Overview" url="Overview.htm" />
+  <item name="Past Surveys" url="Past_Surveys.htm" />
+  <item name="CWNS 2008 Workgroup Contributions" url="CWNS_2008_Workgroup_Contributions.htm" />
+  <item name="2008 Goals &amp; Objectives" url="2008_Goals_&amp;_Objectives.htm" />
+  <item name="Scope of CWNS 2008 Data Collection" url="Scope_of_CWNS_2008_Data_Collection.htm" />
+  <item name="2008 Schedule &amp; Milestones" url="2008_Schedule_&amp;_Milestones.htm" />
+</book>
+<book name="Ch. 2 - Data Collection Procedures" >
+  <item name="Data Collection Procedures" url="Data_Collection_Procedures.htm" />
+  <item name="Need Definition" url="Need_Definition.htm" />
+  <item name="CWNS 2008 Categories" url="CWNS_2008_Categories.htm" />
+  <item name="Document Requirements" url="Document_Requirements.htm" />
+  <item name="Documentation Rules" url="Documentation_Rules.htm" />
+  <item name="CWSRF Eligibility" url="CWSRF_Eligibility.htm" />
+  <item name="Review Statuses" url="Review_Statuses.htm" />
+  <item name="Feedback Statuses" url="Feedback_Statuses.htm" />
+  <item name="Data Areas" url="Data_Areas.htm" />
+</book>
+<book name="Ch. 3 - Preparation for Data Collection" >
+  <item name="Roles and Responsibilities" url="Roles_and_Responsibilities.htm" />
+  <item name="Coordination With Other State Programs" url="Coordination_With_Other_State_Programs.htm" />
+  <item name="Coordination With Local Users" url="Coordination_With_Local_Users.htm" />
+  <book name="Resources Available" >
+    <item name="Key Contact Information" url="Key_Contact_Information.htm" />
+    <item name="EPA Portal" url="EPA_Portal.htm" />
+    <item name="EPA Collaboration Site" url="EPA_Collaboration_Site.htm" />
+    <item name="CWNS Portal Library" url="EPA_Portal_Library.htm" />
+    <item name="Web Conferencing" url="Web_Conferencing.htm" />
+    <item name="EPA Website" url="EPA_Website.htm" />
+  </book>
+</book>
+<book name="Ch. 4 - Introduction to the Data Entry Portal (DEP)" >
+  <item name="Highlights of the Data Entry Portal (DEP)" url="Highlights_of_the_Data_Entry_Portal_(DEP).htm" />
+  <item name="Portal Environment" url="Portal_Environment.htm" />
+  <book name="Integration With Other Data Systems" >
+    <item name="Integration With Other Data Systems" url="Integration_With_Other_Data_Systems.htm" />
+    <item name="NPDES Envirofacts (PCS) &amp; ICIS" url="NPDES_Envirofacts_(PCS)_&amp;_ICIS.htm" />
+    <item name="CWSRF Benefits Reporting" url="CWSRF_Benefits_Reporting.htm" />
+    <item name="TMDL / Impaired Waters" url="TMLD_Impaired_Waters.htm" />
+    <item name="Waters Light Viewer" url="Waters_Light_Viewer.htm" />
+    <book name="Integration With Other Tools" >
+      <item name="Electronic Document Management System (EDMS)" url="Electronic_Document_Management_System.htm" />
+      <item name="Ask WATERS" url="Ask_WATERs.htm" />
+    </book>
+  </book>
+</book>
+<book name="Ch. 5 - Navigating In The Data Entry Portal (DEP)" >
+  <item name="Entering the DEP" url="Entering_the_DEP.htm" />
+  <book name="CWNS 2008 Welcome Page" >
+    <item name="CWNS 2008 Welcome Page" url="CWNS_2008_Welcome_Page.htm" />
+    <item name="Facility/Project List" url="Facility_Project_List.htm" />
+    <item name="Facility/Project Search Portlet" url="Facility_Project_Search_Portlet.htm" />
+    <item name="Facility/Project Advanced Search Portlet" url="Facility_Project_Advanced_Search_Portlet.htm" />
+    <item name="Main Menu" url="Main_Menu.htm" />
+    <item name="Review Status Statistics Portlet" url="Review_Status_Statistics_Portlet.htm" />
+    <item name="Announcements Portlet" url="Announcements_Portlet.htm" />
+    <item name="Technical Data Area Pages" url="Technical_Data_Area_Pages.htm" />
+    <item name="Tabs" url="Tabs.htm" />
+    <item name="Breadcrumbs" url="Breadcrumbs.htm" />
+    <item name="Summary Portlet" url="Summary_Portlet.htm" />
+    <item name="Review Status Portlet" url="Review_Status_Portlet.htm" />
+    <item name="Review Comments Portlet" url="Review_Comments_Portlet.htm" />
+  </book>
+  <book name="Commonly Used Icons" >
+    <item name="Help Icon" url="Help_Icon.htm" />
+    <item name="Save" url="Save.htm" />
+    <item name="Data Areas Comments" url="Data_Areas_Comments.htm" />
+    <item name="Local Feedback" url="Local_Feedback.htm" />
+    <item name="Lookup" url="Lookup.htm" />
+    <item name="Search" url="Search.htm" />
+    <item name="Required Fields" url="Required_Data.htm" />
+  </book>
+</book>
+<book name="Ch. 6 - Administrative Functions" >
+  <item name="User Administration Policy" url="User_Administration_Policy.htm" />
+  <item name="User Roles and Access Levels" url="User_Roles_and_Access_Levels.htm" />
+  <item name="Administration Portlet" url="Administration_Portlet.htm" />
+  <item name="User Management Data Area" url="User_Management_Data_Area.htm" />
+  <item name="User List" url="User_List.htm" />
+  <item name="User Search" url="User_Search.htm" />
+  <book name="User Details" >
+    <item name="New User Accounts" url="New_User_Accounts.htm" />
+    <item name="State Initiated New User Accounts" url="State_Initiated_New_User_Accounts.htm" />
+    <item name="User Initiated New User Accounts" url="User_Initiated_New_User_Accounts.htm" />
+    <item name="New User Approval" url="New_User_Approval.htm" />
+    <item name="User Details" url="User_Details.htm" />
+    <item name="Editing User Details" url="Editing_User_Details.htm" />
+    <item name="Generating Feedback Copy" url="Generating_Feedback_Copy.htm" />
+  </book>
+</book>
+<book name="Ch. 7 - Facility/Project Tab" >
+  <item name="Facility/Project Menu" url="Facility___Project_Menu.htm" />
+  <item name="Facility/Project Information" url="Facility_Project_Information.htm" />
+  <item name="Facility/Project Types" url="Facility_Project_Types.htm" />
+  <item name="Permits" url="Permits.htm" />
+  <item name="NPDES Permit Search" url="NPDES_Permit_Search.htm" />
+  <item name="Point of Contact" url="Point_of_Contact.htm" />
+  <item name="Point of Contact Search" url="Point_of_Contact_Search.htm" />
+</book>
+<book name="Ch. 8 - Location Tab" >
+  <item name="Location Information" url="Location_Information.htm" />
+  <item name="Address" url="Address.htm" />
+  <book name="Coordinates" >
+    <item name="Coordinates" url="Coordinates.htm" />
+    <item name="From NPDES Permits" url="From_NPDES.htm" />
+    <item name="Manual Data Entry" url="Manual_Data_Entry.htm" />
+    <item name="WATERS Lite Viewer" url="WATERS_Lite_Viewer.htm" />
+  </book>
+  <book name="Areas Related To Needs" >
+    <item name="Areas Related To Needs" url="Areas_Related_To_Needs.htm" />
+    <item name="County" url="County.htm" />
+    <item name="Congressional District" url="Congressional_District.htm" />
+    <item name="Watershed" url="Watershed.htm" />
+    <item name="Special Program Areas" url="Special_Program_Areas.htm" />
+  </book>
+</book>
+<book name="Ch. 9 - Needs Tab" >
+  <item name="Needs Data Area" url="Needs_Data_Area.htm" />
+  <book name="Capital Costs Sub-Area" >
+    <item name="Capital Costs Sub-Area" url="Capital_Costs_Sub-Area.htm" />
+    <item name="Needs By Document" url="Needs_By_Document.htm" />
+    <item name="Document Search" url="Document_Search.htm" />
+    <item name="Document Submittal" url="Document_Submittal.htm" />
+    <item name="Document Annotation" url="Document_Annotation.htm" />
+    <item name="Capital Costs" url="Capital_Costs.htm" />
+    <item name="Cost Curves" url="Cost_Curves.htm" />
+    <item name="Treatment Plant Cost Curves" url="Treatment_Plant_Cost_Curves.htm" />
+    <item name="Decentralized Wastewater Treatment Cost" url="Decentralized_Wastewater_Treatement_Cost.htm" />
+    <item name="Collection: Combined Sewers Cost Curves" url="Collection__Combined_Sewers_Cost_Curves.htm" />
+    <item name="Collection: Separate Sewers Cost Curves" url="Collection__Separate_Sewers_Cost_Curves.htm" />
+  </book>
+  <book name="Funding Sub-Area" >
+    <item name="Funding Source" url="Funding_Source.htm" />
+    <item name="CWRSF Benefits Reporting Search" url="CWRSF_Benefits_Reporting_Search.htm" />
+  </book>
+  <book name="O &amp; M (Operation &amp; Maintenance) Sub-Area" >
+    <item name="O &amp; M (Operation &amp; Maintenance)" url="O_&amp;_M_(Operation_&amp;_Maintenance).htm" />
+  </book>
+</book>
+<book name="Ch. 10 - Population &amp; Flow Tab" >
+  <item name="Population" url="Population.htm" />
+  <item name="Cost Curve Population" url="Cost_Curve_Population.htm" />
+  <item name="Flow" url="Flow.htm" />
+  <item name="NPDES Permit Flow Data" url="NPDES_Permit_Flow_Data.htm" />
+</book>
+<book name="Ch. 11 - Discharge &amp; Effluent Tab" >
+  <item name="Discharge Information" url="Discharge_Information.htm" />
+  <item name="Effluent Information" url="Effluent_Information.htm" />
+</book>
+<book name="Ch. 12 - Pollution Data Tab" >
+  <item name="Pollution Problems" url="Pollution_Problems.htm" />
+  <item name="Impaired Waters Search" url="Impaired_Waters_Search.htm" />
+</book>
+<book name="Ch. 13 - Combined Sewer Overflow Tab" >
+  <item name="Combined Sewer Overflow" url="Combined_Sewer_Overflow.htm" />
+</book>
+<book name="Ch. 14 - Unit Process &amp; Utility Management Tabs" >
+  <item name="Unit Process &amp; Utility Management Tabs" url="Unit_Process_&amp;_Utility_Management_Tabs.htm" />
+  <item name="Unit Process" url="Unit_Process.htm" />
+  <item name="Utility Management" url="Utility_Management.htm" />
+</book>
+<book name="Ch. 15 - State-Local Users Interaction" >
+  <item name="Assigning Local Users" url="Assigning_Local_User_Facilities.htm" />
+  <item name="Accessing Local Feedback" url="Accessing_Local_Feedback.htm" />
+  <item name="Communicating With Local Users" url="Communicating_With_Local_Users.htm" />
+  <item name="Small Community Form" url="Small_Community_Form.htm" />
+</book>
+<book name="Ch. 16 - Data &amp; Document Submittal" >
+  <item name="Data &amp; Document Submission" url="Document_Submission.htm" />
+</book>
+<book name="Ch. 17 - Review Process" >
+  <item name="Review Process" url="Review_Process.htm" />
+  <item name="Milestones" url="Milestones.htm" />
+  <item name="Monthly Data Validation Checks" url="Monthly_Data_Validation_Checks.htm" />
+  <item name="Documentation Criteria Review" url="Documentation_Criteria_Review.htm" />
+  <item name="Non-footnotable Document Review" url="Non-footnotable_Document_Review.htm" />
+  <item name="Footnotable Document Audit" url="Footnotable_Document_Audit.htm" />
+  <item name="CWSRF Eligibility Audit" url="CWSRF_Eligibility_Audit.htm" />
+  <item name="Data Reconciliation" url="Data_Reconciliation.htm" />
+</book>
+<book name="Appendices" >
+  <item name="A: Summary of CWNS Workgroup Input on 2008 Methods" url="Summary_of_CWNS_Workgroup_Input_on_2008_Methods.htm" />
+  <item name="B: 2008 Needs Categories" url="2008_Needs_Categories.htm" />
+  <item name="C: Document Type List" url="Document_Type_List.htm" />
+  <item name="D: Facility / Project Type Information" url="Facility___Project_Type_Information.htm" />
+  <item name="E: 301 (h) Waiver List" url="301_(h)_Waiver_List.htm" />
+</book>
+
+</tocdata>

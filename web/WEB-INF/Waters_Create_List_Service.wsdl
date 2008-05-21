@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://org.rti.waters.CreateList_Service/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://org.rti.waters.CreateList_Service/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://org.rti.waters.CreateList_Service/">
+      <s:element name="CreateList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="layer_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="search_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="search_filter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partial_search" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="return_all" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateList_EntityID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_org_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="list_org_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entity_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partial_search" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="return_all" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateList_EntityIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateList_EntityIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateList_Orgs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_org_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateList_OrgsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateList_OrgsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateList_Credentials">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_program" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="user_org_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="layer_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="search_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="search_filter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="partial_search" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="return_all" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateList_CredentialsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateList_CredentialsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateListSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateList" />
+  </wsdl:message>
+  <wsdl:message name="CreateListSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_EntityIDSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateList_EntityID" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_EntityIDSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateList_EntityIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_OrgsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateList_Orgs" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_OrgsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateList_OrgsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_CredentialsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateList_Credentials" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_CredentialsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateList_CredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateListHttpGetIn">
+    <wsdl:part name="layer_name" type="s:string" />
+    <wsdl:part name="search_name" type="s:string" />
+    <wsdl:part name="search_filter" type="s:string" />
+    <wsdl:part name="partial_search" type="s:string" />
+    <wsdl:part name="return_all" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateListHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_EntityIDHttpGetIn">
+    <wsdl:part name="user_name" type="s:string" />
+    <wsdl:part name="user_password" type="s:string" />
+    <wsdl:part name="user_program" type="s:string" />
+    <wsdl:part name="user_org_id" type="s:string" />
+    <wsdl:part name="list_org_id" type="s:string" />
+    <wsdl:part name="entity_id" type="s:string" />
+    <wsdl:part name="partial_search" type="s:string" />
+    <wsdl:part name="return_all" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_EntityIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_OrgsHttpGetIn">
+    <wsdl:part name="user_program" type="s:string" />
+    <wsdl:part name="user_org_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_OrgsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_CredentialsHttpGetIn">
+    <wsdl:part name="user_name" type="s:string" />
+    <wsdl:part name="user_password" type="s:string" />
+    <wsdl:part name="user_program" type="s:string" />
+    <wsdl:part name="user_org_id" type="s:string" />
+    <wsdl:part name="layer_name" type="s:string" />
+    <wsdl:part name="search_name" type="s:string" />
+    <wsdl:part name="search_filter" type="s:string" />
+    <wsdl:part name="partial_search" type="s:string" />
+    <wsdl:part name="return_all" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_CredentialsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateListHttpPostIn">
+    <wsdl:part name="layer_name" type="s:string" />
+    <wsdl:part name="search_name" type="s:string" />
+    <wsdl:part name="search_filter" type="s:string" />
+    <wsdl:part name="partial_search" type="s:string" />
+    <wsdl:part name="return_all" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateListHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_EntityIDHttpPostIn">
+    <wsdl:part name="user_name" type="s:string" />
+    <wsdl:part name="user_password" type="s:string" />
+    <wsdl:part name="user_program" type="s:string" />
+    <wsdl:part name="user_org_id" type="s:string" />
+    <wsdl:part name="list_org_id" type="s:string" />
+    <wsdl:part name="entity_id" type="s:string" />
+    <wsdl:part name="partial_search" type="s:string" />
+    <wsdl:part name="return_all" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_EntityIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_OrgsHttpPostIn">
+    <wsdl:part name="user_program" type="s:string" />
+    <wsdl:part name="user_org_id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_OrgsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_CredentialsHttpPostIn">
+    <wsdl:part name="user_name" type="s:string" />
+    <wsdl:part name="user_password" type="s:string" />
+    <wsdl:part name="user_program" type="s:string" />
+    <wsdl:part name="user_org_id" type="s:string" />
+    <wsdl:part name="layer_name" type="s:string" />
+    <wsdl:part name="search_name" type="s:string" />
+    <wsdl:part name="search_filter" type="s:string" />
+    <wsdl:part name="partial_search" type="s:string" />
+    <wsdl:part name="return_all" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateList_CredentialsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Waters_Create_List_ServiceSoap">
+    <wsdl:operation name="CreateList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching names for the given layer, search filter and partial name.  Works for all layers that do not require WebRIT credentials.</wsdl:documentation>
+      <wsdl:input message="tns:CreateListSoapIn" />
+      <wsdl:output message="tns:CreateListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_EntityID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching Entity_IDs for the given user and program.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_EntityIDSoapIn" />
+      <wsdl:output message="tns:CreateList_EntityIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Orgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of matching Orgs for the given userOrg and program.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_OrgsSoapIn" />
+      <wsdl:output message="tns:CreateList_OrgsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Credentials">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching names for the given layer, search filter and partial name.  Works for all layers that require WebRIT credentials.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_CredentialsSoapIn" />
+      <wsdl:output message="tns:CreateList_CredentialsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Waters_Create_List_ServiceHttpGet">
+    <wsdl:operation name="CreateList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching names for the given layer, search filter and partial name.  Works for all layers that do not require WebRIT credentials.</wsdl:documentation>
+      <wsdl:input message="tns:CreateListHttpGetIn" />
+      <wsdl:output message="tns:CreateListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_EntityID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching Entity_IDs for the given user and program.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_EntityIDHttpGetIn" />
+      <wsdl:output message="tns:CreateList_EntityIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Orgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of matching Orgs for the given userOrg and program.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_OrgsHttpGetIn" />
+      <wsdl:output message="tns:CreateList_OrgsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Credentials">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching names for the given layer, search filter and partial name.  Works for all layers that require WebRIT credentials.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_CredentialsHttpGetIn" />
+      <wsdl:output message="tns:CreateList_CredentialsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Waters_Create_List_ServiceHttpPost">
+    <wsdl:operation name="CreateList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching names for the given layer, search filter and partial name.  Works for all layers that do not require WebRIT credentials.</wsdl:documentation>
+      <wsdl:input message="tns:CreateListHttpPostIn" />
+      <wsdl:output message="tns:CreateListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_EntityID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching Entity_IDs for the given user and program.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_EntityIDHttpPostIn" />
+      <wsdl:output message="tns:CreateList_EntityIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Orgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of matching Orgs for the given userOrg and program.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_OrgsHttpPostIn" />
+      <wsdl:output message="tns:CreateList_OrgsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Credentials">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return XML list of possible matching names for the given layer, search filter and partial name.  Works for all layers that require WebRIT credentials.</wsdl:documentation>
+      <wsdl:input message="tns:CreateList_CredentialsHttpPostIn" />
+      <wsdl:output message="tns:CreateList_CredentialsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Waters_Create_List_ServiceSoap" type="tns:Waters_Create_List_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateList">
+      <soap:operation soapAction="http://org.rti.waters.CreateList_Service/CreateList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_EntityID">
+      <soap:operation soapAction="http://org.rti.waters.CreateList_Service/CreateList_EntityID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Orgs">
+      <soap:operation soapAction="http://org.rti.waters.CreateList_Service/CreateList_Orgs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Credentials">
+      <soap:operation soapAction="http://org.rti.waters.CreateList_Service/CreateList_Credentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Waters_Create_List_ServiceSoap12" type="tns:Waters_Create_List_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateList">
+      <soap12:operation soapAction="http://org.rti.waters.CreateList_Service/CreateList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_EntityID">
+      <soap12:operation soapAction="http://org.rti.waters.CreateList_Service/CreateList_EntityID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Orgs">
+      <soap12:operation soapAction="http://org.rti.waters.CreateList_Service/CreateList_Orgs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Credentials">
+      <soap12:operation soapAction="http://org.rti.waters.CreateList_Service/CreateList_Credentials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Waters_Create_List_ServiceHttpGet" type="tns:Waters_Create_List_ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CreateList">
+      <http:operation location="/CreateList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_EntityID">
+      <http:operation location="/CreateList_EntityID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Orgs">
+      <http:operation location="/CreateList_Orgs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Credentials">
+      <http:operation location="/CreateList_Credentials" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Waters_Create_List_ServiceHttpPost" type="tns:Waters_Create_List_ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CreateList">
+      <http:operation location="/CreateList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_EntityID">
+      <http:operation location="/CreateList_EntityID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Orgs">
+      <http:operation location="/CreateList_Orgs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateList_Credentials">
+      <http:operation location="/CreateList_Credentials" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Waters_Create_List_Service">
+    <wsdl:port name="Waters_Create_List_ServiceSoap" binding="tns:Waters_Create_List_ServiceSoap">
+      <soap:address location="http://rtidemo.rti.org/Waters_Create_List_Service/Waters_Create_List_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Waters_Create_List_ServiceSoap12" binding="tns:Waters_Create_List_ServiceSoap12">
+      <soap12:address location="http://rtidemo.rti.org/Waters_Create_List_Service/Waters_Create_List_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Waters_Create_List_ServiceHttpGet" binding="tns:Waters_Create_List_ServiceHttpGet">
+      <http:address location="http://rtidemo.rti.org/Waters_Create_List_Service/Waters_Create_List_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Waters_Create_List_ServiceHttpPost" binding="tns:Waters_Create_List_ServiceHttpPost">
+      <http:address location="http://rtidemo.rti.org/Waters_Create_List_Service/Waters_Create_List_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

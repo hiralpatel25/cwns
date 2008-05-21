@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.AdvancedTreatmentTypeRef" table="ADVANCED_TREATMENT_TYPE_REF">
+        <id name="advancedTreatmentTypeId" type="long">
+            <column name="ADVANCED_TREATMENT_TYPE_ID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="35" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="facilityAdvancedTreatments" inverse="true">
+            <key>
+                <column name="ADVANCED_TREATMENT_TYPE_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityAdvancedTreatment" />
+        </set>
+    </class>
+</hibernate-mapping>

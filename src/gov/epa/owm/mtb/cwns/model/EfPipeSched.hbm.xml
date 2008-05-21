@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.EfPipeSched" table="EF_PIPE_SCHED">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.EfPipeSchedId">
+            <key-property name="efNpdesPermitNumber" type="string">
+                <column name="EF_NPDES_PERMIT_NUMBER_FK" length="9" />
+            </key-property>
+            <key-property name="efDischargeNum" type="string">
+                <column name="EF_DISCHARGE_NUM" length="3" />
+            </key-property>
+            <key-property name="efReportDesig" type="string">
+                <column name="EF_REPORT_DESIG" length="1" />
+            </key-property>
+            <key-property name="efPipeSetQualifier" type="char">
+                <column name="EF_PIPE_SET_QUALIFIER" length="1" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="efPermit" class="gov.epa.owm.mtb.cwns.model.EfPermit" update="false" insert="false" fetch="select">
+            <column name="EF_NPDES_PERMIT_NUMBER_FK" length="9" not-null="true" />
+        </many-to-one>
+        <property name="outfallTypeCode" type="string">
+            <column name="OUTFALL_TYPE_CODE" length="1" />
+        </property>
+        <property name="pipeDesc" type="string">
+            <column name="PIPE_DESC" length="30" />
+        </property>
+        <property name="pipeInactiveCode" type="string">
+            <column name="PIPE_INACTIVE_CODE" length="1" />
+        </property>
+        <set name="efEffluentLimits" inverse="true">
+            <key>
+                <column name="EF_NPDES_PERMIT_NUMBER_FK" length="9" not-null="true" />
+                <column name="EF_DISCHARGE_NUM_FK" length="3" not-null="true" />
+                <column name="EF_REPORT_DESIG_FK" length="1" not-null="true" />
+                <column name="EF_PIPE_SET_QUALIFIER_FK" length="1" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.EfEffluentLimit" />
+        </set>
+    </class>
+</hibernate-mapping>

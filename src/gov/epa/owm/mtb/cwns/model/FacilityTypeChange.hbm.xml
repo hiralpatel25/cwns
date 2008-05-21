@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.FacilityTypeChange" table="FACILITY_TYPE_CHANGE">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.FacilityTypeChangeId">
+            <key-property name="facilityId" type="long">
+                <column name="FACILITY_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="facilityTypeId" type="long">
+                <column name="FACILITY_TYPE_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="changeTypeId" type="long">
+                <column name="CHANGE_TYPE_ID_FK" precision="15" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="facilityType" class="gov.epa.owm.mtb.cwns.model.FacilityType" update="false" insert="false" fetch="select">
+            <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            <column name="FACILITY_TYPE_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="changeTypeRef" class="gov.epa.owm.mtb.cwns.model.ChangeTypeRef" update="false" insert="false" fetch="select">
+            <column name="CHANGE_TYPE_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

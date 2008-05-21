@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.PollutionCategoryGroupRef" table="POLLUTION_CATEGORY_GROUP_REF">
+        <id name="pollutionCategoryGroupId" type="long">
+            <column name="POLLUTION_CATEGORY_GROUP_ID" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="locationId" type="string">
+            <column name="LOCATION_ID" length="2" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="pollutionProblemRefs" inverse="true">
+            <key>
+                <column name="POLLUTION_CATEGORY_GROUP_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.PollutionProblemRef" />
+        </set>
+    </class>
+</hibernate-mapping>

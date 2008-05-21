@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CategoryClassificationRef" table="CATEGORY_CLASSIFICATION_REF">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.CategoryClassificationRefId">
+            <key-property name="categoryId" type="string">
+                <column name="CATEGORY_ID_FK" length="5" />
+            </key-property>
+            <key-property name="classificationId" type="string">
+                <column name="CLASSIFICATION_ID_FK" length="3" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="categoryRef" class="gov.epa.owm.mtb.cwns.model.CategoryRef" update="false" insert="false" fetch="select">
+            <column name="CATEGORY_ID_FK" length="5" not-null="true" />
+        </many-to-one>
+        <many-to-one name="classificationRef" class="gov.epa.owm.mtb.cwns.model.ClassificationRef" update="false" insert="false" fetch="select">
+            <column name="CLASSIFICATION_ID_FK" length="3" not-null="true" />
+        </many-to-one>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CwnsUser" table="CWNS_USER">
+        <id name="cwnsUserId" type="string">
+            <column name="CWNS_USER_ID" length="30" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cwnsUserStatusRef" class="gov.epa.owm.mtb.cwns.model.CwnsUserStatusRef" fetch="select">
+            <column name="CWNS_USER_STATUS_ID_FK" length="1" not-null="true" />
+        </many-to-one>
+        <property name="firstName" type="string">
+            <column name="FIRST_NAME" length="20" not-null="true" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LAST_NAME" length="30" not-null="true" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="25" />
+        </property>
+        <property name="emailAddress" type="string">
+            <column name="EMAIL_ADDRESS" length="40" />
+        </property>
+        <property name="roleTitle" type="string">
+            <column name="ROLE_TITLE" length="30" />
+        </property>
+        <property name="lastLogonTs" type="timestamp">
+            <column name="LAST_LOGON_TS" length="11" />
+        </property>
+        <property name="oidUserid" type="string">
+            <column name="OID_USERID" length="200" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="4000" />
+        </property>
+        <property name="portalRequestId" type="string">
+            <column name="PORTAL_REQUEST_ID" length="1000" />
+        </property>
+        <property name="initialPassword" type="string">
+            <column name="INITIAL_PASSWORD" length="50" />
+        </property>
+        <property name="regType" type="string">
+            <column name="REG_TYPE" length="10" />
+        </property>
+        <property name="regNotificationComments" type="string">
+            <column name="REG_NOTIFICATION_COMMENTS" length="4000" />
+        </property>
+        <property name="affiliation" type="string">
+            <column name="AFFILIATION" length="40" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="40" />
+        </property>
+        <property name="facilityList" type="string">
+            <column name="FACILITY_LIST" length="4000" />
+        </property>
+        <property name="townAndCountyList" type="string">
+            <column name="TOWN_AND_COUNTY_LIST" length="4000"/>
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="cwnsUserLocations" inverse="true">
+            <key>
+                <column name="CWNS_USER_ID_FK" length="30" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CwnsUserLocation" />
+        </set>
+    </class>
+</hibernate-mapping>

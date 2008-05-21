@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.Facility" table="FACILITY">
+        <id name="facilityId" type="long">
+            <column name="FACILITY_ID" precision="15" scale="0" />
+            <generator class="sequence">
+				<param name="sequence">FACILITY_SEQ</param>
+			</generator>     
+        </id>
+        <many-to-one name="reviewStatusRef" class="gov.epa.owm.mtb.cwns.model.ReviewStatusRef" fetch="select">
+            <column name="REVIEW_STATUS_ID_FK" length="3" not-null="true" />
+        </many-to-one>
+        <many-to-one name="system" class="gov.epa.owm.mtb.cwns.model.System" fetch="select">
+            <column name="SYSTEM_ID_FK" precision="15" scale="0" />
+        </many-to-one>
+        <property name="versionCode" type="char">
+            <column name="VERSION_CODE" length="1" not-null="true" />
+        </property>
+        <property name="locationId" type="string">
+            <column name="LOCATION_ID" length="2" not-null="true" />
+        </property>
+        <property name="cwnsNbr" type="string">
+            <column name="CWNS_NBR" length="11" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="60" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="200" />
+        </property>
+        <property name="ownerCode" type="string">
+            <column name="OWNER_CODE" length="3" />
+        </property>
+        <property name="militaryFlag" type="char">
+            <column name="MILITARY_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="tmdlFlag" type="java.lang.Character">
+            <column name="TMDL_FLAG" length="1" />
+        </property>
+        <property name="sourceWaterProtectionFlag" type="java.lang.Character">
+            <column name="SOURCE_WATER_PROTECTION_FLAG" length="1" />
+        </property>
+        <property name="smallCommunityExceptionFlag" type="char">
+            <column name="SMALL_COMMUNITY_EXCEPTION_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="presentTreatmentPlantType" type="java.lang.Character">
+            <column name="PRESENT_TREATMENT_PLANT_TYPE" length="1" />
+        </property>
+        <property name="projectedTreatmentPlantType" type="java.lang.Character">
+            <column name="PROJECTED_TREATMENT_PLANT_TYPE" length="1" />
+        </property>
+        <property name="localUserDoesUnitProcFlag" type="char">
+            <column name="LOCAL_USER_DOES_UNIT_PROC_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="localUserDoesUtilMgmtFlag" type="char">
+            <column name="LOCAL_USER_DOES_UTIL_MGMT_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="npsTypeCode" type="string">
+            <column name="NPS_TYPE_CODE" length="3" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="facilityAddresses" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityAddress" />
+        </set>
+        <set name="combinedSewers" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CombinedSewer" />
+        </set>
+        <set name="facilityEntryStatuses" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityEntryStatus" />
+        </set>
+        <set name="facilityReviewStatuses" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityReviewStatus" />
+        </set>
+        <set name="facilityPointOfContacts" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityPointOfContact" />
+        </set>
+        <set name="facilityComments" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityComment" />
+        </set>
+        <set name="facilityFlows" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityFlow" />
+        </set>
+        <set name="fundingSources" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FundingSource" />
+        </set>
+        <set name="facilityDischargesForFacilityIdDischargeTo" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK_DISCHARGE_TO" precision="15" scale="0" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityDischarge" />
+        </set>
+        <set name="facilityDischargesForFacilityId" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityDischarge" />
+        </set>
+        <set name="csoImperviousnesses" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CsoImperviousness" />
+        </set>
+        <set name="reviewComments" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.ReviewComment" />
+        </set>
+        <set name="facilityEffluents" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityEffluent" />
+        </set>
+        <set name="operationAndMaintenanceCosts" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.OperationAndMaintenanceCost" />
+        </set>
+        <set name="facilityPollutionProblems" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityPollutionProblem" />
+        </set>
+        <set name="facilityUnitProcesses" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityUnitProcess" />
+        </set>
+        <set name="facilityUtilMgmtPractices" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityUtilMgmtPractice" />
+        </set>
+        <set name="facilityImpairedWaters" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityImpairedWater" />
+        </set>
+        <set name="facilityDocuments" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityDocument" />
+        </set>
+        <set name="geographicAreas" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.GeographicArea" />
+        </set>
+        <set name="rainfalls" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.Rainfall" />
+        </set>
+        <set name="facilityPopulations" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityPopulation" />
+        </set>
+        <set name="facilityPermits" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityPermit" />
+        </set>
+        <set name="cwnsUserLocationFacilities" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CwnsUserLocationFacility" />
+        </set>
+        <set name="federalReviewStatuses" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FederalReviewStatus" />
+        </set>
+        <set name="facilityTypes" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityType" />
+        </set>
+        <set name="facilityPopulationUnits" inverse="true">
+            <key>
+                <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityPopulationUnit" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CwnsUserSetting" table="CWNS_USER_SETTING">
+        <id name="cwnsUserSettingId" type="long">
+            <column name="CWNS_USER_SETTING_ID" precision="15" scale="0" />
+            <generator class="sequence">
+				<param name="sequence">CWNS_USER_SETTING_SEQ</param>
+			</generator>     
+        </id>
+        <property name="userAndRole" type="string">
+            <column name="USER_AND_ROLE" length="50" not-null="true" />
+        </property>
+        <property name="listType" type="string">
+            <column name="LIST_TYPE" length="10" not-null="true" />
+        </property>
+        <property name="facilityId" type="long">
+            <column name="FACILITY_ID" precision="15" scale="0" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

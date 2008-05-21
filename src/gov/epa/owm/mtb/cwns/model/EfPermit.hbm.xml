@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.EfPermit" table="EF_PERMIT">
+        <id name="efNpdesPermitNumber" type="string">
+            <column name="EF_NPDES_PERMIT_NUMBER" length="9" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="horizontalCllctnMethodRef" class="gov.epa.owm.mtb.cwns.model.HorizontalCllctnMethodRef" fetch="select">
+            <column name="HORIZONTAL_CLLCTN_METHOD_ID_FK" precision="15" scale="0" />
+        </many-to-one>
+        <many-to-one name="permitTypeRef" class="gov.epa.owm.mtb.cwns.model.PermitTypeRef" fetch="select">
+            <column name="PERMIT_TYPE_ID_FK" precision="15" scale="0" />
+        </many-to-one>
+        <many-to-one name="locationDescriptionRef" class="gov.epa.owm.mtb.cwns.model.LocationDescriptionRef" fetch="select">
+            <column name="LOCATION_DESCRIPTION_ID_FK" length="5" />
+        </many-to-one>
+        <many-to-one name="horizontalCoordntDatumRef" class="gov.epa.owm.mtb.cwns.model.HorizontalCoordntDatumRef" fetch="select">
+            <column name="HORIZONTAL_COORDNT_DATUM_ID_FK" precision="15" scale="0" />
+        </many-to-one>
+        <property name="inactiveCode" type="string">
+            <column name="INACTIVE_CODE" length="1" />
+        </property>
+        <property name="countyName" type="string">
+            <column name="COUNTY_NAME" length="30" />
+        </property>
+        <property name="facilityName" type="string">
+            <column name="FACILITY_NAME" length="61" />
+        </property>
+        <property name="facilityLocationStreet1" type="string">
+            <column name="FACILITY_LOCATION_STREET_1" length="35" />
+        </property>
+        <property name="facilityLocationStreet2" type="string">
+            <column name="FACILITY_LOCATION_STREET_2" length="30" />
+        </property>
+        <property name="facilityLocationCity" type="string">
+            <column name="FACILITY_LOCATION_CITY" length="23" />
+        </property>
+        <property name="facilityLocationStateId" type="string">
+            <column name="FACILITY_LOCATION_STATE_ID" length="2" />
+        </property>
+        <property name="facilityLocationZip" type="string">
+            <column name="FACILITY_LOCATION_ZIP" length="9" />
+        </property>
+        <property name="pointOfContactAuthorityNm" type="string">
+            <column name="POINT_OF_CONTACT_AUTHORITY_NM" length="35" />
+        </property>
+        <property name="pointOfContactName" type="string">
+            <column name="POINT_OF_CONTACT_NAME" length="30" />
+        </property>
+        <property name="pointOfContactPhoneNumber" type="string">
+            <column name="POINT_OF_CONTACT_PHONE_NUMBER" length="10" />
+        </property>
+        <property name="pointOfContactStreet1" type="string">
+            <column name="POINT_OF_CONTACT_STREET_1" length="30" />
+        </property>
+        <property name="pointOfContactStreet2" type="string">
+            <column name="POINT_OF_CONTACT_STREET_2" length="30" />
+        </property>
+        <property name="pointOfContactCity" type="string">
+            <column name="POINT_OF_CONTACT_CITY" length="23" />
+        </property>
+        <property name="pointOfContactStateId" type="string">
+            <column name="POINT_OF_CONTACT_STATE_ID" length="2" />
+        </property>
+        <property name="pointOfContactZip" type="string">
+            <column name="POINT_OF_CONTACT_ZIP" length="9" />
+        </property>
+        <property name="latitudeDecimalDegree" type="big_decimal">
+            <column name="LATITUDE_DECIMAL_DEGREE" precision="6" scale="4" />
+        </property>
+        <property name="latitudeDirection" type="java.lang.Character">
+            <column name="LATITUDE_DIRECTION" length="1" />
+        </property>
+        <property name="longitudeDecimalDegree" type="big_decimal">
+            <column name="LONGITUDE_DECIMAL_DEGREE" precision="7" scale="4" />
+        </property>
+        <property name="longitudeDirection" type="java.lang.Character">
+            <column name="LONGITUDE_DIRECTION" length="1" />
+        </property>
+        <property name="scale" type="string">
+            <column name="SCALE" length="1" />
+        </property>
+        <property name="codeOfAccuracy" type="string">
+            <column name="CODE_OF_ACCURACY" length="1" />
+        </property>
+        <property name="receivingWaters" type="string">
+            <column name="RECEIVING_WATERS" length="40" />
+        </property>
+        <property name="presentDesignFlowRate" type="big_decimal">
+            <column name="PRESENT_DESIGN_FLOW_RATE" precision="22" scale="0" />
+        </property>
+        <property name="migrationUserid" type="string">
+            <column name="MIGRATION_USERID" length="30" not-null="true" />
+        </property>
+        <property name="migrationTs" type="timestamp">
+            <column name="MIGRATION_TS" length="11" not-null="true" />
+        </property>
+        <set name="efPipeScheds" inverse="true">
+            <key>
+                <column name="EF_NPDES_PERMIT_NUMBER_FK" length="9" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.EfPipeSched" />
+        </set>
+        <set name="permits" inverse="true">
+            <key>
+                <column name="EF_NPDES_PERMIT_NUMBER" length="9" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.Permit" />
+        </set>
+    </class>
+</hibernate-mapping>

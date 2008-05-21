@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CombinedSewer" table="COMBINED_SEWER">
+        <id name="facilityId" type="long">
+            <column name="FACILITY_ID_FK" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="combinedSewerStatusRef" class="gov.epa.owm.mtb.cwns.model.CombinedSewerStatusRef" fetch="select">
+            <column name="COMBINED_SEWER_STATUS_ID_FK" length="1" />
+        </many-to-one>
+        <many-to-one name="facility" class="gov.epa.owm.mtb.cwns.model.Facility" update="false" insert="false" fetch="select">
+            <column name="FACILITY_ID_FK" precision="15" scale="0" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="docAreaSquareMilesMsr" type="java.lang.Integer">
+            <column name="DOC_AREA_SQUARE_MILES_MSR" precision="6" scale="0" />
+        </property>
+        <property name="docPopulationCount" type="java.lang.Integer">
+            <column name="DOC_POPULATION_COUNT" precision="8" scale="0" />
+        </property>
+        <property name="ccAreaSquareMilesMsr" type="java.lang.Integer">
+            <column name="CC_AREA_SQUARE_MILES_MSR" precision="6" scale="0" />
+        </property>
+        <property name="ccPopulationCount" type="java.lang.Integer">
+            <column name="CC_POPULATION_COUNT" precision="8" scale="0" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

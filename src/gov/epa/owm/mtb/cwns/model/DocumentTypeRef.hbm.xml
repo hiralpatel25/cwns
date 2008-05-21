@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.DocumentTypeRef" table="DOCUMENT_TYPE_REF">
+        <id name="documentTypeId" type="string">
+            <column name="DOCUMENT_TYPE_ID" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="90" not-null="true" />
+        </property>
+        <property name="aprovedForNeedsFlag" type="char">
+            <column name="APROVED_FOR_NEEDS_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="aprovedForCostsFlag" type="char">
+            <column name="APROVED_FOR_COSTS_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="allowFootnoteFlag" type="char">
+            <column name="ALLOW_FOOTNOTE_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="1800" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="documents" inverse="true">
+            <key>
+                <column name="DOCUMENT_TYPE_ID_FK" length="2" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.Document" />
+        </set>
+        <set name="documentTypeGroupRefs" inverse="true">
+            <key>
+                <column name="DOCUMENT_TYPE_ID_FK" length="2" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.DocumentTypeGroupRef" />
+        </set>
+    </class>
+</hibernate-mapping>

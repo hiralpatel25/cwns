@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dwr>
+    <allow>
+        <create creator="new" javascript="UploadMonitor">
+            <param name="class" value="gov.epa.owm.mtb.cwns.needs.upload.UploadMonitor"/>
+        </create>
+        <convert converter="bean" match="gov.epa.owm.mtb.cwns.needs.upload.UploadInfo"/>
+    </allow>
+</dwr>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.AccessLevelAppliesToRef" table="ACCESS_LEVEL_APPLIES_TO_REF">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.AccessLevelAppliesToRefId">
+            <key-property name="accessLevelId" type="long">
+                <column name="ACCESS_LEVEL_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="locationTypeId" type="string">
+                <column name="LOCATION_TYPE_ID_FK" length="8" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="locationTypeRef" class="gov.epa.owm.mtb.cwns.model.LocationTypeRef" update="false" insert="false" fetch="select">
+            <column name="LOCATION_TYPE_ID_FK" length="8" not-null="true" />
+        </many-to-one>
+        <many-to-one name="accessLevelRef" class="gov.epa.owm.mtb.cwns.model.AccessLevelRef" update="false" insert="false" fetch="select">
+            <column name="ACCESS_LEVEL_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

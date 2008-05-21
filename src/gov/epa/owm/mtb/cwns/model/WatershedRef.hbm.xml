@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.WatershedRef" table="WATERSHED_REF">
+        <id name="watershedId" type="string">
+            <column name="WATERSHED_ID" length="8" not-null="true" unique="true"/>
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="35" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="geographicAreaWatersheds" inverse="true">
+            <key>
+                <column name="WATERSHED_ID_FK" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.GeographicAreaWatershed" />
+        </set>
+        <set name="watershedLocationRefs" inverse="true">
+            <key>
+                <column name="WATERSHED_ID_FK"  not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.WatershedLocationRef" />
+        </set>
+    </class>
+</hibernate-mapping>
