@@ -609,6 +609,16 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 		columns.add("projectedFlowPortionPersent");
 		SearchConditions scs = new SearchConditions(new SearchCondition("facilityByFacilityIdDischargeTo.facilityId", 
 				  SearchCondition.OPERATOR_EQ, new Long(facilityId)));
+		
+		Facility facility = (Facility)searchDAO.getObject(Facility.class, Long.valueOf(facilityId));
+		char versionCode ='S';
+		if(facility!=null){
+			versionCode=facility.getVersionCode();
+		}
+		
+		AliasCriteria alias = new AliasCriteria("facilityByFacilityId", "uf", AliasCriteria.JOIN_INNER);
+		ArrayList aliasArray = new ArrayList();
+		aliasArray.add(alias);
 
 		SearchConditions scs0 = new SearchConditions();
 
@@ -638,8 +648,10 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 		}
 
 		scs.setCondition(SearchCondition.OPERATOR_AND, scs0);
+		
+		scs.setCondition(new SearchCondition("uf.versionCode", SearchCondition.OPERATOR_EQ, new Character(versionCode)));
 
-		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs);
+		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs, new ArrayList(), aliasArray);
 		Iterator iter = results.iterator();
 		while (iter.hasNext()){
 			Object[] o = (Object[])iter.next();
@@ -670,11 +682,24 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 
 	public List getDirectDownstreamFacilitiesListByDischargeType(String facilityId, 
 			int dischargeType){
+		
+		Facility facility = (Facility)searchDAO.getObject(Facility.class, Long.valueOf(facilityId));
+		char versionCode ='S';
+		if(facility!=null){
+			versionCode=facility.getVersionCode();
+		}
+		
+		AliasCriteria alias = new AliasCriteria("facilityByFacilityId", "uf", AliasCriteria.JOIN_INNER);
+		ArrayList aliasArray = new ArrayList();
+		aliasArray.add(alias);
+		
+		
 		SearchConditions scs = new SearchConditions(new SearchCondition("facilityByFacilityId.facilityId", 
 				SearchCondition.OPERATOR_EQ, new Long(facilityId)));
 		scs.setCondition(new SearchCondition("dischargeMethodRef.dischargeMethodId", 
 				SearchCondition.OPERATOR_EQ, new Long(dischargeType)));
-		List results = searchDAO.getSearchList(FacilityDischarge.class, scs);		
+		scs.setCondition(new SearchCondition("uf.versionCode", SearchCondition.OPERATOR_EQ, new Character(versionCode)));
+		List results = searchDAO.getSearchList(FacilityDischarge.class, scs, new ArrayList(), aliasArray, 0, 0);		
 		return results;
 	}
 	
@@ -692,14 +717,26 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 			int dischargeType,
 			ArrayList resultList){
 		
+		Facility facility = (Facility)searchDAO.getObject(Facility.class, Long.valueOf(facilityId));
+		char versionCode ='S';
+		if(facility!=null){
+			versionCode=facility.getVersionCode();
+		}
+		
 		ArrayList columns = new ArrayList();
 		columns.add("facilityByFacilityIdDischargeTo.facilityId");
 		columns.add("presentFlag"); 
 		columns.add("projectedFlag");
 		columns.add("presentFlowPortionPersent");
 		columns.add("projectedFlowPortionPersent");
+		
+		AliasCriteria alias = new AliasCriteria("facilityByFacilityId", "uf", AliasCriteria.JOIN_INNER);
+		ArrayList aliasArray = new ArrayList();
+		aliasArray.add(alias);
+		
 		SearchConditions scs = new SearchConditions(new SearchCondition("facilityByFacilityId.facilityId", 
 				SearchCondition.OPERATOR_EQ, new Long(facilityId)));
+		scs.setCondition(new SearchCondition("uf.versionCode", SearchCondition.OPERATOR_EQ, new Character(versionCode)));
 		
 		SearchConditions scs0 = new SearchConditions();
 
@@ -730,7 +767,7 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 
 		scs.setCondition(SearchCondition.OPERATOR_AND, scs0);
 
-		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs);
+		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs, new ArrayList(), aliasArray);
 		Iterator iter = results.iterator();
 		while (iter.hasNext()){
 			Object[] o = (Object[])iter.next();
@@ -750,6 +787,11 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 			Collection dischargingFPList, 
 			Collection dischargeReceiveHelperList){
 		
+		Facility facility = (Facility)searchDAO.getObject(Facility.class, Long.valueOf(facilityId));
+		char versionCode ='S';
+		if(facility!=null){
+			versionCode=facility.getVersionCode();
+		}
 		ArrayList columns = new ArrayList();
 		columns.add("facilityByFacilityId.facilityId");
 		columns.add("presentFlag"); 
@@ -757,8 +799,14 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 		columns.add("presentFlowPortionPersent");
 		columns.add("projectedFlowPortionPersent");
 		
+		AliasCriteria alias = new AliasCriteria("facilityByFacilityId", "uf", AliasCriteria.JOIN_INNER);
+		ArrayList aliasArray = new ArrayList();
+		aliasArray.add(alias);
+		
 		SearchConditions scs = new SearchConditions(new SearchCondition("facilityByFacilityIdDischargeTo.facilityId", SearchCondition.OPERATOR_EQ, new Long(facilityId)));
-		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs);
+		scs.setCondition(new SearchCondition("uf.versionCode", SearchCondition.OPERATOR_EQ, new Character(versionCode)));
+		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs,new ArrayList(), aliasArray);
+
 		Iterator iter = results.iterator();
 		while (iter.hasNext()){
 			Object[] o = (Object[])iter.next();
@@ -991,7 +1039,8 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 		
 		ArrayList columns = new ArrayList();
 		columns.add("facilityByFacilityId.facilityId");
-		columns.add("facilityByFacilityIdDischargeTo.facilityId");	
+		columns.add("facilityByFacilityIdDischargeTo.facilityId");
+		
 		
 		SearchConditions scs0 = null;
 		
@@ -1051,8 +1100,13 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 		scs2.setCondition(SearchCondition.OPERATOR_AND, scs3);  
 		
 		log.debug(" getRelatedSewerShedFacilities: ready to searchDAO.getSearchList" + "\r\n");
-	
-		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs2);
+		
+		//make sure that the version code matches the facilityId's version code
+		AliasCriteria alias = new AliasCriteria("facilityByFacilityId", "uf", AliasCriteria.JOIN_INNER);
+		ArrayList aliasArray = new ArrayList();
+		aliasArray.add(alias);
+		scs2.setCondition(new SearchCondition("uf.versionCode", SearchCondition.OPERATOR_EQ, new Character(versionCode)));
+		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs2, new ArrayList(), aliasArray);
 		
 		Iterator iter = results.iterator();
 		while (iter.hasNext()){
@@ -1147,7 +1201,12 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 		
 		ArrayList columns = new ArrayList();
 		columns.add("facilityByFacilityId.facilityId");
-		columns.add("facilityByFacilityIdDischargeTo.facilityId");	
+		columns.add("facilityByFacilityIdDischargeTo.facilityId");
+		
+		//make sure that the version code matches the facilityId's version code
+		AliasCriteria alias = new AliasCriteria("facilityByFacilityId", "uf", AliasCriteria.JOIN_INNER);
+		ArrayList aliasArray = new ArrayList();
+		aliasArray.add(alias);
 		
 		SearchConditions scs0 = null;
 		
@@ -1184,7 +1243,16 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 
 		log.debug(" getRelatedSewerShedFacilities: ready to searchDAO.getSearchList" + "\r\n");
 	
-		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs2);
+		//set facility Version code
+		Facility facility = (Facility)searchDAO.getObject(Facility.class, Long.valueOf(facilityId));
+		char versionCode ='S';
+		if(facility!=null){
+			versionCode=facility.getVersionCode();
+		}
+		
+		scs2.setCondition(new SearchCondition("uf.versionCode", SearchCondition.OPERATOR_EQ, new Character(versionCode)));
+		
+		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs2, new ArrayList(), aliasArray);
 		Iterator iter = results.iterator();
 		while (iter.hasNext()){
 			Object[] o = (Object[])iter.next();
@@ -2134,6 +2202,12 @@ public class PopulationServiceImpl extends CWNSService implements PopulationServ
 			
 		log.debug(" getRelatedSewerShedFacilities: ready to searchDAO.getSearchList" + "\r\n");
 	
+		Facility facility = (Facility)searchDAO.getObject(Facility.class, Long.valueOf(facilityId));
+		char versionCode ='S';
+		if(facility!=null){
+			versionCode=facility.getVersionCode();
+		}
+		scs2.setCondition(new SearchCondition("disFacility.versionCode", SearchCondition.OPERATOR_EQ, new Character(versionCode)));				
 		Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs2, new ArrayList(), aliasArray);
 		//Collection results = searchDAO.getSearchList(FacilityDischarge.class, columns, scs2);
 		Iterator iter = results.iterator();
