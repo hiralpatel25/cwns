@@ -5,18 +5,11 @@ package gov.epa.owm.mtb.cwns.administration;
  * @author Lockheed Martin CWNS Team
  * @version 1.0
  */
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
 import gov.epa.owm.mtb.cwns.common.CWNSAction;
 import gov.epa.owm.mtb.cwns.common.CWNSProperties;
 import gov.epa.owm.mtb.cwns.common.CurrentUser;
 import gov.epa.owm.mtb.cwns.common.exceptions.ApplicationException;
-import gov.epa.owm.mtb.cwns.common.search.Search;
-import gov.epa.owm.mtb.cwns.common.search.SortCriteria;
 import gov.epa.owm.mtb.cwns.service.UserService;
-import gov.epa.owm.mtb.cwns.userlist.UserListAction;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
