@@ -158,7 +158,7 @@
 	   
 	  <strong>CWNS 2008</strong> 
 		 
-		<br /><br />Data collection for CWNS 2008 is from February 5, 2008 through October 27, 2008.&nbsp; For the first time, both state staff and local users (e.g., wastewater facilities, municipal governments, conservation districts) can enter data directly into the CWNS system.&nbsp; The state CWNS coordinator reviews submitted data before submitting it to EPA.<br /><br />If you do not have an account on the CWNS system, click here to <a href="<%=midtierURL%><%=selfRegistrationUrl%>">apply</a>.&nbsp; Accounts must be approved by the CWNS State Coordinator in your state. Please allow up to five business days for account approval process.<br /></p>	
+		<br /><br />Data collection for CWNS 2008 is from February 5, 2008 through February 27, 2009.&nbsp; For the first time, both state staff and local users (e.g., wastewater facilities, municipal governments, conservation districts) can enter data directly into the CWNS system.&nbsp; The state CWNS coordinator reviews submitted data before submitting it to EPA.<br /><br />If you do not have an account on the CWNS system, click here to <a href="<%=midtierURL%><%=selfRegistrationUrl%>">apply</a>.&nbsp; Accounts must be approved by the CWNS State Coordinator in your state. Please allow up to five business days for account approval process.<br /></p>	
 		
 		
 		
