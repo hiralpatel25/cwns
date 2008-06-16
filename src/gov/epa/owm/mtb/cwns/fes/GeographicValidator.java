@@ -169,15 +169,8 @@ public class GeographicValidator extends FESValidator {
 		for (Iterator iter = fts.iterator(); iter.hasNext();) {
 			FacilityType ft = (FacilityType) iter.next();
 			if(ft.getPresentFlag()=='Y'){
-				long overallType=ft.getFacilityTypeRef().getFacilityOverallTypeRef().getFacilityOverallTypeId();
 				long facilityTypeId=ft.getFacilityTypeRef().getFacilityTypeId();
-				if(FacilityTypeService.FACILITY_TYPE_OVERALL_TYPE_NPS!=overallType &&
-				   FacilityTypeService.FACILITY_OVERALL_TYPE_STROMWATER!=overallType &&
-				   FacilityTypeService.FACILITY_OVERALL_TYPE_DECENTRALIZED!=overallType &&
-				   FacilityTypeService.FACILITY_OVERALL_TYPE_PLANNING!=overallType &&
-				   FacilityTypeService.FACILITY_TYPE_INTERCEPTOR_SEWER.longValue()!= facilityTypeId &&
-				   FacilityTypeService.FACILITY_TYPE_COMBINED_SEWER.longValue()!= facilityTypeId &&
-				   FacilityTypeService.FACILITY_TYPE_SEPERATE_SEWER.longValue()!= facilityTypeId){
+				if(FacilityTypeService.FACILITY_TYPE_TREATMENT_PLANT.longValue()== facilityTypeId){
 					return true;
 				}
 			}			
