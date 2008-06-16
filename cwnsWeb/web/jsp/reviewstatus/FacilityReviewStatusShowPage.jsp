@@ -66,7 +66,8 @@
          if (isFacilityInSewershed == "N" && c == "Y" && value == "FRR"){
             var result = confirm("By continuing with submission for Federal review, you certify that: \n" +
                                  "(1) you have received appropriately signed Small Community Form and/or \n" +
-                                 "(2) you are documenting needs and costs with other documentation \n" +
+                                 "(2) you are documenting needs and costs with other documentation and/or \n" +
+                                 "(3) reporting that there are no needs and costs \n" +
                                  "Continue to Submit for Federal Review?");
             if (result == true){
               //document.getElementById('facilityReviewStatusAct').value = "save";
@@ -100,7 +101,9 @@
                      var result = confirm("By continuing with submission for Federal review, you certify that: \n" +
                                  "(1) you have received appropriately signed Small Community Form and/or \n" +
                                  "(2) you are documenting needs and costs with other documentation for the following facilities in the sewershed.\n" +
-                                 smallCommunityFacilities + "\n Continue to submit for Federal Review?");
+                                  smallCommunityFacilities + 
+                                 "(3) reporting that there are no needs and costs \n" +
+                                 "\n Continue to submit for Federal Review?");
                      if (result == true){
                        //document.getElementById('facilityReviewStatusAct').value = "save";
                        //document.getElementById('selectedReviewStatus').value = value;
