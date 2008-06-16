@@ -359,14 +359,14 @@ function ShowLookUpWindow(popupUrl)
 		    <TD width="1%"></TD>  
 			<TD><STRONG>Contact Name:</STRONG></TD>
 			<TD>
-				<pdk-html:text name="pointOfContactForm" property="contactName" size="50" maxlength="50" />
+				<pdk-html:text name="pointOfContactForm" property="contactName" size="50" maxlength="30" />
 			</TD>
 		</TR>
 		<TR>
 		    <TD width="1%"></TD>  
 			<TD><STRONG>Role/Title:</STRONG></TD>
 			<TD>
-				<pdk-html:text name="pointOfContactForm" property="title" size="50" maxlength="50" />
+				<pdk-html:text name="pointOfContactForm" property="title" size="50" maxlength="40" />
 			</TD>
 		</TR>
 		<TR>
@@ -392,7 +392,7 @@ function ShowLookUpWindow(popupUrl)
 				<STRONG>Address:</STRONG>
 			</TD>
 			<TD>
-				<pdk-html:text name="pointOfContactForm" property="address1" size="50" maxlength="50" />
+				<pdk-html:text name="pointOfContactForm" property="address1" size="50" maxlength="40" />
 			</TD>
 		</TR>
 		<TR>
@@ -401,7 +401,7 @@ function ShowLookUpWindow(popupUrl)
 				<STRONG>Address 2:</STRONG>
 			</TD>
 			<TD>
-				<pdk-html:text name="pointOfContactForm" property="address2" size="50" maxlength="50" />
+				<pdk-html:text name="pointOfContactForm" property="address2" size="50" maxlength="40" />
 			</TD>
 		</TR>
 		<TR>
@@ -410,7 +410,7 @@ function ShowLookUpWindow(popupUrl)
 				<STRONG>City:</STRONG>
 			</TD>
 			<TD>
-				<pdk-html:text name="pointOfContactForm" property="city" size="50" maxlength="50" />
+				<pdk-html:text name="pointOfContactForm" property="city" size="50" maxlength="25" />
 			</TD>
 		</TR>
 		
@@ -439,7 +439,7 @@ function ShowLookUpWindow(popupUrl)
 				<STRONG>County:</STRONG>
 			</TD>
 			<TD>
-				<pdk-html:text name="pointOfContactForm" styleId="countyName" property="countyName" size="50" maxlength="50" />
+				<pdk-html:text name="pointOfContactForm" styleId="countyName" property="countyName" size="50" maxlength="25" />
 			   <%
 	           String eventPopupWinowUrl2 = CWNSEventUtils.constructEventLink(pRequest,"ViewCountyListPage", linkParams,true, true);%>
 			   <A href="javascript:void(0);" onclick='ShowLookUpWindow("<%=eventPopupWinowUrl2%>")'">
@@ -453,7 +453,7 @@ function ShowLookUpWindow(popupUrl)
 				<STRONG>Zip Code:</STRONG>
 			</TD>
 			<TD>
-				<pdk-html:text name="pointOfContactForm"  styleId="zip" property="zip" size="50" maxlength="50" />
+				<pdk-html:text name="pointOfContactForm"  styleId="zip" property="zip" size="50" maxlength="10" />
 			</TD>
 		</TR>
 	
@@ -465,7 +465,7 @@ function ShowLookUpWindow(popupUrl)
 				<STRONG>Email:</STRONG>
 			</TD>
 			<TD>
-				<pdk-html:text name="pointOfContactForm" property="email" size="50" maxlength="50" />
+				<pdk-html:text name="pointOfContactForm" property="email" size="50" maxlength="40" />
 			</TD>
 			
 		</TR>
