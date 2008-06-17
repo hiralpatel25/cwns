@@ -55,6 +55,7 @@ public class UserListAction extends CWNSAction {
 	public static final String QUERY_TYPE_SEARCH_DESC="List based on User Search citeria";
 
 	public static final String SORT_COLUMN_NAME ="lastName";
+	public static final String SORT_COLUMN_MOD_DATE ="lastUpdateTs";
 	public static final String SORT_COLUMN_ROLE ="id.cwnsNbr";
 	public static final String SORT_COLUMN_STATUS ="id.cwnsNbr";
 	

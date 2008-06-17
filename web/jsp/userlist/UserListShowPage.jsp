@@ -253,7 +253,7 @@ function trimSpaces(s) {
 								&nbsp;
 							</TH>
 							<TH class="PortletSubHeaderText" align="left">
-								Last Modified Date
+								<a href="javascript: setSortOrder('<%=UserListAction.SORT_COLUMN_MOD_DATE%>')">Last Modified Date</a>
 							</TH>
 						</TR>
 
