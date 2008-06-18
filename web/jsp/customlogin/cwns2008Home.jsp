@@ -229,7 +229,7 @@ Cookie[] cookies = request.getCookies();
 			<tr><td colspan="2">		
 				You have already logged in, please click the link below to go to the CWNS Home Page
 				<br><center><a href="<%=midtierURL%><%=landingPage%>">CWNS</a> </center>
-			</tr></td>
+			</td></tr>
 		</table>
 		
 		<% } else  if((str_err != null) && (str_err.length() > 1)) {%>
