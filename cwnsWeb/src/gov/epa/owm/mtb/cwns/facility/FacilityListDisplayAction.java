@@ -17,6 +17,7 @@ import gov.epa.owm.mtb.cwns.dao.CwnsUserSettingDAO;
 import gov.epa.owm.mtb.cwns.dao.FacilityDAO;
 import gov.epa.owm.mtb.cwns.model.Facility;
 import gov.epa.owm.mtb.cwns.service.FacilityService;
+import gov.epa.owm.mtb.cwns.service.ReviewStatusRefService;
 import gov.epa.owm.mtb.cwns.service.UserService;
 
 import java.text.DateFormat;
@@ -103,6 +104,8 @@ public class FacilityListDisplayAction extends CWNSAction {
 	public static final String DISPLAY_FA		= "displayFA";
 	public static final String DISPLAY_SCR		= "displaySCR";
 	public static final String DISPLAY_SA		= "displaySA";
+	public static final String DISPLAY_SRRT		= "displaySRRT";
+	public static final String DISPLAY_DE		= "displayDE";
 	public static final String DISPLAY_REQUEST_ACCESS = "requestAccess";
 
 	// used for import and export
@@ -483,6 +486,24 @@ public class FacilityListDisplayAction extends CWNSAction {
 				   masterSelectedList = facilityIdsNotUpdated;
 				   pSession.setAttribute("masterSelectedList", masterSelectedList);
 			   }
+		   }else if(ReviewStatusRefService.STATE_REQUESTED_RETURN.equalsIgnoreCase(action)){
+			   masterSelectedList = updateMasterSelectedList(facilityListForm, pSession);
+			   Set facilityIdsNotUpdated = facilityService.changeStatusToStateRequestedReturn(masterSelectedList, currentUser);
+			   setFacilityNotChangeAttribute(facilityIdsNotUpdated,masterSelectedList,request);
+			   masterSelectedList = clearMasterSelectedList(pSession);
+			   if(facilityIdsNotUpdated != null && facilityIdsNotUpdated.size() > 0){
+				   masterSelectedList = facilityIdsNotUpdated;
+				   pSession.setAttribute("masterSelectedList", masterSelectedList);
+			   }
+		   }else if(ReviewStatusRefService.DELETED.equalsIgnoreCase(action)){
+			   masterSelectedList = updateMasterSelectedList(facilityListForm, pSession);
+			   Set facilityIdsNotUpdated = facilityService.changeStatusToDeleted(masterSelectedList, currentUser);
+			   setFacilityNotChangeAttribute(facilityIdsNotUpdated,masterSelectedList,request);
+			   masterSelectedList = clearMasterSelectedList(pSession);
+			   if(facilityIdsNotUpdated != null && facilityIdsNotUpdated.size() > 0){
+				   masterSelectedList = facilityIdsNotUpdated;
+				   pSession.setAttribute("masterSelectedList", masterSelectedList);
+			   }
 		   }else if (ACTION_REQUEST_ACCESS.equalsIgnoreCase(action)){
 			   masterSelectedList = updateMasterSelectedList(facilityListForm, pSession);
 			   boolean isSuccess = facilityService.requestAccess(masterSelectedList, currentUser);
@@ -606,6 +627,7 @@ public class FacilityListDisplayAction extends CWNSAction {
     			   && (facilityService.isCwnsUserHasAccessLevel(currentUser, AccessLevelRefDAO.FACILITY_UPDATE) 
     					   || facilityService.isCwnsUserHasAccessLevel(currentUser, AccessLevelRefDAO.SUBMIT_FOR_STATE_REVIEW))){
     		   request.setAttribute(DISPLAY_LA, DISPLAY_LA);
+    		   request.setAttribute(DISPLAY_DE, DISPLAY_DE);
     	   }
     	   
     	   if(locationTypeId.equalsIgnoreCase(userService.LOCATION_TYPE_ID_FEDERAL)
@@ -613,6 +635,7 @@ public class FacilityListDisplayAction extends CWNSAction {
     		   request.setAttribute(DISPLAY_FA, DISPLAY_FA);
     		   request.setAttribute(DISPLAY_SCR, DISPLAY_SCR);
     		   request.setAttribute(DISPLAY_SA, DISPLAY_SA);
+    		   request.setAttribute(DISPLAY_SRRT, DISPLAY_SRRT);
     	   }
     	   
     	   if(locationTypeId.equalsIgnoreCase(userService.LOCATION_TYPE_ID_LOCAL)){

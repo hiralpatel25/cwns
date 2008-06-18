@@ -2067,6 +2067,81 @@ public class FacilityServiceImpl extends CWNSService implements FacilityService 
     	return facilityIdsNotUpdated;
     }
 	
+	public Set changeStatusToStateRequestedReturn(Set facilities, CurrentUser user) {
+		Set facilityIdsNotUpdated = new HashSet();
+		List reviewStatusIdList = new ArrayList();
+		
+		reviewStatusIdList.add(FacilityDAO.FEDERAL_REVIEW_REQUESTED);
+		reviewStatusIdList.add(FacilityDAO.FEDERAL_REVIEW_CORRECTION);
+		
+		Iterator iter = facilities.iterator();
+		while (iter.hasNext()) {
+			String facilityId = (String)iter.next();
+			
+			//Check If facility.review_status = FRR or FRC
+    		if(isFacilityReviewStatusFoundInList(facilityId,reviewStatusIdList)){
+			//Get the review status before FRR or FRC (which is current)
+    			String previousReviewStatus=getPreviousReviewStatus(facilityId);
+			//Create Facility_review_status and Update facility to new status
+    			if(previousReviewStatus==null || !statusChange(facilityId,previousReviewStatus,user)){
+					facilityIdsNotUpdated.add(facilityId); //status not change
+				}
+    		}else{
+    			facilityIdsNotUpdated.add(facilityId); //condition not met
+    		}
+		}
+		return facilityIdsNotUpdated;
+    }
+	
+	
+	public String getPreviousReviewStatus(String facilityId){
+		ArrayList columns = new ArrayList();
+		columns.add("id.reviewStatusId");
+		//columns.add("id.lastUpdateTs");
+		SortCriteria sortCriteria = new SortCriteria("id.lastUpdateTs", SortCriteria.ORDER_DECENDING);
+		ArrayList sortArray = new ArrayList();
+		sortArray.add(sortCriteria);
+		SearchConditions scs = new SearchConditions(new SearchCondition("facility.facilityId",SearchCondition.OPERATOR_EQ, new Long(facilityId)));
+		Collection results = searchDAO.getSearchList(FacilityReviewStatus.class, columns, scs, sortArray);
+		Iterator iter = results.iterator();
+		//should be the current review status
+		if (iter.hasNext()){
+			String currentReviewStatus=(String)iter.next();
+			log.debug("Current Review Status: " + currentReviewStatus);
+		}    			
+		String previousReviewStatus=null;
+		if (iter.hasNext()){
+			previousReviewStatus=(String)iter.next();
+		}
+		return previousReviewStatus;
+	}
+	
+	public Set changeStatusToDeleted(Set facilities, CurrentUser user) {
+		
+    	Set facilityIdsNotUpdated = new HashSet();
+    	List reviewStatusIdList = new ArrayList();
+    	
+    	reviewStatusIdList.add(FacilityDAO.STATE_ASSIGNED);
+    	reviewStatusIdList.add(FacilityDAO.STATE_IN_PROGRESS);
+    	reviewStatusIdList.add(FacilityDAO.STATE_CORRECTION_REQUESTED);
+    	
+    	Iterator iter = facilities.iterator();
+    	while (iter.hasNext()) {
+    		String facilityId = (String)iter.next();
+    		//If Facility.review_status_type_id is  ‘SAS’, ‘SIP’  or ‘SCR’
+    		//Create Facility_review_status, linked to Review_status_type of ‘DE’
+    		//Update facility: move transfer link to Review_Status_Type to ‘DE’    		
+    		if(isFacilityReviewStatusFoundInList(facilityId,reviewStatusIdList)){
+				if(!statusChange(facilityId,ReviewStatusRefService.DELETED,user)){
+					facilityIdsNotUpdated.add(facilityId); //status not change
+				}
+			}else{
+				facilityIdsNotUpdated.add(facilityId); //condition not met
+			}
+    	}
+    	return facilityIdsNotUpdated;
+    }
+	
 	public Set changeStatusToFederalReviewCorrection(Set facilities, CurrentUser user){
 		Set facilityIdsNotUpdated = new HashSet();
 		List reviewStatusIdList = new ArrayList();

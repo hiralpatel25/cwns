@@ -75,7 +75,7 @@ function submitreviewForm(action){
 		</TD>
 		<TD>
 		    <pdk-html:select size="1" name="reviewStatusForm" property="locationId" styleId="locationId">
-		    	<option value='all'>All</option>
+		    	<option value='HQ'>All</option>
 		    	<logic:iterate id="location" name="locationRefs" type="Entity">
 		  		<logic:match name="location" property="key" value='<%=stateId%>'>				
  					<OPTION value='<bean:write name="location" property="key"/>' selected="selected"> <bean:write name="location" property="value"/></OPTION> 

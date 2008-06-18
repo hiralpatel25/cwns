@@ -60,7 +60,7 @@ public class ReviewStatusRefServiceImpl extends CWNSService implements ReviewSta
 	
 	public Collection findReviewStatusFacilityCountAndSort(String locationTypeId,String locationId) {
 		Collection locationIds = new ArrayList();
-		if (locationId.equalsIgnoreCase("all")) {
+		if (locationId.equalsIgnoreCase("HQ")) {
 			if(UserServiceImpl.LOCATION_TYPE_ID_FEDERAL.equalsIgnoreCase(locationTypeId))
 				locationIds = getStates();
 			else if(UserServiceImpl.LOCATION_TYPE_ID_REGIONAL.equalsIgnoreCase(locationTypeId))
