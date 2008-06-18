@@ -341,7 +341,7 @@ function ShowFacilityListHelp(popupUrl)
 					<logic:notEmpty name="<%=FacilityListDisplayAction.DISPLAY_SCR%>"><a href="javascript: setActionAndSubmit('<%=FacilityDAO.STATE_CORRECTION_REQUESTED%>')">State Correction Requested</a>&nbsp;&nbsp;|&nbsp;&nbsp;</logic:notEmpty>
 					<logic:notEmpty name="<%=FacilityListDisplayAction.DISPLAY_SA%>"><a href="javascript: setActionAndSubmit('<%=FacilityDAO.STATE_ASSIGNED%>')">State Assigned</a>&nbsp;&nbsp;|&nbsp;&nbsp;</logic:notEmpty>
 					<logic:notEmpty name="<%=FacilityListDisplayAction.DISPLAY_SRRT%>"><A href="javascript: setActionAndSubmit('<%=ReviewStatusRefService.STATE_REQUESTED_RETURN%>')">State Return Requested</A>&nbsp;&nbsp;|&nbsp;&nbsp;</logic:notEmpty>
-					<logic:notEmpty name="<%=FacilityListDisplayAction.DISPLAY_DE%>"><A href="javascript: setActionAndSubmit('<%=ReviewStatusRefService.DELETED%>')">Delete</A>&nbsp;&nbsp;|&nbsp;&nbsp;</logic:notEmpty>
+					<logic:notEmpty name="<%=FacilityListDisplayAction.DISPLAY_DE%>"><A href="javascript: setActionAndSubmit('<%=ReviewStatusRefService.DELETED%>')">Deleted</A>&nbsp;&nbsp;|&nbsp;&nbsp;</logic:notEmpty>
 					<logic:notEmpty name="facilityIdsNotUpdated"><a href="javascript:displayErrorFacilities()">Change Review Status Error</a></logic:notEmpty>
 					<!-- Only for local users -->
 					<logic:notEmpty name="<%=FacilityListDisplayAction.DISPLAY_REQUEST_ACCESS%>"><A href="javascript: setActionAndSubmit('<%=FacilityListDisplayAction.ACTION_REQUEST_ACCESS%>')">Request Access</A></logic:notEmpty>
