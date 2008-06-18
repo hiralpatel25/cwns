@@ -197,6 +197,9 @@ public interface FacilityService {
 	public Collection getStateIdsForRegion(String regionCode);
 	
 	public void updateImportFacilitiesInDatabase(Set facilityNbrs, String userAndRole);
-
+	
+	public Set changeStatusToDeleted(Set facilities, CurrentUser user);
+	
+	public Set changeStatusToStateRequestedReturn(Set facilities, CurrentUser user);
 }
 
