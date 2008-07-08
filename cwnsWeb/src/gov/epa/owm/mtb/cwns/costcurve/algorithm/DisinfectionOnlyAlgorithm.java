@@ -43,7 +43,7 @@ public class DisinfectionOnlyAlgorithm extends
 		double cost_base_amount = treatmentPlantCostCurveService.computeDisinfectionCosts(flowRate);
 							
 		CostCurveOutput costCurveOuput = new CostCurveOutput();
-		costCurveOuput.setFutureMunicipalFlowRate(flowRate);
+		//costCurveOuput.setFutureMunicipalFlowRate(flowRate);
 				
 		//calculate costs
 		List costOupts = treatmentPlantCostCurveService.applyMultiplierSplitCost(cost_base_amount, 
