@@ -1,0 +1,349 @@
+<?xml version = '1.0'?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<!-- ####################################################
+     #
+     # Consult the web-app DTD before making changes to 
+     # this file to ensure the xml remains valid
+     #
+     # http://java.sun.com/dtd/web-app_2_3.dtd
+     #
+     #################################################### -->
+<web-app>
+
+    <display-name>CWNS</display-name>
+    <description>Clean Watershed Needs Survey</description>
+
+    <!-- Indicates that this web provider may be deployed in a distributed 
+         servlet container. -->
+    <distributable/>
+
+    <!-- 
+    Configure Provider Logging.
+         Parameters: 
+         oracle.portal.log.LogLevel
+            - LogLevel controls the amount of information logged. There are 7
+              log levels:
+              0 - logging disabled
+              1 - configuration
+              2 - severe error
+              3 - warning
+              4 - throwing exception
+              5 - performance
+              6 - information
+              7 - debug
+            - The oracle.portal.log.Logger interface defines methods that map to 
+              these 7 log levels. However, there are also 2 methods that do not 
+              map to log levels. These methods are included for backwards 
+              compatibility and data logged using these methods will always be
+              logged regardless of the log level.
+    -->
+  <context-param>
+    <param-name>oracle.portal.log.LogLevel</param-name>
+    <param-value>7</param-value>
+  </context-param>
+  
+  <context-param>
+        <param-name>debug_mode</param-name>
+        <param-value>true</param-value>
+  </context-param>
+      
+  <context-param>
+      <param-name>log4j.property.file.location</param-name>
+      <param-value>WEB-INF/classes/log4j.properties</param-value>
+  </context-param>
+
+  <context-param>
+      <param-name>hibernate.property.file.location</param-name>
+      <param-value>WEB-INF/classes/hibernate.properties</param-value>
+  </context-param>  
+  
+  <context-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+		  /WEB-INF/applicationContext-action.xml
+		  /WEB-INF/applicationContext-hibernate.xml
+		  /WEB-INF/applicationContext-service.xml
+		  /WEB-INF/applicationContext-costCurve.xml
+		  /WEB-INF/applicationContext-dao.xml
+      </param-value>
+  </context-param>  
+ 
+  <filter>
+        <filter-name>hibernate</filter-name>
+        <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+  </filter>
+  
+ <filter>
+	<filter-name>CrossSiteScriptingFilter</filter-name>
+    <filter-class>javawebparts.filter.CrossSiteScriptingFilter</filter-class>
+    <init-param>
+      	<param-name>redirectTo</param-name>
+        <param-value>crossSiteScriptingError.do</param-value>   
+    </init-param>
+    <init-param>
+        <param-name>cssRegex</param-name>
+        <param-value><![CDATA[[><%$()]]]></param-value>   
+   	</init-param>    
+  </filter>   
+
+  <filter-mapping>
+    <filter-name>hibernate</filter-name>
+    <url-pattern>*</url-pattern>
+  </filter-mapping>
+ 
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/images/*</url-pattern>
+  </filter-mapping>    
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/servlet/ImpFacility</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/servlet/AjaxRequestProcessor</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/servlet/NeedsFileUpload</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/servlet/CapitalCostUniquenessCheck</url-pattern>
+  </filter-mapping>         
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/servlet/FacilityListImportServlet</url-pattern>
+  </filter-mapping>
+   <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/servlet/FacilityListImportServlet</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/servlet/FacilityListExportServlet</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/javascript/*</url-pattern>
+  </filter-mapping>
+    <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/servlet/*</url-pattern>
+  </filter-mapping>  
+  <filter-mapping>
+      <filter-name>CrossSiteScriptingFilter</filter-name>
+      <url-pattern>/cwns/*</url-pattern>
+  </filter-mapping>  
+  
+  <listener> 
+     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+
+
+    <!-- Define the JPDK servlets and their parameters -->
+    <servlet>
+      <servlet-name>SOAPServlet</servlet-name>
+      <display-name>SOAPServlet</display-name>
+      <description>Extended Portal SOAP Server</description>
+      <servlet-class>oracle.webdb.provider.v2.adapter.SOAPServlet</servlet-class>
+      <!-- The following parameter enables invalidation caching -->
+      <init-param>
+        <param-name>invalidation_caching</param-name>
+        <param-value>true</param-value>
+      </init-param>
+    </servlet>  
+
+    <!-- Struts servlet -->
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>gov.epa.owm.mtb.cwns.common.CWNSActionServlet</servlet-class>
+        <init-param> 
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>3</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>2</param-value>
+        </init-param>
+        <init-param>
+            <param-name>validate</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    
+  <servlet>
+    <servlet-name>FacilityListImportServlet</servlet-name>
+    <description>Facility List Import Utility</description>
+    <servlet-class>gov.epa.owm.mtb.cwns.facility.FacilityListImportServlet</servlet-class>
+  </servlet>
+    
+  <servlet>
+    <servlet-name>FacilityListExportServlet</servlet-name>
+    <description>Facility List Export Utility</description>
+    <servlet-class>gov.epa.owm.mtb.cwns.facility.FacilityListExportServlet</servlet-class>
+  </servlet>
+  
+  <!-- Fax Servlet  -->
+  <servlet>
+    <servlet-name>InboundFaxProcessor</servlet-name> 
+    <description>Inbound Fax Processor</description>
+    <servlet-class>gov.epa.owm.mtb.cwns.fax.InboundFaxProcessor</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ECHOServlet</servlet-name>
+    <description>Servelet to echo text</description>
+    <servlet-class>gov.epa.owm.mtb.cwns.common.EchoServlet</servlet-class>
+  </servlet>
+  
+  
+  
+  <servlet>
+        <servlet-name>dwr-invoker</servlet-name>
+        <display-name>DWR Servlet</display-name>
+        <servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>logLevel</param-name>
+            <param-value>WARN</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet>
+    	<servlet-name>NeedsDocumentUploadServlet</servlet-name>
+	<description>Needs Document File Upload Servlet</description>
+	<servlet-class>gov.epa.owm.mtb.cwns.needs.NeedsDocumentUploadServlet</servlet-class>
+    </servlet>  
+
+    <servlet>
+    	<servlet-name>CapitalCostUniquenessCheckServlet</servlet-name>
+	<description>Capital Cost Uniqueness Check Servlet</description>
+	<servlet-class>gov.epa.owm.mtb.cwns.capitalCost.CapitalCostUniquenessCheckServlet</servlet-class>
+    </servlet>  
+
+   <servlet>
+    <servlet-name>AjaxRequestProcessor</servlet-name>
+    <description>Ajax Processor</description>
+    <servlet-class>gov.epa.owm.mtb.cwns.common.AjaxRequestProcessor</servlet-class>
+  </servlet>
+
+
+    <!-- ##########################
+         # 
+         # Servlet-Mapping section 
+         #
+         ########################## -->
+
+    <servlet-mapping>
+      <servlet-name>SOAPServlet</servlet-name>
+      <url-pattern>/providers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>SOAPServlet</servlet-name>
+      <url-pattern>/providers/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Struts servlet mapping -->
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>FacilityListImportServlet</servlet-name>
+    <url-pattern>/servlet/FacilityListImportServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ECHOServlet</servlet-name>
+    <url-pattern>/echo</url-pattern>
+  </servlet-mapping>  
+  <servlet-mapping>
+    <servlet-name>AjaxRequestProcessor</servlet-name>
+    <url-pattern>/servlet/AjaxRequestProcessor</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>InboundFaxProcessor</servlet-name>
+    <url-pattern>/servlet/InboundFaxProcessor</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+        <servlet-name>dwr-invoker</servlet-name>
+        <url-pattern>/dwr/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+    <servlet-name>NeedsDocumentUploadServlet</servlet-name>
+    <url-pattern>/servlet/NeedsFileUpload</url-pattern>
+  </servlet-mapping>
+
+    <servlet-mapping>
+	    <servlet-name>CapitalCostUniquenessCheckServlet</servlet-name>
+	    <url-pattern>/servlet/CapitalCostUniquenessCheck</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+      <session-timeout>50</session-timeout>
+    </session-config>
+
+    <login-config>
+      <auth-method>BASIC</auth-method>
+    </login-config>
+
+    <!-- #############################
+         # 
+         # JNDI Variables Section
+         #
+         ############################# -->
+         
+    <!-- JNDI variables not specific to any provider -->
+            
+    <env-entry>
+    	<env-entry-name>oracle/portal/log/logLevel</env-entry-name>
+    	<env-entry-value>4</env-entry-value> 
+    	<env-entry-type>java.lang.Integer</env-entry-type>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>oracle/portal/provider/global/transportEnabled</env-entry-name>
+        <env-entry-value>true</env-entry-value>
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+    
+    <!-- JNDI variables specific to the struts provider -->    
+
+    <env-entry>
+    	<env-entry-name>oracle/portal/struts/showTestPage</env-entry-name>
+    	<env-entry-value>true</env-entry-value> 
+    	<env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+    <env-entry>
+       	<env-entry-name>oracle/portal/struts/maxTimeDifference</env-entry-name>
+    	<env-entry-value>7200000</env-entry-value> 
+   	<env-entry-type>java.lang.String</env-entry-type>
+    </env-entry> 
+    <env-entry>
+        <env-entry-name>oracle/portal/struts/definition</env-entry-name>
+        <env-entry-value>providers/struts/provider.xml</env-entry-value>
+        <env-entry-type>java.lang.String</env-entry-type> 
+    </env-entry> 
+    <env-entry>
+        <env-entry-name>oracle/portal/struts/autoReload</env-entry-name>
+        <env-entry-value>true</env-entry-value> 
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+    <env-entry>
+        <env-entry-name>oracle/portal/struts/sharedKey</env-entry-name>
+        <env-entry-value/> 
+        <env-entry-type>java.lang.String</env-entry-type>
+    </env-entry>
+</web-app>

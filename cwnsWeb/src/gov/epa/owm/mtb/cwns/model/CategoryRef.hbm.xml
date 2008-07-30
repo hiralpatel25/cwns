@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.CategoryRef" table="CATEGORY_REF">
+        <id name="categoryId" type="string">
+            <column name="CATEGORY_ID" length="5" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="45" not-null="true" />
+        </property>
+        <property name="validForSsoFlag" type="char">
+            <column name="VALID_FOR_SSO_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="sortSequence" type="byte">
+            <column name="SORT_SEQUENCE" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="facilityTypeCategoryRefs" inverse="true">
+            <key>
+                <column name="CATEGORY_ID_FK" length="5" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityTypeCategoryRef" />
+        </set>
+        <set name="costCurveCategoryRefs" inverse="true">
+            <key>
+                <column name="CATEGORY_ID_FK" length="5" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CostCurveCategoryRef" />
+        </set>
+        <set name="categoryClassificationRefs" inverse="true">
+            <key>
+                <column name="CATEGORY_ID_FK" length="5" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.CategoryClassificationRef" />
+        </set>
+        <set name="costs" inverse="true">
+            <key>
+                <column name="CATEGORY_ID_FK" length="5" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.Cost" />
+        </set>
+    </class>
+</hibernate-mapping>

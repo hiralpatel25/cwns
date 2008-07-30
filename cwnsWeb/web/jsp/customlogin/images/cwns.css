@@ -1,0 +1,96 @@
+.tooltipCWNS {
+  position: absolute;
+  display:none;
+  padding:1px 2px 1px 2px;
+  border: 1px solid black;
+  background-color:#FFFFDD;
+  white-space: nowrap;  
+  FONT-FAMILY: Arial, Helvetica;
+  FONT-SIZE: 8pt;
+  z-index: 100;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);  
+}
+.LeftTabBackgroundSlant {
+	BACKGROUND: url(../images/FFFFFFtl.gif) #cccc99 no-repeat left top
+}
+.LeftTabForegroundSlant {
+	BACKGROUND: url(../images/FFFFFFtl.gif) #336699 no-repeat left top
+}
+.LeftTabForegroundSlantDisabled {
+	BACKGROUND: url(../images/FFFFFFtl.gif) #cccccc no-repeat left top
+}
+.RightTabBackgroundCurve {
+	BACKGROUND: url(../images/FFFFFFtr.gif) #cccc99 no-repeat right top
+}
+.RightTabForegroundCurve {
+	BACKGROUND: url(../images/FFFFFFtr.gif) #336699 no-repeat right top
+}
+.RightTabForegroundCurveDisabled {
+	BACKGROUND: url(../images/FFFFFFtr.gif) #cccccc no-repeat right top
+}
+.TabBackgroundColor {
+	BACKGROUND-COLOR: #cccc99
+}
+
+.DivBackgroundColor {
+	BACKGROUND-COLOR: #cccccc
+}
+
+.TabBackgroundText {
+	FONT-SIZE: 9pt; COLOR: #003366; FONT-FAMILY: Arial, Helvetica; TEXT-DECORATION: none
+}
+.TabBackgroundText A:link {text-decoration: none; COLOR: #003366;}
+.TabBackgroundText A:visited {text-decoration: none; COLOR: #003366;}
+.TabBackgroundText A:active {text-decoration: none; COLOR: #003366;}
+.TabBackgroundText A:hover {text-decoration: none; COLOR: #003366; }
+.TabForegroundColor {
+	BACKGROUND-COLOR: #336699
+}
+.TabForegroundColorDisabled {
+	BACKGROUND-COLOR: #cccccc
+}
+.TabForegroundText {
+	FONT-SIZE: 9pt; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica; TEXT-DECORATION: none
+}
+.TabForegroundText A:link {text-decoration: none; COLOR: #ffffff;}
+.TabForegroundText A:visited {text-decoration: none; COLOR: #ffffff;}
+.TabForegroundText A:active {text-decoration: none; COLOR: #ffffff;}
+.TabForegroundText A:hover {text-decoration: none; COLOR: #ffffff; }
+.TabForegroundTextDisabled {
+	FONT-SIZE: 9pt; COLOR: #888888; FONT-FAMILY: Arial, Helvetica; TEXT-DECORATION: none
+}
+.RowHighlighted {
+	BACKGROUND-COLOR: #CCFFCC
+}
+.MessageZone {
+	BACKGROUND-COLOR: #FFFFCC
+}
+.ErrorText {
+	FONT-SIZE: 9pt; COLOR: #FF0000; FONT-FAMILY: Arial, Helvetica; TEXT-DECORATION: none
+}
+.WarningText {
+	FONT-SIZE: 9pt; COLOR: #996600; FONT-FAMILY: Arial, Helvetica; TEXT-DECORATION: none
+}
+.InformationText {
+	FONT-SIZE: 9pt; COLOR: #0066FF; FONT-FAMILY: Arial, Helvetica; TEXT-DECORATION: none
+}
+.required {
+	COLOR: red;
+}
+
+.error {
+	Color:red;
+}	
+.readOnlyTextArea {
+    background: #cccccc;
+}
+
+.disabledField{
+	border-style: solid;
+	border-color: #CCCCCC;
+   	background-color: #EEEEEE;
+}
+
+.disabledText{
+	color: gray;
+}

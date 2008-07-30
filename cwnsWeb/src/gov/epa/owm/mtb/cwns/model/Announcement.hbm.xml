@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.Announcement" table="ANNOUNCEMENT">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.AnnouncementId">
+            <key-property name="administrativeMessageId" type="long">
+                <column name="ADMINISTRATIVE_MESSAGE_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="lastUpdateTs" type="timestamp">
+                <column name="LAST_UPDATE_TS" length="11" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="administrativeMessageRef" class="gov.epa.owm.mtb.cwns.model.AdministrativeMessageRef" update="false" insert="false" fetch="select">
+            <column name="ADMINISTRATIVE_MESSAGE_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="locationId" type="string">
+            <column name="LOCATION_ID" length="2" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="200" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

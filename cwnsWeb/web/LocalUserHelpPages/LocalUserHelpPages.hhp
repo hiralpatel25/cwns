@@ -1,0 +1,122 @@
+[OPTIONS]
+Compiled File=LocalUserHelpPages.chm
+Title=LocalUserHelpPages
+Contents File=LocalUserHelpPages.hhc
+Index File=LocalUserHelpPages.hhk
+Default topic=
+Default Window=
+Error log file=
+Display compile progress=No
+Display compile notes=No
+Full-text search=Yes
+Binary Index=Yes
+Auto Index=No
+Enhanced decompilation=No
+Binary TOC=No
+Flat=No
+
+[WINDOWS]
+
+[FILES]
+Providing_Local_Feedback.htm
+CWNS_Registration.htm
+DEP_Help_Function.htm
+Key_Contact_Information.htm
+EPA_Website.htm
+Documentation_Requirements.htm
+CWNS_Categories.htm
+Need_Definition.htm
+Schedule_and_Milestones.htm
+Data_Collection_Procedures.htm
+Local_User_Roles_and_Responsibilities.htm
+Local.Overview.htm
+Updating_Unit_Process_and_Utility_Management_Information.htm
+Review_Status_Portlet.htm
+Summary_Portlet.htm
+Breadcrumbs.htm
+Tabs.htm
+Technical_Data_Area_Pages.htm
+Simplified_Methodology_for_Small_Communities.htm
+Navigating_the_Administration_Portlet.htm
+Facility_Project_Search_Portlet.htm
+Facility_Project_List.htm
+CWNS_2008_Welcome_Page.htm
+EPA-Approved_Small_Community_Form.htm
+Small_Community_Definition.htm
+Documenting_Small_Community_Needs.htm
+EPA_and_State_Roles_and_Responsibilities.htm
+Entering_the_DEP.htm
+Help.htm
+Review_Comments_Portlet.htm
+Lookup.htm
+Point_of_Contact.htm
+Coordinates.htm
+Save.htm
+Point_of_Contact_Search.htm
+Data_Area_Comments.htm
+NPDES_Permit_Search.htm
+Permits.htm
+Facility_Project_Types.htm
+Facility_Project_Information.htm
+Facility_Project_Tab.htm
+Required_Field.htm
+Search.htm
+Address.htm
+Needs_by_Document.htm
+Document_Search.htm
+Special_Program_Areas.htm
+Congressional_District.htm
+County.htm
+Areas_Related_to_Needs.htm
+WATERS_Lite_Viewer.htm
+Manual_Data_Entry.htm
+From_NPDES.htm
+Capital_Costs.htm
+Document_Submitta.htm
+Needs_Data_Area.htm
+Watershed.htm
+O_&_M.htm
+Cost_Curves.htm
+Funding_Source.htm
+CWSRF_Benefits_Reporting_Search.htm
+Flow.htm
+NPDES_Permit_Flow_Data.htm
+Utility_Management.htm
+Unit_Process.htm
+Unit_Process_and_Utility_Management_Tabs.htm
+Combined_Sewer_Overflow.htm
+Population_Information.htm
+Impaired_Waters_Search.htm
+Pollution_Problems.htm
+Effluent_Information.htm
+Discharge_Information.htm
+CWNS_Local_User_Manager.htm
+A__2008_Needs_Categories.htm
+B__Document_Type_List.htm
+C__Small_Community_Needs_Form.htm
+D__Facility_Project_Type_Information.htm
+E__301(h)_Waiver_List.htm
+Submit_Data_for_State_Review.htm
+User_Management.htm
+New_User_Accounts.htm
+Administration_Portlet.htm
+User_Management_Data_Area.htm
+User_Search.htm
+New_User_Approval.htm
+User_Details.htm
+User_List.htm
+eHelp.xml
+RoboHHRE.lng
+
+LocalUserHelpPages.glo
+LocalUserHelpPages.brs
+[ALIAS]
+#include LocalUserHelpPages.ali
+
+[MAP]
+#include BSSCDefault.h
+
+[TEXT POPUPS]
+BSSCDefault.h
+
+

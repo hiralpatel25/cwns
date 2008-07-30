@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.ReviewStatusRef" table="REVIEW_STATUS_REF">
+        <id name="reviewStatusId" type="string">
+            <column name="REVIEW_STATUS_ID" length="3" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="versionCode" type="string">
+            <column name="VERSION_CODE" length="8" not-null="true" />
+        </property>
+        <property name="sortSequence" type="byte">
+            <column name="SORT_SEQUENCE" precision="2" scale="0" not-null="true" unique="true" />
+        </property>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="facilities" inverse="true">
+            <key>
+                <column name="REVIEW_STATUS_ID_FK" length="3" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.Facility" />
+        </set>
+        <set name="facilityReviewStatuses" inverse="true">
+            <key>
+                <column name="REVIEW_STATUS_ID_FK" length="3" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityReviewStatus" />
+        </set>
+    </class>
+</hibernate-mapping>

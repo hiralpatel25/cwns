@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 31, 2007 10:35:24 AM by Hibernate Tools 3.2.0.beta8 -->
+<hibernate-mapping>
+    <class name="gov.epa.owm.mtb.cwns.model.TreatmentTypeUnitprocessRef" table="TREATMENT_TYPE_UNITPROCESS_REF">
+        <composite-id name="id" class="gov.epa.owm.mtb.cwns.model.TreatmentTypeUnitprocessRefId">
+            <key-property name="treatmentTypeId" type="long">
+                <column name="TREATMENT_TYPE_ID_FK" precision="15" scale="0" />
+            </key-property>
+            <key-property name="unitProcessId" type="long">
+                <column name="UNIT_PROCESS_ID_FK" precision="15" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="treatmentTypeRef" class="gov.epa.owm.mtb.cwns.model.TreatmentTypeRef" update="false" insert="false" fetch="select">
+            <column name="TREATMENT_TYPE_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="unitProcessRef" class="gov.epa.owm.mtb.cwns.model.UnitProcessRef" update="false" insert="false" fetch="select">
+            <column name="UNIT_PROCESS_ID_FK" precision="15" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="lastUpdateUserid" type="string">
+            <column name="LAST_UPDATE_USERID" length="30" not-null="true" />
+        </property>
+        <property name="lastUpdateTs" type="timestamp">
+            <column name="LAST_UPDATE_TS" length="11" not-null="true" />
+        </property>
+        <set name="facilityUnitProcesses" inverse="true">
+            <key>
+                <column name="TREATMENT_TYPE_ID_FK" precision="15" scale="0" not-null="true" />
+                <column name="UNIT_PROCESS_ID_FK" precision="15" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="gov.epa.owm.mtb.cwns.model.FacilityUnitProcess" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,4011 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<?providerDefinition version="3.1"?>
+<provider class="oracle.portal.provider.v2.DefaultProviderDefinition">
+	<localePersonalizationLevel>none</localePersonalizationLevel>
+	<session>true</session>
+	<defaultLocale>en</defaultLocale>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>1</id>
+		<name>FacilityList</name>
+		<title>Facility/Project List</title>
+		<description>Displays A List of Facilities</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>keyword</name>
+			<displayName>keyword</displayName>
+			<description>keyword to search facilities</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>action</name>
+			<displayName>action</displayName>
+			<description>action to search facilities</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facName</name>
+			<displayName>Facility Name</displayName>
+			<description>facilities Name search phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>reviewStatus</name>
+			<displayName>Review Status</displayName>
+			<description>review status search phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>overAllType</name>
+			<displayName>overAllType</displayName>
+			<description>
+				Overall type of facility search Prase
+			</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>authority</name>
+			<displayName>authority</displayName>
+			<description>authority search Prase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>sysname</name>
+			<displayName>System Name</displayName>
+			<description>System Name Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>county</name>
+			<displayName>County</displayName>
+			<description>County Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>watershed</name>
+			<displayName>Watershed</displayName>
+			<description>Water Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>needOperator</name>
+			<displayName>Need Operator</displayName>
+			<description>Need Operator Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>needTotal</name>
+			<displayName>Need Total</displayName>
+			<description>Need Total Search Phrase</description>
+		</inputParameter>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>notChanged</name>
+			<displayName>notChanged</displayName>
+			<description>
+				Facility not Changed since Search Phrase
+			</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>permitNumber</name>
+			<displayName>permitNumber</displayName>
+			<description>Permit Number Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>state</name>
+			<displayName>state</displayName>
+			<description>State Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>errorStatus</name>
+			<displayName>errorStatus</displayName>
+			<description>Error Status Search Phrase</description>
+		</inputParameter>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>Location Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationTypeId</name>
+			<displayName>locationTypeId</displayName>
+			<description>Location Type Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>docDate</name>
+			<displayName>docDate</displayName>
+			<description>Document Date Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>docOperator</name>
+			<displayName>docOperator</displayName>
+			<description>document Search Operator</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presPopulationOperator</name>
+			<displayName>presPopulationOperator</displayName>
+			<description>
+				Present Population Search Operator
+			</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presPopulationCount</name>
+			<displayName>presPopulationCount</displayName>
+			<description>Present Population Search Count</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presPopulationType</name>
+			<displayName>presPopulationType</displayName>
+			<description>Present Population Search Type</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presFlowOperator</name>
+			<displayName>presFlowOperator</displayName>
+			<description>Present Flow Search Operator</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presFlowCount</name>
+			<displayName>presFlowCount</displayName>
+			<description>Present Flow Search Count</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presFlowType</name>
+			<displayName>presFlowType</displayName>
+			<description>Present Flow Search Type</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facProjectOperator</name>
+			<displayName>facProjectOperator</displayName>
+			<description>Facility/Project Search Operator</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>docType</name>
+			<displayName>docType</displayName>
+			<description>Document Type Search Type</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>FacilityInfoPage</name>
+			<displayName>Facility Info Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/facilityListDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>2</id>
+		<name>BasicSearch</name>
+		<title>Search</title>
+		<description>Basic Search</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/basicSearch.do</defaultAction>
+			</showPage>
+		</renderer>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>keyword</name>
+			<displayName>keyword</displayName>
+			<description>keyword to search facilities</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>searchKeyword</name>
+			<description>
+				Use this event to submit the keyword search to the list
+				facility portlet
+			</description>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>keyword</name>
+				<displayName>keyword</displayName>
+				<description>keyword to search facilities</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+				<description>action to search facilities</description>
+			</parameter>
+		</event>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>3</id>
+		<name>AdvancedSearch</name>
+		<title>Advanced Search</title>
+		<description>Advanced Search</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>action</name>
+			<displayName>action</displayName>
+			<description>action to search facilities</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facName</name>
+			<displayName>Facility Name</displayName>
+			<description>facilities Name search phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>reviewStatus</name>
+			<displayName>Review Status</displayName>
+			<description>review status search phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>overAllType</name>
+			<displayName>overAllType</displayName>
+			<description>
+				Overall type of facility search Prase
+			</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>authority</name>
+			<displayName>authority</displayName>
+			<description>authority search Prase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>sysname</name>
+			<displayName>System Name</displayName>
+			<description>System Name Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>county</name>
+			<displayName>County</displayName>
+			<description>County Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>watershed</name>
+			<displayName>Watershed</displayName>
+			<description>Water Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>needOperator</name>
+			<displayName>Need Operator</displayName>
+			<description>Need Operator Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>needTotal</name>
+			<displayName>Need Total</displayName>
+			<description>Need Total Search Phrase</description>
+		</inputParameter>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>notChanged</name>
+			<displayName>notChanged</displayName>
+			<description>
+				Facility not Changed since Search Phrase
+			</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>permitNumber</name>
+			<displayName>permitNumber</displayName>
+			<description>Permit Number Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>state</name>
+			<displayName>state</displayName>
+			<description>State Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>errorStatus</name>
+			<displayName>errorStatus</displayName>
+			<description>Error Status Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>docDate</name>
+			<displayName>docDate</displayName>
+			<description>Document Date Search Phrase</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>docOperator</name>
+			<displayName>docOperator</displayName>
+			<description>document Search Operator</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presPopulationOperator</name>
+			<displayName>presPopulationOperator</displayName>
+			<description>
+				Present Population Search Operator
+			</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presPopulationCount</name>
+			<displayName>presPopulationCount</displayName>
+			<description>Present Population Search Count</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presPopulationType</name>
+			<displayName>presPopulationType</displayName>
+			<description>Present Population Search Type</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presFlowOperator</name>
+			<displayName>presFlowOperator</displayName>
+			<description>Present Flow Search Operator</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presFlowCount</name>
+			<displayName>presFlowCount</displayName>
+			<description>Present Flow Search Count</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>presFlowType</name>
+			<displayName>presFlowType</displayName>
+			<description>Present Flow Search Type</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facProjectOperator</name>
+			<displayName>facProjectOperator</displayName>
+			<description>Facility/Project Search Operator</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>docType</name>
+			<displayName>docType</displayName>
+			<description>Document Type Search Type</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewCountyListPage</name>
+			<displayName>View CountyList Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>formId</name>
+				<displayName>formId</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>SystemNameListPage</name>
+			<displayName>System Name List Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>WatershedListPage</name>
+			<displayName>Watershed List Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/advanceSearch.do</defaultAction>
+			</showPage>
+		</renderer>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>advanceKeyword</name>
+			<description>
+				Use this event to submit the keyword search to the list
+				facility portlet
+			</description>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+				<description>action to search facilities</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facName</name>
+				<displayName>Facility Name</displayName>
+				<description>facilities Name search phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>reviewStatus</name>
+				<displayName>Review Status</displayName>
+				<description>review status search phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>overAllType</name>
+				<displayName>overAllType</displayName>
+				<description>
+					Overall type of facility search Prase
+				</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>authority</name>
+				<displayName>authority</displayName>
+				<description>authority search Prase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>sysname</name>
+				<displayName>System Name</displayName>
+				<description>System Name Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>county</name>
+				<displayName>County</displayName>
+				<description>County Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>watershed</name>
+				<displayName>Watershed</displayName>
+				<description>Water Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>needOperator</name>
+				<displayName>Need Operator</displayName>
+				<description>Need Operator Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>needTotal</name>
+				<displayName>Need Total</displayName>
+				<description>Need Total Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>olderdoc</name>
+				<displayName>Older Docu</displayName>
+				<description>Older Doc Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>notChanged</name>
+				<displayName>notChanged</displayName>
+				<description>
+					Facility not Changed since Search Phrase
+				</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>permitNumber</name>
+				<displayName>permitNumber</displayName>
+				<description>Permit Number Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>state</name>
+				<displayName>state</displayName>
+				<description>State Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>errorStatus</name>
+				<displayName>errorStatus</displayName>
+				<description>Error Status Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>docDate</name>
+				<displayName>docDate</displayName>
+				<description>Document Date Search Phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>docOperator</name>
+				<displayName>docOperator</displayName>
+				<description>document Search Operator</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>presPopulationOperator</name>
+				<displayName>presPopulationOperator</displayName>
+				<description>
+					Present Population Search Operator
+				</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>presPopulationCount</name>
+				<displayName>presPopulationCount</displayName>
+				<description>
+					Present Population Search Count
+				</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>presPopulationType</name>
+				<displayName>presPopulationType</displayName>
+				<description>
+					Present Population Search Type
+				</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>presFlowOperator</name>
+				<displayName>presFlowOperator</displayName>
+				<description>Present Flow Search Operator</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>presFlowCount</name>
+				<displayName>presFlowCount</displayName>
+				<description>Present Flow Search Count</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>presFlowType</name>
+				<displayName>presFlowType</displayName>
+				<description>Present Flow Search Type</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facProjectOperator</name>
+				<displayName>facProjectOperator</displayName>
+				<description>
+					Facility/Project Search Operator
+				</description>
+			</parameter>
+			<Parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>docType</name>
+				<displayName>docType</displayName>
+				<description>Document Type Search Type</description>
+			</Parameter>
+		</event>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>4</id>
+		<name>MainMenu</name>
+		<title>Main Menu</title>
+		<description>Main Menu</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>NewFacilityInfoPage</name>
+			<displayName>New Facility Info Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/mainMenuDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>5</id>
+		<name>Administration</name>
+		<title>Administration</title>
+		<description>Administration</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>Location Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationTypeId</name>
+			<displayName>locationTypeId</displayName>
+			<description>Location Type Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>userLocation</name>
+			<displayName>userLocation</displayName>
+			<description>user Location</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>userType</name>
+			<displayName>userType</displayName>
+			<description>user Type</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>UserManagementPage</name>
+			<displayName>User Management Page</displayName>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSStateHomePage</name>
+			<displayName>CWNS State Home Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userLocation</name>
+				<displayName>userLocation</displayName>
+				<description>user Location</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userType</name>
+				<displayName>userType</displayName>
+				<description>user Type</description>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSFederalHomePage</name>
+			<displayName>CWNS Federal Home Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userLocation</name>
+				<displayName>userLocation</displayName>
+				<description>user Location</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userType</name>
+				<displayName>userType</displayName>
+				<description>user Type</description>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSLocalHomePage</name>
+			<displayName>CWNS Local Home Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userLocation</name>
+				<displayName>userLocation</displayName>
+				<description>user Location</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userType</name>
+				<displayName>userType</displayName>
+				<description>user Type</description>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSRegionalHomePage</name>
+			<displayName>CWNS Regional Home Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userLocation</name>
+				<displayName>userLocation</displayName>
+				<description>user Location</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userType</name>
+				<displayName>userType</displayName>
+				<description>user Type</description>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/administration.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>6</id>
+		<name>ReviewStatusStatistics</name>
+		<title>Review Status Statistics</title>
+		<description>Review Status Statistics</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>true</showDetails>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>advanceKeyword</name>
+			<description>
+				Use this event to submit the keyword search to the list
+				facility portlet
+			</description>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+				<description>action to search facilities</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>reviewStatus</name>
+				<displayName>Review Status</displayName>
+				<description>review status search phrase</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>state</name>
+				<displayName>state</displayName>
+				<description>State Search Phrase</description>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/reviewStatus.do</defaultAction>
+			</showPage>
+			<!--<showPage>/htdocs/reviewstatus/ReviewStatusShowPage.jsp</showPage>-->
+			<showDetailsPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/reviewStatus.do</defaultAction>
+			</showDetailsPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>7</id>
+		<name>Announcements</name>
+		<title>Announcements</title>
+		<description>Announcements</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/announcements.do</defaultAction>
+			</showPage>
+			<!-- <showPage>/jsp/announcements/AnnouncementsShowPage.jsp</showPage>-->
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>8</id>
+		<name>FacilityFactSheet</name>
+		<title>Facility Fact Sheet</title>
+		<description>Facility Fact Sheet</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<!--
+			<inputParameter class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityNumber</name>
+			<displayName>facility number</displayName>
+			<description>facility number</description>
+			</inputParameter> 
+		-->
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>
+				/jsp/facilityfactsheet/FacilityFactSheetShowPage.jsp
+			</showPage>
+		</renderer>
+		<!--	  
+			<renderer class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+			<defaultAction>/facilityFactSheetDisplay.do</defaultAction>
+			</showPage>
+			</renderer> 
+		-->
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>9</id>
+		<name>Summary</name>
+		<title>Summary</title>
+		<description>Summary</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facnumber</displayName>
+			<description>facnumber</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewAllCommentsPage</name>
+			<displayName>View All Comments</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewSewershedPage</name>
+			<displayName>View Sewershed</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<!-- <showPage>/jsp/summary/SummaryShowPage.jsp</showPage> -->
+
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/summary.do</defaultAction>
+			</showPage>
+
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>10</id>
+		<name>ReviewComments</name>
+		<title>Review Comments</title>
+		<description>Review Comments</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facnumber</displayName>
+			<description>facnumber</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>FacilityViewAllCommentsEvent</name>
+			<displayName>Facility View All Comments Event</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/reviewComments.do</defaultAction>
+			</showPage>
+
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>11</id>
+		<name>Documents</name>
+		<title>Documents</title>
+		<description>Documents</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>/jsp/documents/DocumentsShowPage.jsp</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>12</id>
+		<name>BreadCrumb</name>
+		<title>Bread Crumb</title>
+		<description>Bread Crumb</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSStateHomePage</name>
+			<displayName>CWNS State Home Page</displayName>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSFederalHomePage</name>
+			<displayName>CWNS Federal Home Page</displayName>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSLocalHomePage</name>
+			<displayName>CWNS Local Home Page</displayName>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSRegionalHomePage</name>
+			<displayName>CWNS Regional Home Page</displayName>
+		</event>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>pageName</name>
+			<displayName>Page Name</displayName>
+			<description>
+				Page Name to be shown in bread crumb
+			</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/breadcrumb.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>13</id>
+		<name>NavigationBanner</name>
+		<title>Navigation Banner</title>
+		<description>Navigation Banner</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>Location Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationTypeId</name>
+			<displayName>locationTypeId</displayName>
+			<description>Location Type Id</description>
+		</inputParameter>
+
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/navigationBanner.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>14</id>
+		<name>ViewAllCommentsPopup</name>
+		<title>All Review Comments</title>
+		<description>
+			Portlet for View All Comments Popup Window
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facnumber</displayName>
+			<description>facnumber</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/reviewCommentsViewAll.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>15</id>
+		<name>ViewAllComments</name>
+		<title>View All Comments</title>
+		<description>
+			Portlet for View All Comments Popup Window in Summary
+			Portlet
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facnumber</displayName>
+			<description>facnumber</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/viewAllComments.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>16</id>
+		<name>ShowCountyList</name>
+		<title>Show County List</title>
+		<description>
+			Portlet to show all the counties in the location
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>location Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>formId</name>
+			<displayName>formId</displayName>
+			<description>form Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/countyList.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>17</id>
+		<name>ShowSystemNameList</name>
+		<title>Show System Name List</title>
+		<description>
+			Portlet to show all the systems in the location
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>location Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/systemNameList.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>18</id>
+		<name>ShowWatershedList</name>
+		<title>Show Watershed List</title>
+		<description>
+			Portlet to show all the watersheds in the location
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>location Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/watershedList.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>19</id>
+		<name>ReviewStatus</name>
+		<title>Review Status</title>
+		<description>Review Status</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/facilityReviewStatus.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>20</id>
+		<name>FacilityInformation</name>
+		<title>Facility Information</title>
+		<description>Facility Information</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>SystemNameListPage</name>
+			<displayName>System Name List Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>FacilityInfoPage</name>
+			<displayName>Facility Info Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>home</name>
+			<displayName>home</displayName>
+		</event>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/facilityInformation.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>21</id>
+		<name>FacilityType</name>
+		<description>Facility Type</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>FacilityID</displayName>
+			<description>Facility Identifier</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/viewFacilityType.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>22</id>
+		<name>Permits</name>
+		<description>Permits</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewPermitDetailsPage</name>
+			<displayName>View Permit Details Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>permitNbr</name>
+				<displayName>permitNbr</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/permitsDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>23</id>
+		<name>PointofContact</name>
+		<description>Point of Contact</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewCountyListPage</name>
+			<displayName>View CountyList Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>formId</name>
+				<displayName>formId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsUserId</name>
+			<displayName>CWNS User Id</displayName>
+			<description>CWNS User Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/pointOfContact.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>24</id>
+		<name>NeedsByCategory</name>
+		<description>Needs By Category</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>
+				/jsp/facilityfactsheet/NeedsByCategoryShowPage.jsp
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>25</id>
+		<name>NeedsByDocument</name>
+		<description>Needs By Document</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/needs.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>26</id>
+		<name>OperationandMaintenanceCosts</name>
+		<description>Operation and Maintenance Costs</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>/oandM.do</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>27</id>
+		<name>FundingSource</name>
+		<description>Funding Source</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CbrLoanDetailPage</name>
+			<displayName>CBR Loan Detail Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>loanId</name>
+				<displayName>loanId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>/funding.do</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>28</id>
+		<name>PopulationInformation</name>
+		<description>Population Information</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>UpsreamCollectionPage</name>
+			<displayName>Upsream Collection Event</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/population.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>29</id>
+		<name>FlowInformation</name>
+		<description>Flow Information</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/flowInfo.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>30</id>
+		<name>DischargeInformation</name>
+		<description>Discharge Information</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>FacilitySelectPage</name>
+			<displayName>Facility Select Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>formId</name>
+				<displayName>formId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>/discharge.do</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>31</id>
+		<name>EffluentInformation</name>
+		<description>Effluent Information</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/effluent.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>32</id>
+		<name>PollutionProblems</name>
+		<description>Pollution Problems</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/pollution.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>33</id>
+		<name>ImpairedWatersInformation</name>
+		<description>Impaired Waters Information</description>
+		<title>Impaired Waters</title>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/impairedWaters.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>34</id>
+		<name>CombinedSewer</name>
+		<description>Combined Sewer</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>FacilityID</displayName>
+			<description>Facility Identifier</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/viewCSO.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>35</id>
+		<name>PointofRecord</name>
+		<description>Point Of Record</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewConverterPage</name>
+			<displayName>View Converter Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>conType</name>
+				<displayName>conType</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>
+					/facilityCoordinatesDisplay.do
+				</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>36</id>
+		<name>NavigationTabs</name>
+		<title>Navigation Tabs</title>
+		<description>Navigation Tabs</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>navigationTabType</name>
+			<displayName>navigationTabType</displayName>
+			<description>navigationTabType</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Facility_Tab</name>
+			<displayName>Facility_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Needs_Tab</name>
+			<displayName>Needs_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Population_AND_Flow_Tab</name>
+			<displayName>Population_AND_Flow_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Population_Tab</name>
+			<displayName>Population_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Discharge_AND_Effluent_Tab</name>
+			<displayName>Discharge_AND_Effluent_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Discharge_Tab</name>
+			<displayName>Discharge_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Combined_Sewer_Tab</name>
+			<displayName>Combined_Sewer_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Pollution_Tab</name>
+			<displayName>Pollution_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Utility_Management_Tab</name>
+			<displayName>Utility_Management_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Unit_Process_Tab</name>
+			<displayName>Unit_Process_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Location_Tab</name>
+			<displayName>Location_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Operation_and_Maintenance_Link</name>
+			<displayName>Operation_and_Maintenance_Link</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Funding_Source_Link</name>
+			<displayName>Funding_Source_Link</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/navigationTabs.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<!--  User Management -->
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>37</id>
+		<name>UserSearch</name>
+		<title>User Search</title>
+		<description>Search Users</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>keyword</name>
+			<displayName>keyword</displayName>
+			<description>keyword to search facilities</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>action</name>
+			<displayName>action</displayName>
+			<description>action to search facilities</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>locationId</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>userType</name>
+			<displayName>userType</displayName>
+			<description>userType</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>userStatus</name>
+			<displayName>userStatus</displayName>
+			<description>userStatus</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>AccessLevel</name>
+			<displayName>AccessLevel</displayName>
+			<description>AccessLevel</description>
+		</inputParameter>
+
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>userSearch</name>
+			<displayName>User Search</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userType</name>
+				<displayName>userType</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>userStatus</name>
+				<displayName>userStatus</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>AccessLevel</name>
+				<displayName>AccessLevel</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>keyword</name>
+				<displayName>keyword</displayName>
+			</parameter>
+		</event>
+
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/userSearch.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>38</id>
+		<name>UserList</name>
+		<title>User List</title>
+		<description>User List</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>keyword</name>
+			<displayName>keyword</displayName>
+			<description>keyword to search facilities</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>action</name>
+			<displayName>action</displayName>
+			<description>action to search facilities</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>locationId</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>userType</name>
+			<displayName>userType</displayName>
+			<description>userType</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>userStatus</name>
+			<displayName>userStatus</displayName>
+			<description>userStatus</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>AccessLevel</name>
+			<displayName>AccessLevel</displayName>
+			<description>AccessLevel</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsUserId</name>
+			<displayName>CWNS User Id</displayName>
+			<description>CWNS User Id</description>
+		</inputParameter>
+
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>NewPortalUser</name>
+			<displayName>New Portal User</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+			</parameter>
+		</event>
+
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>NewCwnsUser</name>
+			<displayName>New CWNS User</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>oidUser</name>
+				<displayName>OID USER</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+			</parameter>
+		</event>
+
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>DisplayUser</name>
+			<displayName>Display User</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>cwnsUserId</name>
+				<displayName>Cwns User Id</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+			</parameter>
+		</event>
+
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>DefaultSearch</name>
+			<displayName>Default Search</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+			</parameter>
+		</event>
+
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/userList.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>39</id>
+		<name>UserDetails</name>
+		<title>User Details</title>
+		<description>User Details</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>action</name>
+			<displayName>action</displayName>
+			<description>action to search facilities</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsUserId</name>
+			<displayName>CWNS User Id</displayName>
+			<description>CWNS User Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>oidUserId</name>
+			<displayName>OID User Id</displayName>
+			<description>OID User Id</description>
+		</inputParameter>
+
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>UMFacilitySelectPage</name>
+			<displayName>UM Facility Select Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>formId</name>
+				<displayName>formId</displayName>
+			</parameter>
+		</event>
+
+
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/userDetails.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<!--  User Registration -->
+
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>40</id>
+		<name>FacilityComments</name>
+		<title>Facility Comments</title>
+		<description>Portlet for Facility Comments Window</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>dataAreaType</name>
+			<displayName>dataAreaType</displayName>
+			<description>dataAreaType</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>dataAreaHeader</name>
+			<displayName>dataAreaHeader</displayName>
+			<description>dataAreaHeader</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>cwnsExecutionOrder</name>
+			<displayName>cwnsExecutionOrder</displayName>
+			<description>cwns Execution Order</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>isLastToExecute</name>
+			<displayName>isLastToExecute</displayName>
+			<description>isLastToExecute</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/facilityComments.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>41</id>
+		<name>UpstreamCollectionPopup</name>
+		<title>Upstream Collection</title>
+		<description>
+			Portlet for Upstream Collection Popup Window
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facnumber</displayName>
+			<description>facnumber</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/upstreamCollection.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>42</id>
+		<name>FacilityMenu</name>
+		<title>Facility/Project Menu</title>
+		<description>Facility Menu</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>FacilityFactSheetPage</name>
+			<displayName>Facility Fact Sheet Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/facilityMenuDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>43</id>
+		<name>FacilityAddress</name>
+		<title>Facility Address</title>
+		<description>Facility Address</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>
+					/facilityAddressDisplay.do
+				</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>44</id>
+		<name>FacilityCounties</name>
+		<description>Facility Counties</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewCountyListPage</name>
+			<displayName>View CountyList Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>formId</name>
+				<displayName>formId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/facilityCountyDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>45</id>
+		<name>FacilityCongressionalDistricts</name>
+		<description>Facility Congressional Districts</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ConDistrictListPage</name>
+			<displayName>Congressional District List Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/conDistrictDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>46</id>
+		<name>FacilityWatersheds</name>
+		<description>Facility Watersheds</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewWatershedListPage</name>
+			<displayName>View Watershed List Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/watershedDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>47</id>
+		<name>FacilityBoundaries</name>
+		<description>Facility Boundaries</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewBoundaryListPage</name>
+			<displayName>View Boundary List Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/boundaryDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>49</id>
+		<name>PointofContactsSearch</name>
+		<title>Point of Contact Search</title>
+		<description>Point of Contact Search</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>action</name>
+			<displayName>action</displayName>
+			<description>action to search facilities</description>
+		</inputParameter>
+
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>AssignPOC</name>
+			<displayName>Assign POC</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>action</name>
+				<displayName>action</displayName>
+				<description>action to search facilities</description>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>pocId</name>
+				<displayName>pocId</displayName>
+			</parameter>
+		</event>
+
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/pointOfContactSearch.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>50</id>
+		<name>ShowCongressionalDistrictList</name>
+		<title>Show Congressional District List</title>
+		<description>
+			Portlet to show all the Congressional Districts in the
+			location
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>location Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/conDistrictList.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>51</id>
+		<name>ShowBoundaryList</name>
+		<title>Show Boundary List</title>
+		<description>
+			Portlet to show all the Boundaries in the location
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>location Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/boundaryList.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>52</id>
+		<name>ImpairedWatersSearch</name>
+		<title>Impaired Waters Search</title>
+		<description>Impaired Waters Search</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>WatershedListPage</name>
+			<displayName>Watershed List Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>locationId</name>
+				<displayName>locationId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/impairedWatersSearch.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>53</id>
+		<name>LatLongConverter</name>
+		<title>Latitude Longitude Converter</title>
+		<description>Latitude Longitude Converter</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>conType</name>
+			<displayName>conType</displayName>
+			<description>conType</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>
+				/jsp/geographicarea/LatLongConverterShowPage.jsp
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>54</id>
+		<name>CapitalCost</name>
+		<title>Capital Cost</title>
+		<description>Capital Cost</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>documentId</name>
+			<displayName>documentId</displayName>
+			<description>document Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/capitalCost.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>55</id>
+		<name>cwns2008Home</name>
+		<title>CWNS Registration</title>
+		<description>CWNS 2008 Home</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>request_Id</name>
+			<displayName>request_Id</displayName>
+			<description>request Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>user_Id</name>
+			<displayName>user_Id</displayName>
+			<description>user Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>requestedGroups</name>
+			<displayName>requestedGroups</displayName>
+			<description>requested Groups</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>IAM_SELF_REGISTRATION</name>
+			<displayName>IAM Self-Registration page</displayName>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>IAM_GROUP_SUBSCRIPTION</name>
+			<displayName>IAM Group Subscription page</displayName>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>registrationPreliminary.do</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>56</id>
+		<name>MyRoles</name>
+		<title>My Roles</title>
+		<description>My Roles</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/myRoles.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>57</id>
+		<name>DocumentSearch</name>
+		<title>Document Search</title>
+		<description>Document Search Portlet</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/documentSearch.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>58</id>
+		<name>ManageCostCurve</name>
+		<title>Manage Cost Curve</title>
+		<description>Manage Cost Curve</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>documentId</name>
+			<displayName>documentId</displayName>
+			<description>document Id</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CostCurveViewAllCatVEvent</name>
+			<displayName>
+				Cost Curve View All Cat V Event Event
+			</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Facility_Tab</name>
+			<displayName>Facility_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Needs_Tab</name>
+			<displayName>Needs_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Population_AND_Flow_Tab</name>
+			<displayName>Population_AND_Flow_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Population_Tab</name>
+			<displayName>Population_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Location_Tab</name>
+			<displayName>Location_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>		
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Discharge_AND_Effluent_Tab</name>
+			<displayName>Discharge_AND_Effluent_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Discharge_Tab</name>
+			<displayName>Discharge_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>Combined_Sewer_Tab</name>
+			<displayName>Combined_Sewer_Tab</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>navigationTabType</name>
+				<displayName>navigationTabType</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/manageCostCurve.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>59</id>
+		<name>FacilitySelect</name>
+		<title>Facility Select</title>
+		<description>
+			Portlet to allow selection of facilities
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>location Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>formId</name>
+			<displayName>formId</displayName>
+			<description>form Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/facilitySelect.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>60</id>
+		<name>CbrSearch</name>
+		<title>CBR Search</title>
+		<description>CBR Search Portlet</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CbrLoanDetailPage</name>
+			<displayName>CBR Loan Detail Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>loanId</name>
+				<displayName>loanId</displayName>
+			</parameter>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/cbrSearch.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>61</id>
+		<name>ManageCostCurveViewCatV</name>
+		<title>
+			Sewershed facilities With Combined Sewer Overflow (CSO) Cost
+			Curve
+		</title>
+		<description>
+			Portlet for View All Cat V Cost Popup Window
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facnumber</displayName>
+			<description>facnumber</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>
+					/manageCostCurveViewAllCatV.do
+				</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>62</id>
+		<name>customLoginBanner</name>
+		<title>Custom Login Banner</title>
+		<description>Custom Login Banner</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage>customLoginBanner.do</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>63</id>
+		<name>CbrLoanShowDetail</name>
+		<title>CBR Loan Show Detail</title>
+		<description>
+			Portlet to list CBR Loan details in popup window
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>loanId</name>
+			<displayName>loanId</displayName>
+			<description>loan Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/cbrLoanDetailDisplay.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>64</id>
+		<name>UnitProcess</name>
+		<title>Unit Process</title>
+		<description>Unit Process</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/unitProcess.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>65</id>
+		<name>UtilityManagement</name>
+		<title>Utility Management</title>
+		<description>Utility Management</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/utilityManagement.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>66</id>
+		<name>NPDESPermitInfo</name>
+		<title>NPDES Permit Information</title>
+		<description>NPDES Permit Information</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>permitNumber</name>
+			<displayName>permitNumber</displayName>
+			<description>permit Number</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/NPDESPermitInfo.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>67</id>
+		<name>PermitsSearch</name>
+		<title>NPDES Permit Search</title>
+		<description>NPDES Permit Search</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>ViewPermitDetailsPage</name>
+			<displayName>View Permit Details Page</displayName>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>permitNbr</name>
+				<displayName>permitNbr</displayName>
+			</parameter>
+			<parameter
+				class="oracle.portal.provider.v2.DefaultParameterDefinition">
+				<name>facilityId</name>
+				<displayName>facilityId</displayName>
+			</parameter>
+		</event>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facilityId</description>
+		</inputParameter>
+
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/permitsSearch.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>68</id>
+		<name>CostCurvePopulation</name>
+		<title>Cost Curve Population</title>
+		<description>Cost Curve Population</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/costCurvePopulation.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>69</id>
+		<name>NPDESPermitFlowData</name>
+		<title>NPDES Permit Flow Data</title>
+		<description>NPDES Permit Flow Data</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>true</renderContainer>
+			<renderCustomize>true</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/NPDESPermitFlowData.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>90</id>
+		<name>UMFacilitySelect</name>
+		<title>UM Facility Select</title>
+		<description>
+			Portlet to allow selection of facilities
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>locationId</name>
+			<displayName>locationId</displayName>
+			<description>location Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>formId</name>
+			<displayName>formId</displayName>
+			<description>form Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facilityId</displayName>
+			<description>facility Id</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/UMfacilitySelect.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>91</id>
+		<name>PortalSideNavigation</name>
+		<title>Portal Side Navigation</title>
+		<description>
+			Portlet to handle portal side navigation links
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>request_Id</name>
+			<displayName>request_Id</displayName>
+			<description>request Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>user_Id</name>
+			<displayName>user_Id</displayName>
+			<description>user Id</description>
+		</inputParameter>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>requestedGroups</name>
+			<displayName>requestedGroups</displayName>
+			<description>requested Groups</description>
+		</inputParameter>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSStateHomePage</name>
+			<displayName>CWNS State Home Page</displayName>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSFederalHomePage</name>
+			<displayName>CWNS Federal Home Page</displayName>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSLocalHomePage</name>
+			<displayName>CWNS Local Home Page</displayName>
+		</event>
+		<event
+			class="oracle.portal.provider.v2.DefaultEventDefinition">
+			<name>CWNSRegionalHomePage</name>
+			<displayName>CWNS Regional Home Page</displayName>
+		</event>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/portalSideNavigation.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+	
+	<portlet
+		class="oracle.portal.provider.v2.DefaultPortletDefinition">
+		<id>92</id>
+		<name>ViewSewershed</name>
+		<title>View Sewershed</title>
+		<description>
+			Portlet for View Sewershed Popup Window in Summary
+			Portlet
+		</description>
+		<timeout>120</timeout>
+		<showEditToPublic>false</showEditToPublic>
+		<hasAbout>false</hasAbout>
+		<showEdit>false</showEdit>
+		<hasHelp>false</hasHelp>
+		<showEditDefault>false</showEditDefault>
+		<showDetails>false</showDetails>
+		<inputParameter
+			class="oracle.portal.provider.v2.DefaultParameterDefinition">
+			<name>facilityId</name>
+			<displayName>facnumber</displayName>
+			<description>facnumber</description>
+		</inputParameter>
+		<renderer
+			class="oracle.portal.provider.v2.render.RenderManager">
+			<renderContainer>false</renderContainer>
+			<renderCustomize>false</renderCustomize>
+			<autoRedirect>true</autoRedirect>
+			<contentType>text/html</contentType>
+			<showPage
+				class="oracle.portal.provider.v2.render.http.StrutsRenderer">
+				<defaultAction>/sewershedList.do</defaultAction>
+			</showPage>
+		</renderer>
+	</portlet>
+
+</provider>
