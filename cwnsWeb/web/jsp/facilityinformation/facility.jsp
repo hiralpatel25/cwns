@@ -149,7 +149,7 @@ function FacilityInformation_required () {
                action="saveFacilityInfo.do" styleId="facilityInformationFormBeanId" >
            
 <DIV id="hidden_fields" style="DISPLAY:none">
-    <input type="hidden" id="paramId" name="" value="">
+    <input type="hidden" id="paramId" name="paramName" value="">
     <pdk-html:text styleId="surveyFacilityId" property="surveyFacilityId" value="<%=facilityInformationForm.getSurveyFacilityId() %>"/>
 	<pdk-html:text styleId="showWarningMessage" property="showWarningMessage" value="<%=facilityInformationForm.getShowWarningMessage() %>"/>
 	<pdk-html:text styleId="isUpdatable" property="isUpdatable" value="<%=facilityInformationForm.getIsUpdatable() %>"/>

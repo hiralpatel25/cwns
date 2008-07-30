@@ -294,7 +294,7 @@ return true;
 	 <div style="DISPLAY: none;"> 
 	  <pdk-html:text name="facilityPermitForm"  property="mode" styleId="modeId"/>
 	  <pdk-html:text name="facilityPermitForm"  property="facilityId" styleId="facilityId"/>
-	 <input type="hidden" id="cancelParamId" name="" value="">
+	 <input type="hidden" id="cancelParamId" name="cancelParamName" value="">
 	  
 	  </div>  
 	<TABLE border="0" width="400" class="PortletText1">
@@ -332,7 +332,7 @@ return true;
 	
 	<logic:equal name="facilityPermitForm" property="mode" value="edit">
 	  <div style="DISPLAY: none;"> 
-	  <input type="hidden" id="cancelParamId" name="" value="">
+	  <input type="hidden" id="cancelParamId" name="cancelParamId" value="">
 	  <pdk-html:text name="facilityPermitForm"  property="mode" styleId="modeId"/>
 	  <pdk-html:text name="facilityPermitForm"  property="facilityId" styleId="facilityId"/>
 	  <pdk-html:text name="facilityPermitForm"  property="permitId" styleId="permitId"/>

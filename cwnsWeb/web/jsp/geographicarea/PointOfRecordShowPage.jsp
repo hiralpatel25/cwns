@@ -563,7 +563,7 @@ if (msDate > today){
 	type="gov.epa.owm.mtb.cwns.facilityInformation.FacilityPORForm"
 	action="saveFacilityCoordinates.do">
 	<DIV id="hidden_fields" style="DISPLAY:none">
-		<input type="hidden" id="PORparamId" name="" value="">
+		<input type="hidden" id="PORparamId" name="PORparamIdName" value="">
 		<pdk-html:text name="facilityPORForm" property="facilityId"/>
 		<pdk-html:text name="facilityPORForm" property="isUpdatable"/>
 		<pdk-html:text name="facilityPORForm" styleId="sourceId" property="source"/>

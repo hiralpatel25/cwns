@@ -1549,7 +1549,7 @@ function tallyAllFields(elemId)
                 action="clusteredSystemDetails.do">
 	 <div style="DISPLAY: none;">
 	   <pdk-html:text styleId="clusteredAct" property="clusteredAct" value=""/> 
-	   <input type="hidden" id="cancelParamId" name="" value="">
+	   <input type="hidden" id="cancelParamId" name="cancelParamName" value="">
 	   
 	 </div>  
    <TABLE border="0" width="100%" class="PortletText1">
@@ -1909,7 +1909,7 @@ function tallyAllFields(elemId)
                 action="owtSystemDetails.do">
 	 <div style="DISPLAY: none;">
 	   <pdk-html:text styleId="owtsAct" property="owtsAct" value=""/> 
-	   <input type="hidden" id="cancelParamId" name="" value="">
+	   <input type="hidden" id="cancelParamId" name="cancelParamId" value="">
 	   
 	 </div>  
    <TABLE border="0" width="100%" class="PortletText1">
