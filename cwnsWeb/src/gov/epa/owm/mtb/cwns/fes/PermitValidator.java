@@ -77,7 +77,7 @@ public class PermitValidator extends FESValidator {
 		if (facilityPermits!=null){
 			for (Iterator iter = facilityPermits.iterator(); iter.hasNext();) {
 				FacilityPermit facilityPermit = (FacilityPermit) iter.next();
-				if(facilityPermit.getPermit().getPermitTypeRef().getNpdesFlag()=='Y'){
+				if(facilityPermit.getPermit().getPermitTypeRef().getNpdesFlag()=='Y' || facilityPermit.getPermit().getPermitTypeRef().getCode().equals("OTH")){
 					return true;
 				}
 			}
