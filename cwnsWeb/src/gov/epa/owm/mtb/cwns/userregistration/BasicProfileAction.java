@@ -197,7 +197,7 @@ public class BasicProfileAction extends CWNSAction {
 					saveErrors(request, rForm.getErrors());
 				}
 			}
-			rForm.setActionComplete(true); //action complete
+			//rForm.setActionComplete(true); //action complete
 		}else if(ACTION_PROCESS_IAM_REQUEST.equalsIgnoreCase(action)){
 			nextScreen="basicProfile";
 			String type = "";
