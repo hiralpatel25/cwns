@@ -2729,7 +2729,7 @@ public class UserServiceImpl extends CWNSService implements UserService {
 		String iamRequestId = cwnsUser.getPortalRequestId();
 
 		if (cwnsUser.getPortalRequestId() != null
-				|| cwnsUser.getPortalRequestId().length() > 0) {
+				&& cwnsUser.getPortalRequestId().length() > 0) {
 
 			IAMResponse iamResponse = regApprovePortalAccount(iamRequestId);
 
