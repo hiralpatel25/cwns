@@ -458,7 +458,7 @@ public class FacilityAddressServiceImpl extends CWNSService implements FacilityA
 				}
 			}
 		} catch (RemoteException e) {
-			log.error("Error while fetching adjacent counties for facility" + facilityId, e);
+			log.error("Error while fetching adjacent congressional districts for facility" + facilityId, e);
 		}
 		return retConHelper;
 	}
