@@ -175,23 +175,26 @@ public class UserDetailsAction extends CWNSAction {
 		
 		if (ACTION_DISPLAY_USER_INFO.equals(action) ||
 			ACTION_DISPLAY_SELECTED_USER_INFO.equals(action) ||	
-			UserListAction.ACTION_SEARCH.equals(action)) {
+			UserListAction.ACTION_SEARCH.equals(action)  || !okToUpdate) {
 			userService.getUserData(udForm, currentUser);
 			udForm.resetRoleData(false);
 			udForm.setDisplayData(DISPLAY_USER_INFO);
-			//System.out.println("udForm.getStatus() = " + udForm.getStatus());
-			
+			if(!okToUpdate){
+				System.out.println("the user tried to refresh already submitted form therefore defaulting to the default action");
+			}
+			//System.out.println("udForm.getStatus() = " + udForm.getStatus());			
 		}else if (ACTION_UPDATE_USER_INFO.equals(action)) {
 			// Update user information
 			userService.updateUserData(udForm);
 			userService.getUserData(udForm, currentUser);
 			udForm.resetRoleData(false);
+			resetToken(request);
 
 		} else if (ACTION_UPDATE_ROLE.equals(action)) {
 			// Process an Update Role request
 			userService.updateRole(udForm, currentUser);
 			udForm.resetRoleData(false);
-
+			resetToken(request);
 		} else if (ACTION_DISPLAY_ROLE.equals(action)) {
 			// Display role information for editing
 		
@@ -216,6 +219,7 @@ public class UserDetailsAction extends CWNSAction {
 
 			udForm.setRoleDisplay(DISPLAY_ROLE_INFO);
 			udForm.setRoleMode(ROLE_UPDATE);
+			resetToken(request);
 			
 		} else if (ACTION_DELETE_ROLE.equals(action)) {
 			if (userService.isPrimaryRole(udForm)) {
@@ -223,13 +227,12 @@ public class UserDetailsAction extends CWNSAction {
 				errors.add(ActionErrors.GLOBAL_ERROR,error);
 			}else {
 				if (okToUpdate) {
-					resetToken(request);
 					userService.deleteRole(udForm);
 				}
 			}
 			userService.getUserData(udForm, currentUser);
 			udForm.resetRoleData(false);
-			
+			resetToken(request);			
 		} else if (ACTION_ADD_ROLE.equals(action)) {
 			// Process a new role
 			if (userService.getCwnsUserLocation(udForm.getCwnsUserId(),
@@ -245,13 +248,13 @@ public class UserDetailsAction extends CWNSAction {
 				udForm.setRoleDisplay(HIDE_ROLE_INFO);
 				userService.getUserData(udForm, currentUser);
 			}
-			
+			resetToken(request);			
 		} else if (ACTION_NEW_ROLE.equals(action)) {
 			// Prepare the screen to add a new role
 			userService.getUserData(udForm, currentUser);
 			udForm.resetRoleData(true);
 			udForm.setAllFacilities("Y");
-			
+			resetToken(request);			
 		} else if (ACTION_APPROVE_USER.equals(action)) {
 
 			boolean approvePortalAccount = false;
@@ -309,7 +312,7 @@ public class UserDetailsAction extends CWNSAction {
 				udForm.resetRoleData(false);
 				udForm.setDisplayData(DISPLAY_USER_INFO);
 			}
-			
+			resetToken(request);
 		} else if (ACTION_DENY_USER.equals(action)) {
 			// Update the CwnsUser object to capture any comments the administrator may
 			// have added.
@@ -343,6 +346,7 @@ public class UserDetailsAction extends CWNSAction {
 				udForm.resetRoleData(false);
 				udForm.setDisplayData(DISPLAY_USER_INFO);
 			}
+			resetToken(request);
 		}
 		
 		if (!errors.isEmpty()) {
