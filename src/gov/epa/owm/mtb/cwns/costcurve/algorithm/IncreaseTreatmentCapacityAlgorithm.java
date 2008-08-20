@@ -149,7 +149,7 @@ public class IncreaseTreatmentCapacityAlgorithm extends
 			double filtrationCosts = treatmentPlantCostCurveService.computeFiltrationCosts(flowRate);
 			initial_cost_base_amount = initial_cost_base_amount + filtrationCosts; 
 
-			flowRate = presentFlowRate;
+			//flowRate = presentFlowRate;
 			String presentTreatmentCurveType = treatmentPlantCostCurveService.getTreatmentCurveType(presentPlantType,
 					presentFacilityEffluentType, presentFacilityEffluenTypeAdvancedTreatmentSubtype);
 			float presentCoefficientAValue = treatmentPlantCostCurveService.getCoefficientAValue(
@@ -159,7 +159,9 @@ public class IncreaseTreatmentCapacityAlgorithm extends
 			
 			double deductions = treatmentPlantCostCurveService.computeBasicCost
 					(flowRate, presentCoefficientAValue, presentCoefficientBValue);
-			cost_base_amount = initial_cost_base_amount - deductions; 
+			
+			double deduction_amount = Math.min(deductions, 0.85 * initial_cost_base_amount);
+			cost_base_amount = initial_cost_base_amount - deduction_amount; 
 			
 			List costOutputs = new ArrayList();
 
@@ -198,7 +200,7 @@ public class IncreaseTreatmentCapacityAlgorithm extends
 								flowRate, coefficientAValue, coefficientBValue);
 			
 			// deductions
-			flowRate = presentFlowRate;
+			//flowRate = presentFlowRate;
 			String salvageTreatmentCurveType = treatmentPlantCostCurveService.getSalvageTreatmentCurveType
 				(presentFacilityEffluentType, presentFacilityEffluenTypeAdvancedTreatmentSubtype,
 					projectedFacilityEffluentType, projectedFacilityEffluenTypeAdvancedTreatmentSubtype);
@@ -210,7 +212,9 @@ public class IncreaseTreatmentCapacityAlgorithm extends
 			double deduction_amount = treatmentPlantCostCurveService.computeBasicCost(
 				flowRate, coefficientAValue, coefficientBValue);
 			
-			cost_base_amount =  cost_base_amount - deduction_amount;
+			double deduction = Math.min(deduction_amount, 0.85 * cost_base_amount);	
+			cost_base_amount =  cost_base_amount - deduction;
+			
 			
 			int catISplitPercentage = treatmentPlantCostCurveService.getUpgradeCatISplitPercentage
 			(presentFacilityEffluentType, presentFacilityEffluenTypeAdvancedTreatmentSubtype,

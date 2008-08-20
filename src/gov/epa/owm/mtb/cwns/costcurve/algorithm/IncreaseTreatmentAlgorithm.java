@@ -133,7 +133,7 @@ public class IncreaseTreatmentAlgorithm extends
 			cost_base_amount = treatmentPlantCostCurveService.computeBasicCost(
 								flowRate, coefficientAValue, coefficientBValue);
 			
-			flowRate = presentFlowRate;
+			//flowRate = presentFlowRate;
 			String salvageTreatmentCurveType = treatmentPlantCostCurveService.getSalvageTreatmentCurveType
 				(presentFacilityEffluentType, presentFacilityEffluenTypeAdvancedTreatmentSubtype,
 					projectedFacilityEffluentType, projectedFacilityEffluenTypeAdvancedTreatmentSubtype);
@@ -145,7 +145,10 @@ public class IncreaseTreatmentAlgorithm extends
 			double deduction_amount = treatmentPlantCostCurveService.computeBasicCost(
 				flowRate, coefficientAValue, coefficientBValue);
 			
-			cost_base_amount =  cost_base_amount - deduction_amount;
+			//make sure deduction_amount is no greater than 85% of the cost_base_amount
+			
+			double deduction = Math.min(deduction_amount, 0.85 * cost_base_amount);			
+			cost_base_amount =  cost_base_amount - deduction;
 			
 			int catISplitPercentage = treatmentPlantCostCurveService.getUpgradeCatISplitPercentage
 				(presentFacilityEffluentType, presentFacilityEffluenTypeAdvancedTreatmentSubtype,
