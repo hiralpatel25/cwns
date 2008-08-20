@@ -225,6 +225,7 @@ public class NeedsServiceImpl extends CWNSService implements NeedsService {
 		boolean isFacility = facilityService.isFacility(new Long(facNum));
 		
 		Collection needInfoList = needsDAO.getDocumentAndType(facNum);
+		long totalAdjustedFederalAmount = totalAdjustedFederalAmount(needInfoList, facNum);
         		
     	Iterator iter = needInfoList.iterator();
     	
@@ -261,12 +262,10 @@ public class NeedsServiceImpl extends CWNSService implements NeedsService {
     	    Character dbFeedbackDeleteFlag = (Character)map.get("feedbackDeleteFlag");
     	    if (dbFeedbackDeleteFlag!=null)
     	       nh.setFeedbackDeleteFlag(dbFeedbackDeleteFlag.toString());
-    	    if(nh.getDocumentTypeId().equals("11") || nh.getDocumentTypeId().equals("98"))
-    	    {
+    	    if(nh.getDocumentTypeId().equals("11") || nh.getDocumentTypeId().equals("98")){
     	    	nh.setIsDocumentUpdatable("N");
     	    }
-    	    else
-    	    {
+    	    else{
     	    	nh.setIsDocumentUpdatable("Y");
     	    }
     	    
@@ -287,54 +286,39 @@ public class NeedsServiceImpl extends CWNSService implements NeedsService {
         	    log.debug("adjust_amount_sum: " + adjustedAmount);
         	    log.debug("needTypeId: " + needTypeId);   
         	            	    
-        	    if(needTypeId.equals("S")==true && adjustedAmount > 0)
-        	    {
+        	    if(needTypeId.equals("S")==true && adjustedAmount > 0){
             	    nh.setHasSSEAmount("Y");
             	    nh.setSseAmount(adjustedAmount);        	    	
         	    }
         	    
-        	    if(needTypeId.equals("F")==true && adjustedAmount > 0)
-        	    {
+        	    if(needTypeId.equals("F")==true && adjustedAmount > 0){
         	    	
             	    nh.setHasFederalAmount("Y");
             	    nh.setFederalAmount(adjustedAmount);
         	    	
         	    	if(dbOutdatedDocCertificatnFlag.equalsIgnoreCase("N")
-        	    			&& dbAllowFootnoteFlag.equalsIgnoreCase("Y"))
-        	    	{
+        	    			&& dbAllowFootnoteFlag.equalsIgnoreCase("Y")){
         	    		footnoteableFlag = true;
         	    	}
         	    	
-        	    	if(adjustedAmount > cwnsInfo.getSubmitDocNeedsAmount())
-        	    	{
-	        	    	if(!isFacility)
-	        	    	{
-	        	    		if(published_date.before(submitDocNeedsNpsYear))
-	        	    		{
+        	    	if(totalAdjustedFederalAmount > cwnsInfo.getSubmitDocNeedsAmount()){
+	        	    	if(!isFacility){
+	        	    		if(published_date.before(submitDocNeedsNpsYear)){
 	        	    			submitFlag = true;
 	        	    		}
-	        	    	}
-	        	    	else
-	        	    	{
+	        	    	} else{
 	        	    		if(published_date.before(submitDocNeedsNNpsYear))
 	        	    		{
 	        	    			submitFlag = true;
 	        	    		}	        	    		
 	        	    	}
-        	    	}
-        	    	else
-        	    	{
-	        	    	if(!isFacility)
-	        	    	{
-	        	    		if(published_date.before(submitDocNpsYear))
-	        	    		{
+        	    	}else{
+	        	    	if(!isFacility) {
+	        	    		if(published_date.before(submitDocNpsYear)){
 	        	    			submitFlag = true;
 	        	    		}
-	        	    	}
-	        	    	else
-	        	    	{
-	        	    		if(published_date.before(submitDocNNpsYear))
-	        	    		{
+	        	    	}else {
+	        	    		if(published_date.before(submitDocNNpsYear)){
 	        	    			submitFlag = true;
 	        	    		}	        	    		
 	        	    	}
@@ -351,6 +335,26 @@ public class NeedsServiceImpl extends CWNSService implements NeedsService {
     	
 		return needsDocList;
 	}
+	
+	private long totalAdjustedFederalAmount(Collection needInfoList, String facNum){
+		long total=0;
+		Iterator iter = needInfoList.iterator();
+    	while ( iter.hasNext() ) {
+    	    Map map = (Map) iter.next();
+    	    Collection adjustAmountList = needsDAO.getAdjustedAmounts(facNum, (Long)map.get("d_documentId"));
+    	    Iterator iterAdjustedAmt = adjustAmountList.iterator();
+        	while ( iterAdjustedAmt.hasNext() ) {
+        	    Map mapAdjustedAmt = (Map) iterAdjustedAmt.next();
+        	    long adjustedAmount = ((Long)mapAdjustedAmt.get("adjust_amount_sum")).longValue();
+        	    String needTypeId = (String)mapAdjustedAmt.get("needTypeId");
+        	    if(needTypeId.equals("F")==true){
+        	    	total=total+adjustedAmount;
+        	    }
+        	}        	 
+    	}
+		return total;
+	}
+	
 
 	public void prepareFacilityDocument(String facilityId, String documentId, NeedsForm form)
 	{
