@@ -115,8 +115,9 @@ public class IncreaseCapacityAlgorithm extends
 				
 		double deductions = treatmentPlantCostCurveService.computeCostByPlantType(
 				presentPlantType, presentFlowRate, presentCoefficientAValue, presentCoefficientBValue, projectedFacilityEffluentType);
-						
-		double cost_base_amount = initial_cost_base_amount - deductions;
+		
+		double deduction_amount = Math.min(deductions, 0.85 * initial_cost_base_amount);
+		double cost_base_amount = initial_cost_base_amount - deduction_amount;
 			
 		int catISplitPercentage = treatmentPlantCostCurveService.getCatISplitPercentage(
 				projectedPlantType, projectedFacilityEffluentType, projectedFacilityEffluenTypeAdvancedTreatmentSubtype);		
