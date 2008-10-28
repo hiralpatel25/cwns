@@ -68,7 +68,7 @@ public class AjaxRequestProcessor extends HttpServlet {
 		if(urlStr==null || "".equals(urlStr)){
 			out.println("<error>url not found</error>");
 		}else{
-			//contrstruct url and get the response
+			//construct the url and get the response
 			URL url = new URL(urlStr); 
 			URLConnection c = url.openConnection();
 	        BufferedReader in = new BufferedReader(
