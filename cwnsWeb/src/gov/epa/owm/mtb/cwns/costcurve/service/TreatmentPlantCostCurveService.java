@@ -66,6 +66,8 @@ public class TreatmentPlantCostCurveService {
 
 	public static final int EFFLUENT_ADVANCED_WITH_BOD_AND_NO_OTHER_ADVANCED_TREATMENT = 506;
 
+	public static final int EFFLUENT_ADVANCED_NO_BOD_AND_AT_LEAST_1_OTHER_ADVANCED_TREATMENT = 0;
+
 	/**
 	 * If user indicates a mechanical plant, get coefficients as per below and
 	 * future design flow facility projected effluent | advanced treatment |
@@ -118,11 +120,11 @@ public class TreatmentPlantCostCurveService {
 				return 100;
 			}
 			if (projectedFacilityEffluenttype == EFFLUENT_TREATMENT_LEVEL_ADVANCED_TREATMENT) {
-				if (projectedFacilityEffluenTypeAdvancedTreatmentSubtype == EFFLUENT_ADVANCED_NO_BOD_AND_1_OTHER_ADVANCED_TREATMENT) {
+				if (projectedFacilityEffluenTypeAdvancedTreatmentSubtype == EFFLUENT_ADVANCED_NO_BOD_AND_1_OTHER_ADVANCED_TREATMENT ||projectedFacilityEffluenTypeAdvancedTreatmentSubtype == EFFLUENT_ADVANCED_NO_BOD_AND_AT_LEAST_2_OTHER_ADVANCED_TREATMENT) {
 					return 83;
 				} else if (projectedFacilityEffluenTypeAdvancedTreatmentSubtype == EFFLUENT_ADVANCED_WITH_BOD_AND_NO_OTHER_ADVANCED_TREATMENT) {
 					return 86;
-				} else if (projectedFacilityEffluenTypeAdvancedTreatmentSubtype == EFFLUENT_ADVANCED_WITH_BOD_AND_1_OTHER_ADVANCED_TREATMENT) {
+				} else if (projectedFacilityEffluenTypeAdvancedTreatmentSubtype == EFFLUENT_ADVANCED_WITH_BOD_AND_1_OTHER_ADVANCED_TREATMENT || projectedFacilityEffluenTypeAdvancedTreatmentSubtype == EFFLUENT_ADVANCED_WITH_BOD_AND_AT_LEAST_2_OTHER_ADVANCED_TREATMENT) {
 					return 72;
 				} else {
 					return 100;
