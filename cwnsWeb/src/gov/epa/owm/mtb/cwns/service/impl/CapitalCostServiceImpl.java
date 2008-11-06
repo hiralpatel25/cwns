@@ -608,7 +608,7 @@ public class CapitalCostServiceImpl extends CWNSService implements CapitalCostSe
 	
 	public boolean categoryNoFacilityTypeChange(long facilityId, String categoryId, boolean isStateUser)
 	{
-		if (isStateUser && categoryId.equalsIgnoreCase("xiii")){
+		if (isStateUser && (categoryId.equalsIgnoreCase("viii") || categoryId.equalsIgnoreCase("ix") || categoryId.equalsIgnoreCase("xiii"))){
 			return true;
 		}
 		

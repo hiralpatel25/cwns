@@ -56,9 +56,11 @@ public class FacilityInformationAction extends CWNSAction {
 		    	facilityinfoform.setNpdesFacilityName(facilityService.getNpdesFacilityName(facilityId));
 		    	
 				// Check if facility has Federal Needs
-				if (facilityService.hasFederalNeeds(new Long(facNum)) && !facilityService.facilityTypesAllowsFederalNeeds(new Long(facNum))){
-					facilityinfoform.setShowPrivate("N");
-				}
+		    	if(!facility.getOwnerCode().equals(FacilityService.FACILITY_OWNER_PRIVATE)){
+					if (facilityService.hasFederalNeeds(new Long(facNum)) && !facilityService.facilityTypesAllowsFederalNeeds(new Long(facNum))){
+						facilityinfoform.setShowPrivate("N");
+					}
+		    	}
 				
 				// Check if facility id updatable or not and set form attribute
 			       if (facilityService.isUpdatable(user, new Long(facNum))){
