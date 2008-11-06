@@ -11,7 +11,9 @@ public interface FacilityTypeService {
 	
 	public static final Long FACILITY_TYPE_TREATMENT_PLANT = new Long(1);
 	public static final Long FACILITY_TYPE_COMBINED_SEWER = new Long(2);
-	public static final Long FACILITY_TYPE_SEPERATE_SEWER = new Long(3);	
+	public static final Long FACILITY_TYPE_SEPERATE_SEWER = new Long(3);
+	public static final Long FACILITY_TYPE_ONSITE_WASTEWATER_TREATMENT_SYSTEM = new Long(5);
+	public static final Long FACILITY_TYPE_CLUSTERED_SYSTEM = new Long(6);
 	public static final Long FACILITY_TYPE_OTHER = new Long(77);
 	public static final Long FACILITY_TYPE_MS4_I = new Long(8);
 	public static final Long FACILITY_TYPE_MS4_II = new Long(9);
